@@ -12,6 +12,8 @@
 #include "../inc/drv_tmr2.h"
 #include "../inc/drv_eusart.h"
 #include "../inc/drv_iic.h"
+#include "../inc/app_protocol.h"
+#include "../inc/app_control.h"
 
 // CONFIG1
 #pragma config FEXTOSC = ECH    // External Oscillator mode selection bits (EC above 8MHz; PFM set to high power)

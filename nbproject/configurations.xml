@@ -9,6 +9,8 @@
       <itemPath>inc/drv_tmr2.h</itemPath>
       <itemPath>inc/drv_eusart.h</itemPath>
       <itemPath>inc/drv_iic.h</itemPath>
+      <itemPath>inc/app_protocol.h</itemPath>
+      <itemPath>inc/app_control.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="src" projectFiles="true">
       <itemPath>src/drv_gpio.c</itemPath>
@@ -18,6 +20,8 @@
       <itemPath>src/drv_tmr2.c</itemPath>
       <itemPath>src/drv_eusart.c</itemPath>
       <itemPath>src/drv_iic.c</itemPath>
+      <itemPath>src/app_protocol.c</itemPath>
+      <itemPath>src/app_control.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>
@@ -39,11 +43,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.44</languageToolchainVersion>
+        <languageToolchainVersion>1.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC16F1xxxx_DFP" vendor="Microchip" version="1.0.40"/>
+        <pack name="PIC16F1xxxx_DFP" vendor="Microchip" version="1.0.54"/>
       </packs>
       <compileType>
         <linkerTool>

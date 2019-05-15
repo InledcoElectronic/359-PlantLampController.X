@@ -10,16 +10,16 @@ void gpio_init() {
     SLRCONA = 0x00;         //压摆率最大
     INLVLA = 0x00;          //TTL输入
     //配置GPIOB
-    TRISB = 0x30;           //RB0 RB1 RB2 RB3配置为输出； RB4 RB5配置为输入
     LATB = 0x0F;            //RBO RB1 RB2 RB3输出高电平
+    TRISB = 0x30;           //RB0 RB1 RB2 RB3配置为输出； RB4 RB5配置为输入
     ANSELB = 0x00;          //配置为数字IO口
     WPUB = 0x00;            //禁止弱上拉
     ODCONB = 0x00;          //标准推挽驱动
     SLRCONB = 0x00;         //压摆率最大
     INLVLB = 0x00;          //TTL输入
     //配置GPIOC
+    LATC = 0x40;            //RC0 RC3 RC4 RC5输出低电平 RC6输出高电平
     TRISC = 0x86;           //RC1 RC2配置为SDA SCL  RC4配置为PWM5 RC5配置为输出 RC6配置为TX  RC7配置为RX
-    LATC = 0x60;            //RC0 RC3 RC4输出低电平 RC5 RC6输出高电平
     WPUC = 0x00;            //禁止弱上拉
     ODCONC = 0x03;          //RC1 RC2配置为漏极开漏使能
     SLRCONC = 0x00;         //压摆率最大

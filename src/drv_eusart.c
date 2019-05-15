@@ -56,6 +56,11 @@ uint8_t eusart_write(uint8_t byte) {
     putch(byte);
     return byte;
 }
+void eusart_write_buffer(uint8_t *pdata, uint8_t len) {
+	for(uint8_t i = 0; i < len; i++) {
+		eusart_write(*(pdata+i));
+	}
+}
 //发送中断使能
 void eusart_transmit_isr() {
     if(tx_remain < sizeof(tx_buffer)) {

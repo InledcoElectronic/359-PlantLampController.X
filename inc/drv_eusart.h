@@ -15,6 +15,7 @@ extern "C" {
     typedef void (*eusart_rcv_handler_t)(uint8_t rcv);
     extern void eusart_init();
     extern uint8_t eusart_write(uint8_t byte);
+    extern void eusart_write_buffer(uint8_t *pdata, uint8_t len);
     extern void eusart_transmit_isr();
     extern void eusart_setReceiveHandler(eusart_rcv_handler_t handler);
     extern void eusart_receive_isr();
