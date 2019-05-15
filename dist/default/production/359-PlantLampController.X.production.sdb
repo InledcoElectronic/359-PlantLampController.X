@@ -1,0 +1,852 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PIC14E SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F15375 ]
+[d frameptr 6 ]
+"66 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/main.c
+[e E9558 tmr2_clk_cs `uc
+TMR2_CLK_T2CKIPPS 0
+TMR2_CLK__FOSC_4 1
+TMR2_CLK__FOSC 2
+TMR2_CLK__HFINTOSC 3
+TMR2_CLK__LFINTOSC 4
+TMR2_CLK__MFINTOSC_500 5
+TMR2_CLK__MFINTOSC_31 6
+TMR2_CLK_SOSC 7
+TMR2_CLK_CLKR 8
+TMR2_CLK_NCO1_OUT 9
+TMR2_CLK_ZCD1_OUT 10
+TMR2_CLK_LC1_OUT 11
+TMR2_CLK_LC2_OUT 12
+TMR2_CLK_LC3_OUT 13
+TMR2_CLK_LC4_OUT 14
+]
+[e E9575 tmr2_ckps `uc
+TMR2_CKPS_1 0
+TMR2_CKPS_2 1
+TMR2_CKPS_4 2
+TMR2_CKPS_8 3
+TMR2_CKPS_16 4
+TMR2_CKPS_32 5
+TMR2_CKPS_64 6
+TMR2_CKPS_128 7
+]
+[e E9585 tmr2_outps `uc
+TMR2_OUTPS_1 0
+TMR2_OUTPS_2 1
+TMR2_OUTPS_3 2
+TMR2_OUTPS_4 3
+TMR2_OUTPS_5 4
+TMR2_OUTPS_6 5
+TMR2_OUTPS_7 6
+TMR2_OUTPS_8 7
+TMR2_OUTPS_9 8
+TMR2_OUTPS_10 9
+TMR2_OUTPS_11 10
+TMR2_OUTPS_12 11
+TMR2_OUTPS_13 12
+TMR2_OUTPS_14 13
+TMR2_OUTPS_15 14
+TMR2_OUTPS_16 15
+]
+[e E9603 tmr2_mode `uc
+TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL 0
+TMR2_MODE_FREE_PERIOD_HW_GATE_CTRL_HV 1
+TMR2_MODE_FREE_PERIOD_HW_GATE_CTRL_LV 2
+TMR2_MODE_FREE_PERIOD_RST_RISE_OR_FALL 3
+TMR2_MODE_FREE_PERIOD_RST_RISE 4
+TMR2_MODE_FREE_PERIOD_RST_FALL 5
+TMR2_MODE_FREE_PERIOD_RST_LV 6
+TMR2_MODE_FREE_PERIOD_RST_HV 7
+TMR2_MODE_SINGLE_EVENT_START_SW 8
+TMR2_MODE_SINGLE_EVENT_START_RISE 9
+TMR2_MODE_SINGLE_EVENT_START_FALL 10
+TMR2_MODE_SINGLE_EVENT_START_RISE_OR_FALL 11
+TMR2_MODE_SINGLE_EVENT_START_RISE_AND_RST_RISE 12
+TMR2_MODE_SINGLE_EVENT_START_FALL_AND_RST_FALL 13
+TMR2_MODE_SINGLE_EVENT_START_RISE_AND_RST_LV 14
+TMR2_MODE_SINGLE_EVENT_START_FALL_AND_RST_HV 15
+TMR2_MODE_MONOSTABLE_START_RISE 17
+TMR2_MODE_MONOSTABLE_START_FALL 18
+TMR2_MODE_MONOSTABLE_START_RISE_OR_FALL 19
+TMR2_MODE_SINGLE_EVENT_START_HV_AND_RST_LV 22
+TMR2_MODE_SINGLE_EVENT_START_LV_AND_RST_HV 23
+]
+[e E9626 tmr2_rsel `uc
+TMR2_RSEL_T2INPPS 0
+TMR2_RSEL_CCP1_OUT 1
+TMR2_RSEL_CCP2_OUT 2
+TMR2_RSEL_PWM3_OUT 3
+TMR2_RSEL_PWM4_OUT 4
+TMR2_RSEL_PWM5_OUT 5
+TMR2_RSEL_PWM6_OUT 6
+TMR2_RSEL_C1OUT_SYNC 7
+TMR2_RSEL_C2OUT_SYNC 8
+TMR2_RSEL_ZCD1_OUT 9
+TMR2_RSEL_LC1_OUT 10
+TMR2_RSEL_LC2_OUT 11
+TMR2_RSEL_LC3_OUT 12
+TMR2_RSEL_LC4_OUT 13
+]
+"6 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_tmr2.c
+[e E9544 tmr2_clk_cs `uc
+TMR2_CLK_T2CKIPPS 0
+TMR2_CLK__FOSC_4 1
+TMR2_CLK__FOSC 2
+TMR2_CLK__HFINTOSC 3
+TMR2_CLK__LFINTOSC 4
+TMR2_CLK__MFINTOSC_500 5
+TMR2_CLK__MFINTOSC_31 6
+TMR2_CLK_SOSC 7
+TMR2_CLK_CLKR 8
+TMR2_CLK_NCO1_OUT 9
+TMR2_CLK_ZCD1_OUT 10
+TMR2_CLK_LC1_OUT 11
+TMR2_CLK_LC2_OUT 12
+TMR2_CLK_LC3_OUT 13
+TMR2_CLK_LC4_OUT 14
+]
+[e E9561 tmr2_ckps `uc
+TMR2_CKPS_1 0
+TMR2_CKPS_2 1
+TMR2_CKPS_4 2
+TMR2_CKPS_8 3
+TMR2_CKPS_16 4
+TMR2_CKPS_32 5
+TMR2_CKPS_64 6
+TMR2_CKPS_128 7
+]
+[e E9571 tmr2_outps `uc
+TMR2_OUTPS_1 0
+TMR2_OUTPS_2 1
+TMR2_OUTPS_3 2
+TMR2_OUTPS_4 3
+TMR2_OUTPS_5 4
+TMR2_OUTPS_6 5
+TMR2_OUTPS_7 6
+TMR2_OUTPS_8 7
+TMR2_OUTPS_9 8
+TMR2_OUTPS_10 9
+TMR2_OUTPS_11 10
+TMR2_OUTPS_12 11
+TMR2_OUTPS_13 12
+TMR2_OUTPS_14 13
+TMR2_OUTPS_15 14
+TMR2_OUTPS_16 15
+]
+[e E9589 tmr2_mode `uc
+TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL 0
+TMR2_MODE_FREE_PERIOD_HW_GATE_CTRL_HV 1
+TMR2_MODE_FREE_PERIOD_HW_GATE_CTRL_LV 2
+TMR2_MODE_FREE_PERIOD_RST_RISE_OR_FALL 3
+TMR2_MODE_FREE_PERIOD_RST_RISE 4
+TMR2_MODE_FREE_PERIOD_RST_FALL 5
+TMR2_MODE_FREE_PERIOD_RST_LV 6
+TMR2_MODE_FREE_PERIOD_RST_HV 7
+TMR2_MODE_SINGLE_EVENT_START_SW 8
+TMR2_MODE_SINGLE_EVENT_START_RISE 9
+TMR2_MODE_SINGLE_EVENT_START_FALL 10
+TMR2_MODE_SINGLE_EVENT_START_RISE_OR_FALL 11
+TMR2_MODE_SINGLE_EVENT_START_RISE_AND_RST_RISE 12
+TMR2_MODE_SINGLE_EVENT_START_FALL_AND_RST_FALL 13
+TMR2_MODE_SINGLE_EVENT_START_RISE_AND_RST_LV 14
+TMR2_MODE_SINGLE_EVENT_START_FALL_AND_RST_HV 15
+TMR2_MODE_MONOSTABLE_START_RISE 17
+TMR2_MODE_MONOSTABLE_START_FALL 18
+TMR2_MODE_MONOSTABLE_START_RISE_OR_FALL 19
+TMR2_MODE_SINGLE_EVENT_START_HV_AND_RST_LV 22
+TMR2_MODE_SINGLE_EVENT_START_LV_AND_RST_HV 23
+]
+[e E9612 tmr2_rsel `uc
+TMR2_RSEL_T2INPPS 0
+TMR2_RSEL_CCP1_OUT 1
+TMR2_RSEL_CCP2_OUT 2
+TMR2_RSEL_PWM3_OUT 3
+TMR2_RSEL_PWM4_OUT 4
+TMR2_RSEL_PWM5_OUT 5
+TMR2_RSEL_PWM6_OUT 6
+TMR2_RSEL_C1OUT_SYNC 7
+TMR2_RSEL_C2OUT_SYNC 8
+TMR2_RSEL_ZCD1_OUT 9
+TMR2_RSEL_LC1_OUT 10
+TMR2_RSEL_LC2_OUT 11
+TMR2_RSEL_LC3_OUT 12
+TMR2_RSEL_LC4_OUT 13
+]
+"62 D:\Program Files\Microchip\xc8\v1.44\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 D:\Program Files\Microchip\xc8\v1.44\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"20 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_eusart.c
+[v _eusart_init eusart_init `(v  1 e 1 0 ]
+"39
+[v _putch putch `(v  1 e 1 0 ]
+"60
+[v _eusart_transmit_isr eusart_transmit_isr `(v  1 e 1 0 ]
+"76
+[v _eusart_receive_isr eusart_receive_isr `(v  1 e 1 0 ]
+"4 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_gpio.c
+[v _gpio_init gpio_init `(v  1 e 1 0 ]
+"12 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_iic.c
+[v _iic_init iic_init `(v  1 e 1 0 ]
+"24
+[v _iic_start iic_start `(v  1 s 1 iic_start ]
+"28
+[v _iic_stop iic_stop `(v  1 s 1 iic_stop ]
+"32
+[v _iic_reStart iic_reStart `(v  1 s 1 iic_reStart ]
+"36
+[v _iic_receive_enable iic_receive_enable `(v  1 s 1 iic_receive_enable ]
+"39
+[v _iic_checkSSPIF iic_checkSSPIF `(v  1 s 1 iic_checkSSPIF ]
+"4 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_osc.c
+[v _osc_init osc_init `(v  1 e 1 0 ]
+"4 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_pwm.c
+[v _pwm1_init pwm1_init `(v  1 e 1 0 ]
+"15
+[v _pwm1_load_duty pwm1_load_duty `(v  1 e 1 0 ]
+"19
+[v _pwm2_init pwm2_init `(v  1 e 1 0 ]
+"30
+[v _pwm2_load_duty pwm2_load_duty `(v  1 e 1 0 ]
+"34
+[v _pwm3_init pwm3_init `(v  1 e 1 0 ]
+"44
+[v _pwm3_load_duty pwm3_load_duty `(v  1 e 1 0 ]
+"48
+[v _pwm4_init pwm4_init `(v  1 e 1 0 ]
+"58
+[v _pwm4_load_duty pwm4_load_duty `(v  1 e 1 0 ]
+"6 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_tmr2.c
+[v _tmr2_init tmr2_init `(v  1 e 1 0 ]
+"23
+[v _tmr2_start tmr2_start `(v  1 e 1 0 ]
+"43
+[v _tmr2_isr tmr2_isr `(v  1 e 1 0 ]
+"55 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/main.c
+[v _main main `(v  1 e 1 0 ]
+"82
+[v _ISR ISR `II(v  1 e 1 0 ]
+[s S38 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"424 D:\Program Files\Microchip\xc8\v1.44\include\pic16f15375.h
+[u S43 . 1 `S38 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES43  1 e 1 @11 ]
+"730
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"792
+[v _TRISB TRISB `VEuc  1 e 1 @19 ]
+"854
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+"1078
+[v _LATB LATB `VEuc  1 e 1 @25 ]
+"1140
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+"1638
+[v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
+"1692
+[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
+"1746
+[v _SP1BRG SP1BRG `VEus  1 e 2 @283 ]
+[s S962 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1903
+[u S971 . 1 `S962 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES971  1 e 1 @285 ]
+[s S941 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2083
+[u S950 . 1 `S941 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES950  1 e 1 @286 ]
+[s S983 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"2271
+[u S992 . 1 `S983 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES992  1 e 1 @287 ]
+"2503
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
+[s S1067 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2802
+[s S1076 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S1081 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S1086 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S1091 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S1096 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S1102 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 R 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 D 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S1111 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S1117 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 I2C_START1 1 0 :1:3 
+`uc 1 I2C_STOP2 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S1123 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ1 1 0 :1:2 
+`uc 1 S2 1 0 :1:3 
+`uc 1 P2 1 0 :1:4 
+`uc 1 DATA_ADDRESS1 1 0 :1:5 
+]
+[s S1129 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A1 1 0 :1:5 
+]
+[s S1134 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_nA1 1 0 :1:5 
+]
+[s S1139 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_nW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT1 1 0 :1:5 
+]
+[s S1144 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA2 1 0 :1:5 
+]
+[s S1149 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS1 1 0 :1:5 
+]
+[u S1154 . 1 `S1067 1 . 1 0 `S1076 1 . 1 0 `S1081 1 . 1 0 `S1086 1 . 1 0 `S1091 1 . 1 0 `S1096 1 . 1 0 `S1102 1 . 1 0 `S1111 1 . 1 0 `S1117 1 . 1 0 `S1123 1 . 1 0 `S1129 1 . 1 0 `S1134 1 . 1 0 `S1139 1 . 1 0 `S1144 1 . 1 0 `S1149 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES1154  1 e 1 @399 ]
+[s S1258 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3087
+[s S1264 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S1269 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S1278 . 1 `S1258 1 . 1 0 `S1264 1 . 1 0 `S1269 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1278  1 e 1 @400 ]
+[s S1303 . 1 `uc 1 DHEN 1 0 :1:0 
+`uc 1 AHEN 1 0 :1:1 
+`uc 1 SBCDE 1 0 :1:2 
+`uc 1 SDAHT 1 0 :1:3 
+`uc 1 BOEN 1 0 :1:4 
+`uc 1 SCIE 1 0 :1:5 
+`uc 1 PCIE 1 0 :1:6 
+`uc 1 ACKTIM 1 0 :1:7 
+]
+"3381
+[u S1312 . 1 `S1303 1 . 1 0 ]
+[v _SSP1CON3bits SSP1CON3bits `VES1312  1 e 1 @402 ]
+"5325
+[v _PR2 PR2 `VEuc  1 e 1 @653 ]
+[s S759 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 CKPS 1 0 :3:4 
+`uc 1 ON 1 0 :1:7 
+]
+"5410
+[s S763 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+`uc 1 CKPS2 1 0 :1:6 
+]
+[s S771 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+`uc 1 T2CKPS 1 0 :3:4 
+`uc 1 T2ON 1 0 :1:7 
+]
+[s S775 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+`uc 1 T2OUTPS1 1 0 :1:1 
+`uc 1 T2OUTPS2 1 0 :1:2 
+`uc 1 T2OUTPS3 1 0 :1:3 
+`uc 1 T2CKPS0 1 0 :1:4 
+`uc 1 T2CKPS1 1 0 :1:5 
+`uc 1 T2CKPS2 1 0 :1:6 
+`uc 1 TMR2ON 1 0 :1:7 
+]
+[u S784 . 1 `S759 1 . 1 0 `S763 1 . 1 0 `S771 1 . 1 0 `S775 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES784  1 e 1 @654 ]
+[s S815 . 1 `uc 1 MODE 1 0 :5:0 
+`uc 1 CKSYNC 1 0 :1:5 
+`uc 1 CKPOL 1 0 :1:6 
+`uc 1 PSYNC 1 0 :1:7 
+]
+"5553
+[s S820 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+`uc 1 MODE4 1 0 :1:4 
+]
+[s S826 . 1 `uc 1 T2MODE 1 0 :5:0 
+`uc 1 T2CKSYNC 1 0 :1:5 
+`uc 1 T2CKPOL 1 0 :1:6 
+`uc 1 T2PSYNC 1 0 :1:7 
+]
+[s S831 . 1 `uc 1 T2MODE0 1 0 :1:0 
+`uc 1 T2MODE1 1 0 :1:1 
+`uc 1 T2MODE2 1 0 :1:2 
+`uc 1 T2MODE3 1 0 :1:3 
+`uc 1 T2MODE4 1 0 :1:4 
+]
+[u S837 . 1 `S815 1 . 1 0 `S820 1 . 1 0 `S826 1 . 1 0 `S831 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES837  1 e 1 @655 ]
+[s S725 . 1 `uc 1 CS 1 0 :4:0 
+]
+"5673
+[s S727 . 1 `uc 1 CS0 1 0 :1:0 
+`uc 1 CS1 1 0 :1:1 
+`uc 1 CS2 1 0 :1:2 
+`uc 1 CS3 1 0 :1:3 
+]
+[s S732 . 1 `uc 1 T2CS 1 0 :4:0 
+]
+[s S734 . 1 `uc 1 T2CS0 1 0 :1:0 
+`uc 1 T2CS1 1 0 :1:1 
+`uc 1 T2CS2 1 0 :1:2 
+`uc 1 T2CS3 1 0 :1:3 
+]
+[u S739 . 1 `S725 1 . 1 0 `S727 1 . 1 0 `S732 1 . 1 0 `S734 1 . 1 0 ]
+[v _T2CLKCONbits T2CLKCONbits `VES739  1 e 1 @656 ]
+[s S865 . 1 `uc 1 RSEL 1 0 :4:0 
+]
+"5753
+[s S867 . 1 `uc 1 RSEL0 1 0 :1:0 
+`uc 1 RSEL1 1 0 :1:1 
+`uc 1 RSEL2 1 0 :1:2 
+`uc 1 RSEL3 1 0 :1:3 
+]
+[s S872 . 1 `uc 1 T2RSEL 1 0 :4:0 
+]
+[s S874 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+`uc 1 T2RSEL1 1 0 :1:1 
+`uc 1 T2RSEL2 1 0 :1:2 
+`uc 1 T2RSEL3 1 0 :1:3 
+]
+[u S879 . 1 `S865 1 . 1 0 `S867 1 . 1 0 `S872 1 . 1 0 `S874 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES879  1 e 1 @657 ]
+"5815
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
+"5835
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
+[s S435 . 1 `uc 1 MODE 1 0 :4:0 
+`uc 1 FMT 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"5892
+[s S441 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+]
+[s S446 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+`uc 1 CCP1FMT 1 0 :1:4 
+`uc 1 CCP1OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 CCP1EN 1 0 :1:7 
+]
+[s S452 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+`uc 1 CCP1MODE1 1 0 :1:1 
+`uc 1 CCP1MODE2 1 0 :1:2 
+`uc 1 CCP1MODE3 1 0 :1:3 
+]
+[s S457 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 P1M1 1 0 :1:7 
+]
+[u S460 . 1 `S435 1 . 1 0 `S441 1 . 1 0 `S446 1 . 1 0 `S452 1 . 1 0 `S457 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES460  1 e 1 @782 ]
+"6057
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @784 ]
+"6077
+[v _CCPR2H CCPR2H `VEuc  1 e 1 @785 ]
+"6134
+[s S505 . 1 `uc 1 CCP2MODE 1 0 :4:0 
+`uc 1 CCP2FMT 1 0 :1:4 
+`uc 1 CCP2OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 CCP2EN 1 0 :1:7 
+]
+[s S511 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
+`uc 1 CCP2MODE1 1 0 :1:1 
+`uc 1 CCP2MODE2 1 0 :1:2 
+`uc 1 CCP2MODE3 1 0 :1:3 
+]
+[s S516 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 P2M1 1 0 :1:7 
+]
+[u S519 . 1 `S435 1 . 1 0 `S441 1 . 1 0 `S505 1 . 1 0 `S511 1 . 1 0 `S516 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES519  1 e 1 @786 ]
+"6292
+[v _PWM3DCL PWM3DCL `VEuc  1 e 1 @788 ]
+"6358
+[v _PWM3DCH PWM3DCH `VEuc  1 e 1 @789 ]
+[s S553 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 POL 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"6549
+[s S559 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 PWM3POL 1 0 :1:4 
+`uc 1 PWM3OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PWM3EN 1 0 :1:7 
+]
+[u S565 . 1 `S553 1 . 1 0 `S559 1 . 1 0 ]
+[v _PWM3CONbits PWM3CONbits `VES565  1 e 1 @790 ]
+"6584
+[v _PWM4DCL PWM4DCL `VEuc  1 e 1 @792 ]
+"6650
+[v _PWM4DCH PWM4DCH `VEuc  1 e 1 @793 ]
+"6841
+[s S589 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 PWM4POL 1 0 :1:4 
+`uc 1 PWM4OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PWM4EN 1 0 :1:7 
+]
+[u S595 . 1 `S553 1 . 1 0 `S589 1 . 1 0 ]
+[v _PWM4CONbits PWM4CONbits `VES595  1 e 1 @794 ]
+[s S373 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 TX2IF 1 0 :1:6 
+`uc 1 RC2IF 1 0 :1:7 
+]
+"9388
+[u S382 . 1 `S373 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES382  1 e 1 @1807 ]
+[s S339 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+]
+"9444
+[u S342 . 1 `S339 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES342  1 e 1 @1808 ]
+[s S352 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 SSP2IE 1 0 :1:2 
+`uc 1 BCL2IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 TX2IE 1 0 :1:6 
+`uc 1 RC2IE 1 0 :1:7 
+]
+"9694
+[u S361 . 1 `S352 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES361  1 e 1 @1817 ]
+[s S330 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+]
+"9750
+[u S333 . 1 `S330 1 . 1 0 ]
+[v _PIE4bits PIE4bits `VES333  1 e 1 @1818 ]
+[s S74 . 1 `uc 1 NDIV 1 0 :4:0 
+`uc 1 NOSC 1 0 :3:4 
+]
+"11185
+[s S77 . 1 `uc 1 NDIV0 1 0 :1:0 
+`uc 1 NDIV1 1 0 :1:1 
+`uc 1 NDIV2 1 0 :1:2 
+`uc 1 NDIV3 1 0 :1:3 
+`uc 1 NOSC0 1 0 :1:4 
+`uc 1 NOSC1 1 0 :1:5 
+`uc 1 NOSC2 1 0 :1:6 
+]
+[u S85 . 1 `S74 1 . 1 0 `S77 1 . 1 0 ]
+[v _OSCCON1bits OSCCON1bits `VES85  1 e 1 @2189 ]
+[s S100 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOSCR 1 0 :1:3 
+`uc 1 ORDY 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SOSCPWR 1 0 :1:6 
+`uc 1 CSWHOLD 1 0 :1:7 
+]
+"11320
+[u S107 . 1 `S100 1 . 1 0 ]
+[v _OSCCON3bits OSCCON3bits `VES107  1 e 1 @2191 ]
+[s S117 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 ADOEN 1 0 :1:2 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 LFOEN 1 0 :1:4 
+`uc 1 MFOEN 1 0 :1:5 
+`uc 1 HFOEN 1 0 :1:6 
+`uc 1 EXTOEN 1 0 :1:7 
+]
+"11418
+[u S125 . 1 `S117 1 . 1 0 ]
+[v _OSCENbits OSCENbits `VES125  1 e 1 @2193 ]
+[s S152 . 1 `uc 1 HFTUN 1 0 :6:0 
+]
+"11471
+[s S154 . 1 `uc 1 HFTUN0 1 0 :1:0 
+`uc 1 HFTUN1 1 0 :1:1 
+`uc 1 HFTUN2 1 0 :1:2 
+`uc 1 HFTUN3 1 0 :1:3 
+`uc 1 HFTUN4 1 0 :1:4 
+`uc 1 HFTUN5 1 0 :1:5 
+]
+[u S161 . 1 `S152 1 . 1 0 `S154 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES161  1 e 1 @2194 ]
+[s S136 . 1 `uc 1 HFFRQ 1 0 :3:0 
+]
+"11526
+[s S138 . 1 `uc 1 HFFRQ0 1 0 :1:0 
+`uc 1 HFFRQ1 1 0 :1:1 
+`uc 1 HFFRQ2 1 0 :1:2 
+]
+[u S142 . 1 `S136 1 . 1 0 `S138 1 . 1 0 ]
+[v _OSCFRQbits OSCFRQbits `VES142  1 e 1 @2195 ]
+"17326
+[v _PPSLOCK PPSLOCK `VEuc  1 e 1 @7823 ]
+[s S52 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
+]
+"17336
+[u S54 . 1 `S52 1 . 1 0 ]
+[v _PPSLOCKbits PPSLOCKbits `VES54  1 e 1 @7823 ]
+"18100
+[v _SSP1CLKPPS SSP1CLKPPS `VEuc  1 e 1 @7877 ]
+"18158
+[v _SSP1DATPPS SSP1DATPPS `VEuc  1 e 1 @7878 ]
+"18448
+[v _RX1DTPPS RX1DTPPS `VEuc  1 e 1 @7883 ]
+"19032
+[v _RB0PPS RB0PPS `VEuc  1 e 1 @7960 ]
+"19076
+[v _RB1PPS RB1PPS `VEuc  1 e 1 @7961 ]
+"19120
+[v _RB2PPS RB2PPS `VEuc  1 e 1 @7962 ]
+"19164
+[v _RB3PPS RB3PPS `VEuc  1 e 1 @7963 ]
+"19648
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @7974 ]
+"20220
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"20282
+[v _WPUA WPUA `VEuc  1 e 1 @7993 ]
+"20344
+[v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
+"20406
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @7995 ]
+"20468
+[v _INLVLA INLVLA `VEuc  1 e 1 @7996 ]
+"20716
+[v _ANSELB ANSELB `VEuc  1 e 1 @8003 ]
+"20778
+[v _WPUB WPUB `VEuc  1 e 1 @8004 ]
+"20840
+[v _ODCONB ODCONB `VEuc  1 e 1 @8005 ]
+"20902
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @8006 ]
+"20964
+[v _INLVLB INLVLB `VEuc  1 e 1 @8007 ]
+"21274
+[v _WPUC WPUC `VEuc  1 e 1 @8015 ]
+"21336
+[v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
+"21398
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
+"21460
+[v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
+"14 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_eusart.c
+[v _eusart_rcv_handler eusart_rcv_handler `*.37(v  1 e 2 0 ]
+"15
+[v _tx_buffer tx_buffer `[32]uc  1 s 32 tx_buffer ]
+"17
+[v _tx_tail tx_tail `uc  1 s 1 tx_tail ]
+"18
+[v _tx_remain tx_remain `uc  1 s 1 tx_remain ]
+"4 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_tmr2.c
+[v _tmr2_isr_handler tmr2_isr_handler `*.37(v  1 e 2 0 ]
+"55 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"80
+} 0
+"23 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_tmr2.c
+[v _tmr2_start tmr2_start `(v  1 e 1 0 ]
+{
+"25
+} 0
+"6
+[v _tmr2_init tmr2_init `(v  1 e 1 0 ]
+{
+[v tmr2_init@cs cs `E9544  1 a 1 wreg ]
+[v tmr2_init@cs cs `E9544  1 a 1 wreg ]
+[v tmr2_init@ckps ckps `E9561  1 p 1 0 ]
+[v tmr2_init@outps outps `E9571  1 p 1 1 ]
+[v tmr2_init@mode mode `E9589  1 p 1 2 ]
+[v tmr2_init@rsel rsel `E9612  1 p 1 3 ]
+"8
+[v tmr2_init@cs cs `E9544  1 a 1 5 ]
+"21
+} 0
+"58 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_pwm.c
+[v _pwm4_load_duty pwm4_load_duty `(v  1 e 1 0 ]
+{
+[v pwm4_load_duty@duty duty `ui  1 p 2 0 ]
+"61
+} 0
+"48
+[v _pwm4_init pwm4_init `(v  1 e 1 0 ]
+{
+"57
+} 0
+"44
+[v _pwm3_load_duty pwm3_load_duty `(v  1 e 1 0 ]
+{
+[v pwm3_load_duty@duty duty `ui  1 p 2 0 ]
+"47
+} 0
+"34
+[v _pwm3_init pwm3_init `(v  1 e 1 0 ]
+{
+"43
+} 0
+"30
+[v _pwm2_load_duty pwm2_load_duty `(v  1 e 1 0 ]
+{
+[v pwm2_load_duty@duty duty `ui  1 p 2 0 ]
+"33
+} 0
+"19
+[v _pwm2_init pwm2_init `(v  1 e 1 0 ]
+{
+"29
+} 0
+"15
+[v _pwm1_load_duty pwm1_load_duty `(v  1 e 1 0 ]
+{
+[v pwm1_load_duty@duty duty `ui  1 p 2 0 ]
+"18
+} 0
+"4
+[v _pwm1_init pwm1_init `(v  1 e 1 0 ]
+{
+"14
+} 0
+"4 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_osc.c
+[v _osc_init osc_init `(v  1 e 1 0 ]
+{
+"18
+} 0
+"12 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_iic.c
+[v _iic_init iic_init `(v  1 e 1 0 ]
+{
+"22
+} 0
+"4 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_gpio.c
+[v _gpio_init gpio_init `(v  1 e 1 0 ]
+{
+"29
+[v gpio_init@state state `uc  1 a 1 0 ]
+"49
+} 0
+"20 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_eusart.c
+[v _eusart_init eusart_init `(v  1 e 1 0 ]
+{
+"38
+} 0
+"82 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/main.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"90
+} 0
+"43 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_tmr2.c
+[v _tmr2_isr tmr2_isr `(v  1 e 1 0 ]
+{
+"48
+} 0
+"60 G:\Work\Program\359-PlantLampController\359-PlantLampController.X\src/drv_eusart.c
+[v _eusart_transmit_isr eusart_transmit_isr `(v  1 e 1 0 ]
+{
+"70
+} 0
+"76
+[v _eusart_receive_isr eusart_receive_isr `(v  1 e 1 0 ]
+{
+"81
+} 0
