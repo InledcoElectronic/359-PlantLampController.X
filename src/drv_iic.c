@@ -17,7 +17,7 @@ void iic_init() {
     SSP1CON1bits.SSPEN = 1;                     //使能串口
     SSP1CON1bits.SSPM = 0x08;                   //时钟 = FOSC / (4 * (SSP1ADD+1))
     SSP1CON3bits.SDAHT = 1;                     //在SCL的下降沿之后，在SDA上最少有300ns的保持时间
-    //设置传输熟虑
+    //设置传输速率
     SSP1ADD = IIC_BUADTATE_VALUE;
 }
 //IIC启动
@@ -55,6 +55,7 @@ void iic_writeByte(uint8_t slaveAddr,uint8_t regAddr,uint8_t byte) {
         if(cnt >= ERROR_COUNT) {
             return;
         }
+        __delay_ms(1);
         iic_start();
         iic_checkSSPIF();
         SSP1BUF = slaveAddr;
@@ -90,6 +91,7 @@ void iic_writeBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len)
         if(cnt >= ERROR_COUNT) {
             return;
         }
+        __delay_ms(1);
         iic_start();
         iic_checkSSPIF();
         SSP1BUF = slaveAddr;
@@ -119,7 +121,7 @@ uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr) {
     //启动条件
     iic_start();
     iic_checkSSPIF();
-  
+    
     //发送从机地址
     SSP1BUF = slaveAddr;
     iic_checkSSPIF();
@@ -128,9 +130,9 @@ uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr) {
         if(cnt > ERROR_COUNT) {
             return 0;
         }
+        __delay_ms(1);
         iic_start();
         iic_checkSSPIF();
-        
         SSP1BUF = slaveAddr;
         iic_checkSSPIF();
     }
@@ -177,9 +179,9 @@ void iic_readBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len) 
         if(cnt > ERROR_COUNT) {
             return ;
         }
+        __delay_ms(1);
         iic_start();
         iic_checkSSPIF();
-        
         SSP1BUF = slaveAddr;
         iic_checkSSPIF();
     }

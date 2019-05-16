@@ -28,7 +28,7 @@ extern "C" {
 #define PeripheralInterruptEnable()     (INTCONbits.PEIE = 1)
 //禁止外设中断使能
 #define PerioheralInterruptDisable()    (INTCONbits.PEIE = 0)
-
+   
 #ifdef	__cplusplus
 }
 #endif

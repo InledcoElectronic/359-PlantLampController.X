@@ -12,7 +12,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _pwm3_init `(v ~T0 @X0 0 ef ]
 "21
 [v _pwm4_init `(v ~T0 @X0 0 ef ]
-"66 src/main.c
+"67 src/main.c
 [c E9558 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
 [n E9558 tmr2_clk_cs TMR2_CLK_T2CKIPPS TMR2_CLK__FOSC_4 TMR2_CLK__FOSC TMR2_CLK__HFINTOSC TMR2_CLK__LFINTOSC TMR2_CLK__MFINTOSC_500 TMR2_CLK__MFINTOSC_31 TMR2_CLK_SOSC TMR2_CLK_CLKR TMR2_CLK_NCO1_OUT TMR2_CLK_ZCD1_OUT TMR2_CLK_LC1_OUT TMR2_CLK_LC2_OUT TMR2_CLK_LC3_OUT TMR2_CLK_LC4_OUT  ]
 [c E9575 0 1 2 3 4 5 6 7 .. ]
@@ -31,14 +31,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _eusart_init `(v ~T0 @X0 0 ef ]
 "15 src/../inc/drv_iic.h
 [v _iic_init `(v ~T0 @X0 0 ef ]
-"16 src/../inc/drv_pwm.h
-[v _pwm1_load_duty `(v ~T0 @X0 0 ef1`ui ]
-"18
-[v _pwm2_load_duty `(v ~T0 @X0 0 ef1`ui ]
-"20
-[v _pwm3_load_duty `(v ~T0 @X0 0 ef1`ui ]
-"22
-[v _pwm4_load_duty `(v ~T0 @X0 0 ef1`ui ]
+"62 src/../inc/drv_pcf8563.h
+[v _pcf8563_init `(v ~T0 @X0 0 ef ]
+"64
+[v _rtc_init `(v ~T0 @X0 0 ef ]
+"417 D:\Program Files\Microchip\xc8\v1.44\include\pic16f15375.h
+[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . INTEDG . PEIE GIE ]
+"416
+[u S25 `S26 1 ]
+[n S25 . . ]
+"424
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"63 src/../inc/drv_pcf8563.h
+[v _rtc_readOrWrite_time `(v ~T0 @X0 0 ef1`uc ]
+"17 src/../inc/drv_eusart.h
+[v _eusart_write `(uc ~T0 @X0 0 ef1`uc ]
+"49 src/../inc/drv_pcf8563.h
+[s S1026 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1026 . year month day weekday hour minute second ]
+"48
+[u S1025 `S1026 1 `uc -> 7 `i ]
+[n S1025 . . array ]
+"61
+[v _data_time `S1025 ~T0 @X0 0 e ]
+[v F9327 `(v ~T0 @X0 1 tf1`ul ]
+"153 D:\Program Files\Microchip\xc8\v1.44\include\pic.h
+[v __delay `JF9327 ~T0 @X0 0 e ]
+[p i __delay ]
 "9745 D:\Program Files\Microchip\xc8\v1.44\include\pic16f15375.h
 [s S453 :1 `uc 1 :1 `uc 1 ]
 [n S453 . TMR1IE TMR2IE ]
@@ -8933,167 +8953,210 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_iic.h: 17: extern void iic_writeBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
 [; ;drv_iic.h: 18: extern uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr);
 [; ;drv_iic.h: 19: extern void iic_readBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
-"17 src/main.c
-[p x FEXTOSC=ECH ]
-"18
-[p x RSTOSC=HFINT1 ]
+[; ;drv_pcf8563.h: 48: typedef union {
+[; ;drv_pcf8563.h: 49: struct {
+[; ;drv_pcf8563.h: 50: uint8_t year;
+[; ;drv_pcf8563.h: 51: uint8_t month;
+[; ;drv_pcf8563.h: 52: uint8_t day;
+[; ;drv_pcf8563.h: 53: uint8_t weekday;
+[; ;drv_pcf8563.h: 54: uint8_t hour;
+[; ;drv_pcf8563.h: 55: uint8_t minute;
+[; ;drv_pcf8563.h: 56: uint8_t second;
+[; ;drv_pcf8563.h: 57: };
+[; ;drv_pcf8563.h: 58: uint8_t array[7];
+[; ;drv_pcf8563.h: 59: }data_time_t;
+[; ;drv_pcf8563.h: 61: extern data_time_t data_time;
+[; ;drv_pcf8563.h: 62: extern void pcf8563_init();
+[; ;drv_pcf8563.h: 63: extern void rtc_readOrWrite_time(uint8_t mode);
+[; ;drv_pcf8563.h: 64: extern void rtc_init();
+"18 src/main.c
+[p x FEXTOSC=OFF ]
 "19
-[p x CLKOUTEN=OFF ]
+[p x RSTOSC=HFINT1 ]
 "20
-[p x CSWEN=ON ]
+[p x CLKOUTEN=OFF ]
 "21
+[p x CSWEN=ON ]
+"22
 [p x FCMEN=ON ]
-"24
-[p x MCLRE=ON ]
 "25
-[p x PWRTE=OFF ]
+[p x MCLRE=ON ]
 "26
-[p x LPBOREN=OFF ]
+[p x PWRTE=OFF ]
 "27
-[p x BOREN=ON ]
+[p x LPBOREN=OFF ]
 "28
-[p x BORV=LO ]
+[p x BOREN=ON ]
 "29
-[p x ZCD=OFF ]
+[p x BORV=LO ]
 "30
-[p x PPS1WAY=ON ]
+[p x ZCD=OFF ]
 "31
+[p x PPS1WAY=ON ]
+"32
 [p x STVREN=ON ]
-"34
-[p x WDTCPS=WDTCPS_31 ]
 "35
-[p x WDTE=ON ]
+[p x WDTCPS=WDTCPS_31 ]
 "36
-[p x WDTCWS=WDTCWS_7 ]
+[p x WDTE=ON ]
 "37
+[p x WDTCWS=WDTCWS_7 ]
+"38
 [p x WDTCCS=SC ]
-"40
-[p x BBSIZE=BB512 ]
 "41
-[p x BBEN=OFF ]
+[p x BBSIZE=BB512 ]
 "42
-[p x SAFEN=OFF ]
+[p x BBEN=OFF ]
 "43
-[p x WRTAPP=OFF ]
+[p x SAFEN=OFF ]
 "44
-[p x WRTB=OFF ]
+[p x WRTAPP=OFF ]
 "45
-[p x WRTC=OFF ]
+[p x WRTB=OFF ]
 "46
-[p x WRTSAF=OFF ]
+[p x WRTC=OFF ]
 "47
+[p x WRTSAF=OFF ]
+"48
 [p x LVP=ON ]
-"50
+"51
 [p x CP=OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"55
+"56
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 55: void main(void) {
+[; ;main.c: 56: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 57: osc_init();
-"57
+[; ;main.c: 58: osc_init();
+"58
 [e ( _osc_init ..  ]
-[; ;main.c: 59: gpio_init();
-"59
+[; ;main.c: 60: gpio_init();
+"60
 [e ( _gpio_init ..  ]
-[; ;main.c: 61: pwm1_init();
-"61
-[e ( _pwm1_init ..  ]
-[; ;main.c: 62: pwm2_init();
+[; ;main.c: 62: pwm1_init();
 "62
-[e ( _pwm2_init ..  ]
-[; ;main.c: 63: pwm3_init();
+[e ( _pwm1_init ..  ]
+[; ;main.c: 63: pwm2_init();
 "63
-[e ( _pwm3_init ..  ]
-[; ;main.c: 64: pwm4_init();
+[e ( _pwm2_init ..  ]
+[; ;main.c: 64: pwm3_init();
 "64
+[e ( _pwm3_init ..  ]
+[; ;main.c: 65: pwm4_init();
+"65
 [e ( _pwm4_init ..  ]
-[; ;main.c: 66: tmr2_init(TMR2_CLK__FOSC_4,TMR2_CKPS_4,TMR2_OUTPS_8,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
-"66
-[e ( _tmr2_init (4 , , , , . `E9558 1 . `E9575 2 . `E9585 7 . `E9603 0 . `E9626 0 ]
-[; ;main.c: 67: tmr2_start();
+[; ;main.c: 67: tmr2_init(TMR2_CLK__FOSC_4,TMR2_CKPS_16,TMR2_OUTPS_8,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
 "67
+[e ( _tmr2_init (4 , , , , . `E9558 1 . `E9575 4 . `E9585 7 . `E9603 0 . `E9626 0 ]
+[; ;main.c: 68: tmr2_start();
+"68
 [e ( _tmr2_start ..  ]
-[; ;main.c: 69: eusart_init();
-"69
+[; ;main.c: 70: eusart_init();
+"70
 [e ( _eusart_init ..  ]
-[; ;main.c: 71: iic_init();
-"71
+[; ;main.c: 72: iic_init();
+"72
 [e ( _iic_init ..  ]
-[; ;main.c: 73: while(1) {
-"73
-[e :U 1027 ]
-{
-[; ;main.c: 74: asm("clrwdt");
+[; ;main.c: 74: pcf8563_init();
 "74
-[; <" clrwdt ;# ">
-[; ;main.c: 75: pwm1_load_duty(0);
-"75
-[e ( _pwm1_load_duty (1 -> -> 0 `i `ui ]
-[; ;main.c: 76: pwm2_load_duty(0);
+[e ( _pcf8563_init ..  ]
+[; ;main.c: 76: rtc_init();
 "76
-[e ( _pwm2_load_duty (1 -> -> 0 `i `ui ]
-[; ;main.c: 77: pwm3_load_duty(0);
-"77
-[e ( _pwm3_load_duty (1 -> -> 0 `i `ui ]
-[; ;main.c: 78: pwm4_load_duty(500);
+[e ( _rtc_init ..  ]
+[; ;main.c: 78: (INTCONbits.GIE = 1);
 "78
-[e ( _pwm4_load_duty (1 -> -> 500 `i `ui ]
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 79: (INTCONbits.PEIE = 1);
 "79
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 81: while(1) {
+"81
+[e :U 1029 ]
+{
+[; ;main.c: 82: asm("clrwdt");
+"82
+[; <" clrwdt ;# ">
+[; ;main.c: 84: rtc_readOrWrite_time(1);
+"84
+[e ( _rtc_readOrWrite_time (1 -> -> 1 `i `uc ]
+[; ;main.c: 85: eusart_write(data_time.second);
+"85
+[e ( _eusart_write (1 . . _data_time 0 6 ]
+[; ;main.c: 86: eusart_write(data_time.minute);
+"86
+[e ( _eusart_write (1 . . _data_time 0 5 ]
+[; ;main.c: 87: eusart_write(data_time.hour);
+"87
+[e ( _eusart_write (1 . . _data_time 0 4 ]
+[; ;main.c: 88: eusart_write(data_time.day);
+"88
+[e ( _eusart_write (1 . . _data_time 0 2 ]
+[; ;main.c: 89: eusart_write(data_time.weekday);
+"89
+[e ( _eusart_write (1 . . _data_time 0 3 ]
+[; ;main.c: 90: eusart_write(data_time.month);
+"90
+[e ( _eusart_write (1 . . _data_time 0 1 ]
+[; ;main.c: 91: eusart_write(data_time.year);
+"91
+[e ( _eusart_write (1 . . _data_time 0 0 ]
+[; ;main.c: 92: _delay((unsigned long)((100)*(16000000/4000.0)));
+"92
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"93
 }
-[e :U 1026 ]
-"73
-[e $U 1027  ]
 [e :U 1028 ]
-[; ;main.c: 79: }
-[; ;main.c: 80: }
-"80
-[e :UE 1025 ]
+"81
+[e $U 1029  ]
+[e :U 1030 ]
+[; ;main.c: 93: }
+[; ;main.c: 94: }
+"94
+[e :UE 1027 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-[v F9688 `(v ~T0 @X0 1 tf ]
-"82
-[v _ISR `IF9688 ~T0 @X0 1 e ]
+[v F9706 `(v ~T0 @X0 1 tf ]
+"96
+[v _ISR `IF9706 ~T0 @X0 1 e ]
 {
-[; ;main.c: 82: void interrupt ISR() {
+[; ;main.c: 96: void interrupt ISR() {
 [e :U _ISR ]
 [f ]
-[; ;main.c: 83: if(PIE4bits.TMR2IE && PIR4bits.TMR2IF) {
-"83
-[e $ ! && != -> . . _PIE4bits 0 1 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR4bits 0 1 `i -> -> -> 0 `i `Vuc `i 1030  ]
+[; ;main.c: 97: if(PIE4bits.TMR2IE && PIR4bits.TMR2IF) {
+"97
+[e $ ! && != -> . . _PIE4bits 0 1 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR4bits 0 1 `i -> -> -> 0 `i `Vuc `i 1032  ]
 {
-[; ;main.c: 84: tmr2_isr();
-"84
+[; ;main.c: 98: tmr2_isr();
+"98
 [e ( _tmr2_isr ..  ]
-"85
+"99
 }
-[; ;main.c: 85: } else if(PIE3bits.RC1IE && PIR3bits.RC1IF) {
-[e $U 1031  ]
-[e :U 1030 ]
-[e $ ! && != -> . . _PIE3bits 0 5 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR3bits 0 5 `i -> -> -> 0 `i `Vuc `i 1032  ]
-{
-[; ;main.c: 86: eusart_receive_isr();
-"86
-[e ( _eusart_receive_isr ..  ]
-"87
-}
-[; ;main.c: 87: } else if(PIE3bits.TX1IE && PIR3bits.TX1IF) {
+[; ;main.c: 99: } else if(PIE3bits.RC1IE && PIR3bits.RC1IF) {
 [e $U 1033  ]
 [e :U 1032 ]
-[e $ ! && != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR3bits 0 4 `i -> -> -> 0 `i `Vuc `i 1034  ]
+[e $ ! && != -> . . _PIE3bits 0 5 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR3bits 0 5 `i -> -> -> 0 `i `Vuc `i 1034  ]
 {
-[; ;main.c: 88: eusart_transmit_isr();
-"88
-[e ( _eusart_transmit_isr ..  ]
-"89
+[; ;main.c: 100: eusart_receive_isr();
+"100
+[e ( _eusart_receive_isr ..  ]
+"101
 }
+[; ;main.c: 101: } else if(PIE3bits.TX1IE && PIR3bits.TX1IF) {
+[e $U 1035  ]
 [e :U 1034 ]
-"90
+[e $ ! && != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR3bits 0 4 `i -> -> -> 0 `i `Vuc `i 1036  ]
+{
+[; ;main.c: 102: eusart_transmit_isr();
+"102
+[e ( _eusart_transmit_isr ..  ]
+"103
+}
+[e :U 1036 ]
+"104
+[e :U 1035 ]
 [e :U 1033 ]
-[e :U 1031 ]
-[; ;main.c: 89: }
-[; ;main.c: 90: }
-[e :UE 1029 ]
+[; ;main.c: 103: }
+[; ;main.c: 104: }
+[e :UE 1031 ]
 }

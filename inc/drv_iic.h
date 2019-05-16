@@ -17,7 +17,7 @@ extern "C" {
     extern void iic_writeBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
     extern uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr);
     extern void iic_readBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
-
+    
 #ifdef	__cplusplus
 }
 #endif

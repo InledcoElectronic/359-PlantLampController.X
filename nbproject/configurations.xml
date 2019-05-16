@@ -9,6 +9,9 @@
       <itemPath>inc/drv_tmr2.h</itemPath>
       <itemPath>inc/drv_eusart.h</itemPath>
       <itemPath>inc/drv_iic.h</itemPath>
+      <itemPath>inc/drv_pcf8563.h</itemPath>
+      <itemPath>inc/drv_tmr0.h</itemPath>
+      <itemPath>inc/drv_flash.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="src" projectFiles="true">
       <itemPath>src/drv_gpio.c</itemPath>
@@ -18,6 +21,9 @@
       <itemPath>src/drv_tmr2.c</itemPath>
       <itemPath>src/drv_eusart.c</itemPath>
       <itemPath>src/drv_iic.c</itemPath>
+      <itemPath>src/drv_pcf8563.c</itemPath>
+      <itemPath>src/drv_tmr0.c</itemPath>
+      <itemPath>src/drv_flash.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>
@@ -146,6 +152,7 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -160,7 +167,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1fff"/>
-        <property key="poweroptions.powerenable" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

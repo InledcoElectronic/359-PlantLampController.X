@@ -12,9 +12,10 @@
 #include "../inc/drv_tmr2.h"
 #include "../inc/drv_eusart.h"
 #include "../inc/drv_iic.h"
+#include "../inc/drv_pcf8563.h"
 
 // CONFIG1
-#pragma config FEXTOSC = ECH    // External Oscillator mode selection bits (EC above 8MHz; PFM set to high power)
+#pragma config FEXTOSC = OFF    // External Oscillator mode selection bits->Oscillator not enabled
 #pragma config RSTOSC = HFINT1  // Power-up default value for COSC bits (HFINTOSC (1MHz))
 #pragma config CLKOUTEN = OFF   // Clock Out Enable bit (CLKOUT function is disabled; i/o or oscillator function on OSC2)
 #pragma config CSWEN = ON       // Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
@@ -63,16 +64,32 @@ void main(void) {
     pwm3_init();
     pwm4_init();
     //初始化定时器
-    tmr2_init(TMR2_CLK__FOSC_4,TMR2_CKPS_4,TMR2_OUTPS_8,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
+    tmr2_init(TMR2_CLK__FOSC_4,TMR2_CKPS_16,TMR2_OUTPS_8,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
     tmr2_start();
     //串口初始化
     eusart_init();
     //IIC初始化
     iic_init();
+    //初始化pcf8563
+    pcf8563_init();
+    //初始化时钟
+    rtc_init();
     
+    GlobalInterruptEnable();
+    PeripheralInterruptEnable();
+ 
     while(1) {
         CLRWDT();
-
+       
+        rtc_readOrWrite_time(1);
+        eusart_write(data_time.second);
+        eusart_write(data_time.minute);
+        eusart_write(data_time.hour);
+        eusart_write(data_time.day);
+        eusart_write(data_time.weekday);        
+        eusart_write(data_time.month);        
+        eusart_write(data_time.year);                            
+        __delay_ms(100);
     }
 }
 

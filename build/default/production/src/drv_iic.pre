@@ -11765,7 +11765,15 @@ extern void iic_writeBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8
 extern uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr);
 extern void iic_readBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
 
-# 12 "src/drv_iic.c"
+# 15 "src/../inc/drv_eusart.h"
+typedef void (*eusart_rcv_handler_t)(uint8_t rcv);
+extern void eusart_init();
+extern uint8_t eusart_write(uint8_t byte);
+extern void eusart_transmit_isr();
+extern void eusart_setReceiveHandler(eusart_rcv_handler_t handler);
+extern void eusart_receive_isr();
+
+# 13 "src/drv_iic.c"
 void iic_init() {
 
 SSP1STATbits.SMP = 1;
@@ -11812,6 +11820,7 @@ cnt++;
 if(cnt >= 5) {
 return;
 }
+_delay((unsigned long)((1)*(16000000/4000.0)));
 iic_start();
 iic_checkSSPIF();
 SSP1BUF = slaveAddr;
@@ -11847,6 +11856,7 @@ cnt++;
 if(cnt >= 5) {
 return;
 }
+_delay((unsigned long)((1)*(16000000/4000.0)));
 iic_start();
 iic_checkSSPIF();
 SSP1BUF = slaveAddr;
@@ -11885,9 +11895,9 @@ cnt++;
 if(cnt > 5) {
 return 0;
 }
+_delay((unsigned long)((1)*(16000000/4000.0)));
 iic_start();
 iic_checkSSPIF();
-
 SSP1BUF = slaveAddr;
 iic_checkSSPIF();
 }
@@ -11934,9 +11944,9 @@ cnt++;
 if(cnt > 5) {
 return ;
 }
+_delay((unsigned long)((1)*(16000000/4000.0)));
 iic_start();
 iic_checkSSPIF();
-
 SSP1BUF = slaveAddr;
 iic_checkSSPIF();
 }
@@ -11973,4 +11983,3 @@ iic_checkSSPIF();
 iic_stop();
 iic_checkSSPIF();
 }
-
