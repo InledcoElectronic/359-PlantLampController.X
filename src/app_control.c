@@ -16,6 +16,10 @@ register_t mRegister;
 uint16_t mTargetBrights[MAX_CHANNEL_COUNT];
 uint16_t mCurrentBrights[MAX_CHANNEL_COUNT];
 
+void app_control_set_time(uint8_t *ptime) {
+
+}
+
 void app_control_update() {
 	uint8_t i;
 	if (mRegister.power) {
@@ -33,10 +37,6 @@ void app_control_update() {
 	pwm4_load_duty(mCurrentBrights[3]);
 }
 
-void app_control_set_time(uint8_t *ptime) {
-
-}
-
 void app_control_ramp() {
 	for (uint8_t i = 0; i < MAX_CHANNEL_COUNT; i++) {
 		if (mCurrentBrights[i] + STEP_RAMP < mTargetBrights[i]) {
@@ -45,7 +45,6 @@ void app_control_ramp() {
 			mCurrentBrights[i] -= STEP_RAMP;
 		}
 	}
-	
 }
 
 void app_control_process() {

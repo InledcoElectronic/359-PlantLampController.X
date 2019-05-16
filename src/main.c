@@ -9,6 +9,7 @@
 #include "../inc/drv_osc.h"
 #include "../inc/drv_gpio.h"
 #include "../inc/drv_pwm.h"
+#include "../inc/drv_tmr0.h"
 #include "../inc/drv_tmr2.h"
 #include "../inc/drv_eusart.h"
 #include "../inc/drv_iic.h"
@@ -79,10 +80,12 @@ void main(void) {
 }
 
 void interrupt ISR() {
-    if(PIE4bits.TMR2IE && PIR4bits.TMR2IF) {
+	if (PIE3bits.RC1IE && PIR3bits.RC1IF) {
+		eusart_receive_isr();
+	} else if (PIE0bits.TMR0IE && PIR0bits.TMR0IF) {
+		tmr0_isr();
+	} else if(PIE4bits.TMR2IE && PIR4bits.TMR2IF) {
         tmr2_isr();
-    } else if(PIE3bits.RC1IE && PIR3bits.RC1IF) {
-        eusart_receive_isr();
     } else if(PIE3bits.TX1IE && PIR3bits.TX1IF) {
         eusart_transmit_isr();
     }

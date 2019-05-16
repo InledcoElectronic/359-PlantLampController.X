@@ -11,6 +11,7 @@
       <itemPath>inc/drv_iic.h</itemPath>
       <itemPath>inc/app_protocol.h</itemPath>
       <itemPath>inc/app_control.h</itemPath>
+      <itemPath>inc/drv_tmr0.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="src" projectFiles="true">
       <itemPath>src/drv_gpio.c</itemPath>
@@ -22,6 +23,7 @@
       <itemPath>src/drv_iic.c</itemPath>
       <itemPath>src/app_protocol.c</itemPath>
       <itemPath>src/app_control.c</itemPath>
+      <itemPath>src/drv_tmr0.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>

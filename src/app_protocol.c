@@ -1,5 +1,4 @@
 #include "../inc/app_protocol.h"
-#include "../inc/app_control.h"
 #include "../inc/drv_eusart.h"
 
 #define	CTRL				LATCbits.LATC5
@@ -8,14 +7,14 @@
 #define	CMD_READ			0x03
 #define	CMD_WRITE			0x10
 
-#define	REG_START			0x00
-#define	REG_END				(sizeof(register_t)-1)
+// Generator polynomial for CRC
+#define POLYNOMIAL			0x131               // P(x) = x^8 + x^5 + x^4 + 1 = 100110001
 
 static uint8_t mGroup;
 static uint8_t mAddress;
 static uint8_t *pRegister;
 static uint8_t mRegCount;
-static app_protocol_write_data_check_cb_t write_data_check_cb;
+static app_protocol_write_data_cb_t write_data_cb;
 
 frame_t mFrame;
 
@@ -29,8 +28,18 @@ void app_protocol_init(uint8_t group, uint8_t address, uint8_t *reg, uint8_t reg
 }
 
 uint8_t getChecksum(uint8_t *pdata, uint8_t len) {
-	
-	return 0;
+	uint8_t crc = 0xFF;
+	for (uint8_t i = 0; i < len; i++) {
+		crc ^= pdata[i];
+		for (uint8_t j = 0; j < 8; j++) {
+			if (crc & 0x80) {
+				crc = (crc << 1) ^ POLYNOMIAL;
+			} else {
+				crc <<= 1;
+			}
+		}
+	}
+	return crc;
 }
 
 static void rs485_write_start() {
@@ -101,9 +110,10 @@ void app_protocol_decode(frame_t *pframe) {
 			}
 			break;
 		case CMD_WRITE:
-			if (write_data_check_cb == NULL || write_data_check_cb(address, cnt, pframe->data) == false) {
+			if (write_data_cb == NULL) {
 				return;
 			}
+			write_data_cb();
 			if (ack) {
 				app_protocol_write_ack();
 			}
@@ -111,4 +121,8 @@ void app_protocol_decode(frame_t *pframe) {
 		default:
 			break;
 	}
+}
+
+void app_protocol_set_write_data_cb(app_protocol_write_data_cb_t callback) {
+	write_data_cb = callback;
 }

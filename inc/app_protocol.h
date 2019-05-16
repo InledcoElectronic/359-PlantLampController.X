@@ -30,7 +30,10 @@ extern "C" {
     } frame_t;
 
 
-    typedef bool (*app_protocol_write_data_check_cb_t)(uint8_t start, uint8_t cnt, uint8_t *pdata);
+    typedef void (*app_protocol_write_data_cb_t)(uint8_t start, uint8_t cnt, uint8_t *pdata);
+    
+    extern void app_protocol_init(uint8_t group, uint8_t address, uint8_t *reg, uint8_t regCount);
+    extern void app_protocol_set_write_data_cb(app_protocol_write_data_cb_t callback);
     
 #ifdef	__cplusplus
 }
