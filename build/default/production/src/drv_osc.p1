@@ -8801,9 +8801,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_osc.c: 6: OSCCON1bits.NOSC = 0x06;
 "6
 [e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
-[; ;drv_osc.c: 7: OSCCON1bits.NDIV = 0x02;
+[; ;drv_osc.c: 7: OSCCON1bits.NDIV = 0x00;
 "7
-[e = . . _OSCCON1bits 0 0 -> -> 2 `i `uc ]
+[e = . . _OSCCON1bits 0 0 -> -> 0 `i `uc ]
 [; ;drv_osc.c: 9: OSCCON3bits.CSWHOLD = 0;
 "9
 [e = . . _OSCCON3bits 0 5 -> -> 0 `i `uc ]

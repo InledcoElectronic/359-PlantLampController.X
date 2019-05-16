@@ -29,6 +29,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISC `Vuc ~T0 @X0 0 e@20 ]
 "1140
 [v _LATC `Vuc ~T0 @X0 0 e@26 ]
+"21212
+[v _ANSELC `Vuc ~T0 @X0 0 e@8014 ]
 "21274
 [v _WPUC `Vuc ~T0 @X0 0 e@8015 ]
 "21336
@@ -67,10 +69,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RC6PPS `Vuc ~T0 @X0 0 e@7974 ]
 "18448
 [v _RX1DTPPS `Vuc ~T0 @X0 0 e@7883 ]
-"18158
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
 "18100
 [v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
+"19428
+[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
+"19472
+[v _RC2PPS `Vuc ~T0 @X0 0 e@7970 ]
+"18158
+[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -8833,9 +8839,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_gpio.c: 9: ODCONA = 0x00;
 "9
 [e = _ODCONA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 10: SLRCONA = 0x00;
+[; ;drv_gpio.c: 10: SLRCONA = 0xFF;
 "10
-[e = _SLRCONA -> -> 0 `i `uc ]
+[e = _SLRCONA -> -> 255 `i `uc ]
 [; ;drv_gpio.c: 11: INLVLA = 0x00;
 "11
 [e = _INLVLA -> -> 0 `i `uc ]
@@ -8854,83 +8860,92 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_gpio.c: 17: ODCONB = 0x00;
 "17
 [e = _ODCONB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 18: SLRCONB = 0x00;
+[; ;drv_gpio.c: 18: SLRCONB = 0xFF;
 "18
-[e = _SLRCONB -> -> 0 `i `uc ]
+[e = _SLRCONB -> -> 255 `i `uc ]
 [; ;drv_gpio.c: 19: INLVLB = 0x00;
 "19
 [e = _INLVLB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 21: TRISC = 0x86;
+[; ;drv_gpio.c: 21: TRISC = 0xA6;
 "21
-[e = _TRISC -> -> 134 `i `uc ]
+[e = _TRISC -> -> 166 `i `uc ]
 [; ;drv_gpio.c: 22: LATC = 0x60;
 "22
 [e = _LATC -> -> 96 `i `uc ]
-[; ;drv_gpio.c: 23: WPUC = 0x00;
+[; ;drv_gpio.c: 23: ANSELC = 0x00;
 "23
-[e = _WPUC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 24: ODCONC = 0x03;
+[e = _ANSELC -> -> 0 `i `uc ]
+[; ;drv_gpio.c: 24: WPUC = 0x00;
 "24
-[e = _ODCONC -> -> 3 `i `uc ]
-[; ;drv_gpio.c: 25: SLRCONC = 0x00;
+[e = _WPUC -> -> 0 `i `uc ]
+[; ;drv_gpio.c: 25: ODCONC = 0x00;
 "25
-[e = _SLRCONC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 26: INLVLC = 0x00;
+[e = _ODCONC -> -> 0 `i `uc ]
+[; ;drv_gpio.c: 26: SLRCONC = 0xFF;
 "26
+[e = _SLRCONC -> -> 255 `i `uc ]
+[; ;drv_gpio.c: 27: INLVLC = 0x00;
+"27
 [e = _INLVLC -> -> 0 `i `uc ]
-"29
+"30
 [v _state `uc ~T0 @X0 1 a ]
-[; ;drv_gpio.c: 29: bool state = INTCONbits.GIE;
+[; ;drv_gpio.c: 30: bool state = INTCONbits.GIE;
 [e = _state . . _INTCONbits 0 3 ]
-[; ;drv_gpio.c: 31: (INTCONbits.GIE = 0);
-"31
+[; ;drv_gpio.c: 32: (INTCONbits.GIE = 0);
+"32
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 33: PPSLOCK = 0x55;
-"33
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 34: PPSLOCK = 0xAA;
+[; ;drv_gpio.c: 34: PPSLOCK = 0x55;
 "34
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 35: PPSLOCKbits.PPSLOCKED = 0;
+[e = _PPSLOCK -> -> 85 `i `uc ]
+[; ;drv_gpio.c: 35: PPSLOCK = 0xAA;
 "35
-[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 36: RB0PPS = 0x09;
+[e = _PPSLOCK -> -> 170 `i `uc ]
+[; ;drv_gpio.c: 36: PPSLOCKbits.PPSLOCKED = 0;
 "36
-[e = _RB0PPS -> -> 9 `i `uc ]
-[; ;drv_gpio.c: 37: RB1PPS = 0x0A;
+[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
+[; ;drv_gpio.c: 37: RB0PPS = 0x09;
 "37
-[e = _RB1PPS -> -> 10 `i `uc ]
-[; ;drv_gpio.c: 38: RB2PPS = 0x0B;
+[e = _RB0PPS -> -> 9 `i `uc ]
+[; ;drv_gpio.c: 38: RB1PPS = 0x0A;
 "38
-[e = _RB2PPS -> -> 11 `i `uc ]
-[; ;drv_gpio.c: 39: RB3PPS = 0x0C;
+[e = _RB1PPS -> -> 10 `i `uc ]
+[; ;drv_gpio.c: 39: RB2PPS = 0x0B;
 "39
-[e = _RB3PPS -> -> 12 `i `uc ]
-[; ;drv_gpio.c: 40: RC6PPS = 0x0F;
+[e = _RB2PPS -> -> 11 `i `uc ]
+[; ;drv_gpio.c: 40: RB3PPS = 0x0C;
 "40
-[e = _RC6PPS -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 41: RX1DTPPS = 0x17;
+[e = _RB3PPS -> -> 12 `i `uc ]
+[; ;drv_gpio.c: 41: RC6PPS = 0x0F;
 "41
-[e = _RX1DTPPS -> -> 23 `i `uc ]
-[; ;drv_gpio.c: 42: SSP1DATPPS = 0x11;
+[e = _RC6PPS -> -> 15 `i `uc ]
+[; ;drv_gpio.c: 42: RX1DTPPS = 0x17;
 "42
-[e = _SSP1DATPPS -> -> 17 `i `uc ]
+[e = _RX1DTPPS -> -> 23 `i `uc ]
 [; ;drv_gpio.c: 43: SSP1CLKPPS = 0x12;
 "43
 [e = _SSP1CLKPPS -> -> 18 `i `uc ]
-[; ;drv_gpio.c: 45: PPSLOCK = 0x55;
+[; ;drv_gpio.c: 44: RC1PPS = 0x16;
+"44
+[e = _RC1PPS -> -> 22 `i `uc ]
+[; ;drv_gpio.c: 45: RC2PPS = 0x15;
 "45
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 46: PPSLOCK = 0xAA;
+[e = _RC2PPS -> -> 21 `i `uc ]
+[; ;drv_gpio.c: 46: SSP1DATPPS = 0x11;
 "46
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 47: PPSLOCKbits.PPSLOCKED = 1;
-"47
-[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
-[; ;drv_gpio.c: 48: INTCONbits.GIE = state;
+[e = _SSP1DATPPS -> -> 17 `i `uc ]
+[; ;drv_gpio.c: 48: PPSLOCK = 0x55;
 "48
-[e = . . _INTCONbits 0 3 _state ]
-[; ;drv_gpio.c: 49: }
+[e = _PPSLOCK -> -> 85 `i `uc ]
+[; ;drv_gpio.c: 49: PPSLOCK = 0xAA;
 "49
+[e = _PPSLOCK -> -> 170 `i `uc ]
+[; ;drv_gpio.c: 50: PPSLOCKbits.PPSLOCKED = 1;
+"50
+[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
+[; ;drv_gpio.c: 51: INTCONbits.GIE = state;
+"51
+[e = . . _INTCONbits 0 3 _state ]
+[; ;drv_gpio.c: 52: }
+"52
 [e :UE 1025 ]
 }

@@ -7,12 +7,14 @@
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_osc.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_iic.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_pwm.c</file>
+            <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_tmr0.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_eusart.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/app_control.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_tmr2.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/app_protocol.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_eusart.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_gpio.c</file>
+            <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_tmr0.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/main.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_tmr2.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/app_control.c</file>

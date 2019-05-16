@@ -1,112 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2699 D:\Program Files\Microchip\xc8\v1.44\include\pic16f15375.h
-[s S130 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S130 . BF UA R_nW S P D_nA CKE SMP ]
-"2709
-[s S131 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S131 . . R_W . D_A ]
-"2715
-[s S132 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S132 . . nW . nA ]
-"2721
-[s S133 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S133 . . nWRITE . nADDRESS ]
-"2727
-[s S134 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S134 . . READ_WRITE . DATA_ADDRESS ]
-"2733
-[s S135 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S135 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"2740
-[s S136 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S136 . BF1 UA1 R START STOP D CKE1 SMP1 ]
-"2750
-[s S137 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S137 . . RW START1 STOP1 DA ]
-"2757
-[s S138 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S138 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
-"2764
-[s S139 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S139 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
-"2771
-[s S140 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S140 . . READ_WRITE1 . D_A1 ]
-"2777
-[s S141 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S141 . . R_W1 . D_nA1 ]
-"2783
-[s S142 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S142 . . R_nW1 . I2C_DAT1 ]
-"2789
-[s S143 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S143 . . nW2 . nA2 ]
-"2795
-[s S144 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S144 . . nWRITE1 . nADDRESS1 ]
-"2698
-[u S129 `S130 1 `S131 1 `S132 1 `S133 1 `S134 1 `S135 1 `S136 1 `S137 1 `S138 1 `S139 1 `S140 1 `S141 1 `S142 1 `S143 1 `S144 1 ]
-[n S129 . . . . . . . . . . . . . . . . ]
-"2802
-[v _SSP1STATbits `VS129 ~T0 @X0 0 e@399 ]
-"3063
-[s S146 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S146 . SSPM CKP SSPEN SSPOV WCOL ]
-"3070
-[s S147 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S147 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"3076
-[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S148 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
-"3062
-[u S145 `S146 1 `S147 1 `S148 1 ]
-[n S145 . . . . ]
-"3087
-[v _SSP1CON1bits `VS145 ~T0 @X0 0 e@400 ]
-"3370
-[s S156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S156 . DHEN AHEN SBCDE SDAHT BOEN SCIE PCIE ACKTIM ]
-"3369
-[u S155 `S156 1 ]
-[n S155 . . ]
-"3381
-[v _SSP1CON3bits `VS155 ~T0 @X0 0 e@402 ]
-"2503
-[v _SSP1ADD `Vuc ~T0 @X0 0 e@397 ]
-"3183
-[s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S150 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-"3193
-[s S151 :1 `uc 1 :5 `uc 1 ]
-[n S151 . . ADMSK ]
-"3197
-[s S152 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S152 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
-"3205
-[s S153 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S153 . SEN1 ADMSK11 ADMSK21 ADMSK31 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
-"3215
-[s S154 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S154 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
-"3182
-[u S149 `S150 1 `S151 1 `S152 1 `S153 1 `S154 1 ]
-[n S149 . . . . . . ]
-"3224
-[v _SSP1CON2bits `VS149 ~T0 @X0 0 e@401 ]
-"9377
-[s S434 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S434 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF TX2IF RC2IF ]
-"9376
-[u S433 `S434 1 ]
-[n S433 . . ]
-"9388
-[v _PIR3bits `VS433 ~T0 @X0 0 e@1807 ]
-"2483
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
-[v F9327 `(v ~T0 @X0 1 tf1`ul ]
-"153 D:\Program Files\Microchip\xc8\v1.44\include\pic.h
-[v __delay `JF9327 ~T0 @X0 0 e ]
-[p i __delay ]
+"49 src/../inc/drv_pcf8563.h
+[s S1026 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1026 . year month day weekday hour minute second ]
+"48
+[u S1025 `S1026 1 `uc -> 7 `i ]
+[n S1025 . . array ]
+"16 src/../inc/drv_iic.h
+[v _iic_writeByte `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"19
+[v _iic_readBuffer `(v ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
+"17
+[v _iic_writeBuffer `(v ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -8850,667 +8754,241 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+[; ;drv_pcf8563.h: 48: typedef union {
+[; ;drv_pcf8563.h: 49: struct {
+[; ;drv_pcf8563.h: 50: uint8_t year;
+[; ;drv_pcf8563.h: 51: uint8_t month;
+[; ;drv_pcf8563.h: 52: uint8_t day;
+[; ;drv_pcf8563.h: 53: uint8_t weekday;
+[; ;drv_pcf8563.h: 54: uint8_t hour;
+[; ;drv_pcf8563.h: 55: uint8_t minute;
+[; ;drv_pcf8563.h: 56: uint8_t second;
+[; ;drv_pcf8563.h: 57: };
+[; ;drv_pcf8563.h: 58: uint8_t array[7];
+[; ;drv_pcf8563.h: 59: }data_time_t;
+[; ;drv_pcf8563.h: 61: extern data_time_t data_time;
+[; ;drv_pcf8563.h: 62: extern void pcf8563_init();
+[; ;drv_pcf8563.h: 63: extern void rtc_readOrWrite_time(uint8_t mode);
+[; ;drv_pcf8563.h: 64: extern void rtc_init();
 [; ;drv_iic.h: 15: extern void iic_init();
 [; ;drv_iic.h: 16: extern void iic_writeByte(uint8_t slaveAddr,uint8_t regAddr,uint8_t byte);
 [; ;drv_iic.h: 17: extern void iic_writeBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
 [; ;drv_iic.h: 18: extern uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr);
 [; ;drv_iic.h: 19: extern void iic_readBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len);
-[; ;drv_eusart.h: 15: typedef void (*eusart_rcv_handler_t)(uint8_t rcv);
-[; ;drv_eusart.h: 16: extern void eusart_init();
-[; ;drv_eusart.h: 17: extern uint8_t eusart_write(uint8_t byte);
-[; ;drv_eusart.h: 18: extern void eusart_transmit_isr();
-[; ;drv_eusart.h: 19: extern void eusart_setReceiveHandler(eusart_rcv_handler_t handler);
-[; ;drv_eusart.h: 20: extern void eusart_receive_isr();
-"13 src/drv_iic.c
-[v _iic_init `(v ~T0 @X0 1 ef ]
+"5 src/drv_pcf8563.c
+[v _data_time `S1025 ~T0 @X0 1 e ]
+[; ;drv_pcf8563.c: 5: data_time_t data_time;
+"7
+[v _hexToBcd `(uc ~T0 @X0 1 sf1`uc ]
 {
-[; ;drv_iic.c: 13: void iic_init() {
-[e :U _iic_init ]
+[; ;drv_pcf8563.c: 7: static uint8_t hexToBcd(uint8_t hex_data) {
+[e :U _hexToBcd ]
+[v _hex_data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;drv_iic.c: 15: SSP1STATbits.SMP = 1;
-"15
-[e = . . _SSP1STATbits 0 7 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 16: SSP1STATbits.CKE = 0;
-"16
-[e = . . _SSP1STATbits 0 6 -> -> 0 `i `uc ]
-[; ;drv_iic.c: 18: SSP1CON1bits.SSPEN = 1;
-"18
-[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 19: SSP1CON1bits.SSPM = 0x08;
-"19
-[e = . . _SSP1CON1bits 0 0 -> -> 8 `i `uc ]
-[; ;drv_iic.c: 20: SSP1CON3bits.SDAHT = 1;
-"20
-[e = . . _SSP1CON3bits 0 3 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 22: SSP1ADD = 9;
-"22
-[e = _SSP1ADD -> -> 9 `i `uc ]
-[; ;drv_iic.c: 23: }
-"23
-[e :UE 1025 ]
-}
-"25
-[v _iic_start `(v ~T0 @X0 1 sf ]
-{
-[; ;drv_iic.c: 25: static void iic_start() {
-[e :U _iic_start ]
-[f ]
-[; ;drv_iic.c: 26: SSP1CON2bits.SEN = 1;
-"26
-[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 27: }
-"27
-[e :UE 1026 ]
-}
-"29
-[v _iic_stop `(v ~T0 @X0 1 sf ]
-{
-[; ;drv_iic.c: 29: static void iic_stop() {
-[e :U _iic_stop ]
-[f ]
-[; ;drv_iic.c: 30: SSP1CON2bits.PEN = 1;
-"30
-[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 31: }
-"31
+"8
+[v _temp `uc ~T0 @X0 1 a ]
+[; ;drv_pcf8563.c: 8: uint8_t temp;
+[; ;drv_pcf8563.c: 9: temp = hex_data / 10 * 16 + hex_data % 10;
+"9
+[e = _temp -> + * / -> _hex_data `i -> 10 `i -> 16 `i % -> _hex_data `i -> 10 `i `uc ]
+[; ;drv_pcf8563.c: 10: return temp;
+"10
+[e ) _temp ]
+[e $UE 1027  ]
+[; ;drv_pcf8563.c: 11: }
+"11
 [e :UE 1027 ]
 }
-"33
-[v _iic_reStart `(v ~T0 @X0 1 sf ]
+"13
+[v _bcdToHex `(uc ~T0 @X0 1 sf1`uc ]
 {
-[; ;drv_iic.c: 33: static void iic_reStart() {
-[e :U _iic_reStart ]
+[; ;drv_pcf8563.c: 13: static uint8_t bcdToHex(uint8_t bcd_data) {
+[e :U _bcdToHex ]
+[v _bcd_data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;drv_iic.c: 34: SSP1CON2bits.RSEN = 1;
-"34
-[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 35: }
-"35
+"14
+[v _temp `uc ~T0 @X0 1 a ]
+[; ;drv_pcf8563.c: 14: uint8_t temp;
+[; ;drv_pcf8563.c: 15: temp = bcd_data / 16 * 10 + bcd_data % 16;
+"15
+[e = _temp -> + * / -> _bcd_data `i -> 16 `i -> 10 `i % -> _bcd_data `i -> 16 `i `uc ]
+[; ;drv_pcf8563.c: 16: return temp;
+"16
+[e ) _temp ]
+[e $UE 1028  ]
+[; ;drv_pcf8563.c: 17: }
+"17
 [e :UE 1028 ]
 }
-"37
-[v _iic_receive_enable `(v ~T0 @X0 1 sf ]
+"19
+[v _pcf8563_init `(v ~T0 @X0 1 ef ]
 {
-[; ;drv_iic.c: 37: static void iic_receive_enable() {
-[e :U _iic_receive_enable ]
+[; ;drv_pcf8563.c: 19: void pcf8563_init() {
+[e :U _pcf8563_init ]
 [f ]
-[; ;drv_iic.c: 38: SSP1CON2bits.RCEN = 1;
-"38
-[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 39: }
-"39
+[; ;drv_pcf8563.c: 20: iic_writeByte(0xA2,0x00,0x00);
+"20
+[e ( _iic_writeByte (3 , , -> -> 162 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drv_pcf8563.c: 21: iic_writeByte(0xA2,0x01,0x00);
+"21
+[e ( _iic_writeByte (3 , , -> -> 162 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;drv_pcf8563.c: 22: iic_writeByte(0xA2,0x0D,0x03);
+"22
+[e ( _iic_writeByte (3 , , -> -> 162 `i `uc -> -> 13 `i `uc -> -> 3 `i `uc ]
+[; ;drv_pcf8563.c: 23: iic_writeByte(0xA2,0x0E,0x03);
+"23
+[e ( _iic_writeByte (3 , , -> -> 162 `i `uc -> -> 14 `i `uc -> -> 3 `i `uc ]
+[; ;drv_pcf8563.c: 24: }
+"24
 [e :UE 1029 ]
 }
-"40
-[v _iic_checkSSPIF `(v ~T0 @X0 1 sf ]
+"26
+[v _rtc_operation_register `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
-[; ;drv_iic.c: 40: static void iic_checkSSPIF() {
-[e :U _iic_checkSSPIF ]
+[; ;drv_pcf8563.c: 26: void rtc_operation_register(uint8_t regAddr,uint8_t len,uint8_t mode) {
+[e :U _rtc_operation_register ]
+[v _regAddr `uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[v _mode `uc ~T0 @X0 1 r3 ]
 [f ]
-[; ;drv_iic.c: 41: while(!PIR3bits.SSP1IF);
-"41
-[e $U 1031  ]
-[e :U 1032 ]
+[v F9590 `uc ~T0 @X0 -> 7 `i s ]
+[i F9590
+:U ..
+"27
+-> -> 0 `i `uc
+..
+]
+[v _time_register `uc ~T0 @X0 -> 7 `i a ]
+[; ;drv_pcf8563.c: 27: uint8_t time_register[7] = {0};
+[e = _time_register F9590 ]
+[; ;drv_pcf8563.c: 28: if(mode) {
+"28
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 1031  ]
+{
+[; ;drv_pcf8563.c: 29: iic_readBuffer(0xA2,regAddr,time_register,len);
+"29
+[e ( _iic_readBuffer (4 , , , -> -> 162 `i `uc _regAddr &U _time_register _len ]
+[; ;drv_pcf8563.c: 31: data_time.second = bcdToHex(time_register[0] & 0x7F);
+"31
+[e = . . _data_time 0 6 ( _bcdToHex (1 -> & -> *U + &U _time_register * -> -> -> 0 `i `ui `ux -> -> # *U &U _time_register `ui `ux `i -> 127 `i `uc ]
+[; ;drv_pcf8563.c: 32: data_time.minute = bcdToHex(time_register[1] & 0x7F);
+"32
+[e = . . _data_time 0 5 ( _bcdToHex (1 -> & -> *U + &U _time_register * -> -> -> 1 `i `ui `ux -> -> # *U &U _time_register `ui `ux `i -> 127 `i `uc ]
+[; ;drv_pcf8563.c: 33: data_time.hour = bcdToHex(time_register[2] & 0x3F);
+"33
+[e = . . _data_time 0 4 ( _bcdToHex (1 -> & -> *U + &U _time_register * -> -> -> 2 `i `ui `ux -> -> # *U &U _time_register `ui `ux `i -> 63 `i `uc ]
+[; ;drv_pcf8563.c: 34: data_time.day = bcdToHex(time_register[3] & 0x3F);
+"34
+[e = . . _data_time 0 2 ( _bcdToHex (1 -> & -> *U + &U _time_register * -> -> -> 3 `i `ui `ux -> -> # *U &U _time_register `ui `ux `i -> 63 `i `uc ]
+[; ;drv_pcf8563.c: 35: data_time.weekday = bcdToHex(time_register[4] & 0x07);
+"35
+[e = . . _data_time 0 3 ( _bcdToHex (1 -> & -> *U + &U _time_register * -> -> -> 4 `i `ui `ux -> -> # *U &U _time_register `ui `ux `i -> 7 `i `uc ]
+[; ;drv_pcf8563.c: 36: data_time.month = bcdToHex(time_register[5] & 0x1F);
+"36
+[e = . . _data_time 0 1 ( _bcdToHex (1 -> & -> *U + &U _time_register * -> -> -> 5 `i `ui `ux -> -> # *U &U _time_register `ui `ux `i -> 31 `i `uc ]
+[; ;drv_pcf8563.c: 37: data_time.year = bcdToHex(time_register[6]);
+"37
+[e = . . _data_time 0 0 ( _bcdToHex (1 *U + &U _time_register * -> -> -> 6 `i `ui `ux -> -> # *U &U _time_register `ui `ux ]
+"38
+}
+[; ;drv_pcf8563.c: 38: } else {
+[e $U 1032  ]
 [e :U 1031 ]
-[e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1032  ]
-[e :U 1033 ]
-[; ;drv_iic.c: 42: PIR3bits.SSP1IF = 0;
+{
+[; ;drv_pcf8563.c: 40: time_register[0] = hexToBcd(data_time.second);
+"40
+[e = *U + &U _time_register * -> -> -> 0 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 6 ]
+[; ;drv_pcf8563.c: 41: time_register[1] = hexToBcd(data_time.minute);
+"41
+[e = *U + &U _time_register * -> -> -> 1 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 5 ]
+[; ;drv_pcf8563.c: 42: time_register[2] = hexToBcd(data_time.hour);
 "42
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;drv_iic.c: 43: }
+[e = *U + &U _time_register * -> -> -> 2 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 4 ]
+[; ;drv_pcf8563.c: 43: time_register[3] = hexToBcd(data_time.day);
 "43
+[e = *U + &U _time_register * -> -> -> 3 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 2 ]
+[; ;drv_pcf8563.c: 44: time_register[4] = hexToBcd(data_time.weekday);
+"44
+[e = *U + &U _time_register * -> -> -> 4 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 3 ]
+[; ;drv_pcf8563.c: 45: time_register[5] = hexToBcd(data_time.month);
+"45
+[e = *U + &U _time_register * -> -> -> 5 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 1 ]
+[; ;drv_pcf8563.c: 46: time_register[6] = hexToBcd(data_time.year);
+"46
+[e = *U + &U _time_register * -> -> -> 6 `i `ui `ux -> -> # *U &U _time_register `ui `ux ( _hexToBcd (1 . . _data_time 0 0 ]
+[; ;drv_pcf8563.c: 48: iic_writeBuffer(0xA2,regAddr,time_register,len);
+"48
+[e ( _iic_writeBuffer (4 , , , -> -> 162 `i `uc _regAddr &U _time_register _len ]
+"49
+}
+[e :U 1032 ]
+[; ;drv_pcf8563.c: 49: }
+[; ;drv_pcf8563.c: 50: }
+"50
 [e :UE 1030 ]
 }
-"45
-[v _iic_writeByte `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-{
-[; ;drv_iic.c: 45: void iic_writeByte(uint8_t slaveAddr,uint8_t regAddr,uint8_t byte) {
-[e :U _iic_writeByte ]
-[v _slaveAddr `uc ~T0 @X0 1 r1 ]
-[v _regAddr `uc ~T0 @X0 1 r2 ]
-[v _byte `uc ~T0 @X0 1 r3 ]
-[f ]
-"46
-[v _cnt `uc ~T0 @X0 1 a ]
-[; ;drv_iic.c: 46: uint8_t cnt = 0;
-[e = _cnt -> -> 0 `i `uc ]
-[; ;drv_iic.c: 48: iic_start();
-"48
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 49: iic_checkSSPIF();
-"49
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 52: SSP1BUF = slaveAddr;
 "52
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 53: iic_checkSSPIF();
+[v _rtc_readOrWrite_time `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;drv_pcf8563.c: 52: void rtc_readOrWrite_time(uint8_t mode) {
+[e :U _rtc_readOrWrite_time ]
+[v _mode `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;drv_pcf8563.c: 53: if(mode) {
 "53
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 54: while(SSP1CON2bits.ACKSTAT) {
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 1034  ]
+{
+[; ;drv_pcf8563.c: 54: rtc_operation_register(0x02,7,1);
 "54
-[e $U 1035  ]
-[e :U 1036 ]
-{
-[; ;drv_iic.c: 55: cnt++;
+[e ( _rtc_operation_register (3 , , -> -> 2 `i `uc -> -> 7 `i `uc -> -> 1 `i `uc ]
 "55
-[e ++ _cnt -> -> 1 `i `uc ]
-[; ;drv_iic.c: 56: if(cnt >= 5) {
-"56
-[e $ ! >= -> _cnt `i -> 5 `i 1038  ]
-{
-[; ;drv_iic.c: 57: return;
-"57
-[e $UE 1034  ]
-"58
 }
-[e :U 1038 ]
-[; ;drv_iic.c: 58: }
-[; ;drv_iic.c: 59: _delay((unsigned long)((1)*(16000000/4000.0)));
-"59
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;drv_iic.c: 60: iic_start();
-"60
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 61: iic_checkSSPIF();
-"61
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 62: SSP1BUF = slaveAddr;
-"62
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 63: iic_checkSSPIF();
-"63
-[e ( _iic_checkSSPIF ..  ]
-"64
+[; ;drv_pcf8563.c: 55: } else {
+[e $U 1035  ]
+[e :U 1034 ]
+{
+[; ;drv_pcf8563.c: 56: rtc_operation_register(0x02,7,0);
+"56
+[e ( _rtc_operation_register (3 , , -> -> 2 `i `uc -> -> 7 `i `uc -> -> 0 `i `uc ]
+"57
 }
 [e :U 1035 ]
-"54
-[e $ != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1036  ]
-[e :U 1037 ]
-[; ;drv_iic.c: 64: }
-[; ;drv_iic.c: 65: SSP1BUF = regAddr;
+[; ;drv_pcf8563.c: 57: }
+[; ;drv_pcf8563.c: 58: }
+"58
+[e :UE 1033 ]
+}
+"60
+[v _rtc_init `(v ~T0 @X0 1 ef ]
+{
+[; ;drv_pcf8563.c: 60: void rtc_init() {
+[e :U _rtc_init ]
+[f ]
+[; ;drv_pcf8563.c: 62: data_time.second = 0x01;
+"62
+[e = . . _data_time 0 6 -> -> 1 `i `uc ]
+[; ;drv_pcf8563.c: 63: data_time.minute = 0x01;
+"63
+[e = . . _data_time 0 5 -> -> 1 `i `uc ]
+[; ;drv_pcf8563.c: 64: data_time.hour = 0x01;
+"64
+[e = . . _data_time 0 4 -> -> 1 `i `uc ]
+[; ;drv_pcf8563.c: 65: data_time.day = 0x01;
 "65
-[e = _SSP1BUF _regAddr ]
-[; ;drv_iic.c: 66: iic_checkSSPIF();
+[e = . . _data_time 0 2 -> -> 1 `i `uc ]
+[; ;drv_pcf8563.c: 66: data_time.weekday = 0x01;
 "66
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 67: if(SSP1CON2bits.ACKSTAT) {
+[e = . . _data_time 0 3 -> -> 1 `i `uc ]
+[; ;drv_pcf8563.c: 67: data_time.month = 0x02;
 "67
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1039  ]
-{
-[; ;drv_iic.c: 68: return ;
+[e = . . _data_time 0 1 -> -> 2 `i `uc ]
+[; ;drv_pcf8563.c: 68: data_time.year = 0x02;
 "68
-[e $UE 1034  ]
-"69
-}
-[e :U 1039 ]
-[; ;drv_iic.c: 69: }
-[; ;drv_iic.c: 70: SSP1BUF = byte;
+[e = . . _data_time 0 0 -> -> 2 `i `uc ]
+[; ;drv_pcf8563.c: 70: rtc_readOrWrite_time(0);
 "70
-[e = _SSP1BUF _byte ]
-[; ;drv_iic.c: 71: iic_checkSSPIF();
+[e ( _rtc_readOrWrite_time (1 -> -> 0 `i `uc ]
+[; ;drv_pcf8563.c: 71: }
 "71
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 72: if(SSP1CON2bits.ACKSTAT) {
-"72
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1040  ]
-{
-[; ;drv_iic.c: 73: return ;
-"73
-[e $UE 1034  ]
-"74
-}
-[e :U 1040 ]
-[; ;drv_iic.c: 74: }
-[; ;drv_iic.c: 77: iic_stop();
-"77
-[e ( _iic_stop ..  ]
-[; ;drv_iic.c: 78: iic_checkSSPIF();
-"78
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 79: }
-"79
-[e :UE 1034 ]
-}
-"81
-[v _iic_writeBuffer `(v ~T0 @X0 1 ef4`uc`uc`*uc`uc ]
-{
-[; ;drv_iic.c: 81: void iic_writeBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len) {
-[e :U _iic_writeBuffer ]
-[v _slaveAddr `uc ~T0 @X0 1 r1 ]
-[v _regAddr `uc ~T0 @X0 1 r2 ]
-[v _buf `*uc ~T0 @X0 1 r3 ]
-[v _len `uc ~T0 @X0 1 r4 ]
-[f ]
-"82
-[v _cnt `uc ~T0 @X0 1 a ]
-[; ;drv_iic.c: 82: uint8_t cnt = 0;
-[e = _cnt -> -> 0 `i `uc ]
-[; ;drv_iic.c: 84: iic_start();
-"84
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 85: iic_checkSSPIF();
-"85
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 88: SSP1BUF = slaveAddr;
-"88
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 89: iic_checkSSPIF();
-"89
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 90: while(SSP1CON2bits.ACKSTAT) {
-"90
-[e $U 1042  ]
-[e :U 1043 ]
-{
-[; ;drv_iic.c: 91: cnt++;
-"91
-[e ++ _cnt -> -> 1 `i `uc ]
-[; ;drv_iic.c: 92: if(cnt >= 5) {
-"92
-[e $ ! >= -> _cnt `i -> 5 `i 1045  ]
-{
-[; ;drv_iic.c: 93: return;
-"93
-[e $UE 1041  ]
-"94
-}
-[e :U 1045 ]
-[; ;drv_iic.c: 94: }
-[; ;drv_iic.c: 95: _delay((unsigned long)((1)*(16000000/4000.0)));
-"95
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;drv_iic.c: 96: iic_start();
-"96
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 97: iic_checkSSPIF();
-"97
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 98: SSP1BUF = slaveAddr;
-"98
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 99: iic_checkSSPIF();
-"99
-[e ( _iic_checkSSPIF ..  ]
-"100
-}
-[e :U 1042 ]
-"90
-[e $ != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1043  ]
-[e :U 1044 ]
-[; ;drv_iic.c: 100: }
-[; ;drv_iic.c: 101: SSP1BUF = regAddr;
-"101
-[e = _SSP1BUF _regAddr ]
-[; ;drv_iic.c: 102: iic_checkSSPIF();
-"102
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 103: if(SSP1CON2bits.ACKSTAT) {
-"103
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1046  ]
-{
-[; ;drv_iic.c: 104: return ;
-"104
-[e $UE 1041  ]
-"105
-}
-[e :U 1046 ]
-[; ;drv_iic.c: 105: }
-[; ;drv_iic.c: 106: for(uint8_t i = 0; i < len; i++) {
-"106
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $U 1050  ]
-[e :U 1047 ]
-{
-[; ;drv_iic.c: 107: SSP1BUF = *(buf + i);
-"107
-[e = _SSP1BUF *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux ]
-[; ;drv_iic.c: 108: iic_checkSSPIF();
-"108
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 109: if(SSP1CON2bits.ACKSTAT) {
-"109
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1051  ]
-{
-[; ;drv_iic.c: 110: return ;
-"110
-[e $UE 1041  ]
-"111
-}
-[e :U 1051 ]
-"112
-}
-"106
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1050 ]
-[e $ < -> _i `i -> _len `i 1047  ]
-[e :U 1048 ]
-"112
-}
-[; ;drv_iic.c: 111: }
-[; ;drv_iic.c: 112: }
-[; ;drv_iic.c: 115: iic_stop();
-"115
-[e ( _iic_stop ..  ]
-[; ;drv_iic.c: 116: iic_checkSSPIF();
-"116
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 117: }
-"117
-[e :UE 1041 ]
-}
-"119
-[v _iic_readByte `(uc ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;drv_iic.c: 119: uint8_t iic_readByte(uint8_t slaveAddr,uint8_t regAddr) {
-[e :U _iic_readByte ]
-[v _slaveAddr `uc ~T0 @X0 1 r1 ]
-[v _regAddr `uc ~T0 @X0 1 r2 ]
-[f ]
-"120
-[v _byte `uc ~T0 @X0 1 a ]
-"121
-[v _cnt `uc ~T0 @X0 1 a ]
-[; ;drv_iic.c: 120: uint8_t byte;
-[; ;drv_iic.c: 121: uint8_t cnt = 0;
-[e = _cnt -> -> 0 `i `uc ]
-[; ;drv_iic.c: 123: iic_start();
-"123
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 124: iic_checkSSPIF();
-"124
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 127: SSP1BUF = slaveAddr;
-"127
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 128: iic_checkSSPIF();
-"128
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 129: while(SSP1CON2bits.ACKSTAT) {
-"129
-[e $U 1053  ]
-[e :U 1054 ]
-{
-[; ;drv_iic.c: 130: cnt++;
-"130
-[e ++ _cnt -> -> 1 `i `uc ]
-[; ;drv_iic.c: 131: if(cnt > 5) {
-"131
-[e $ ! > -> _cnt `i -> 5 `i 1056  ]
-{
-[; ;drv_iic.c: 132: return 0;
-"132
-[e ) -> -> 0 `i `uc ]
-[e $UE 1052  ]
-"133
-}
-[e :U 1056 ]
-[; ;drv_iic.c: 133: }
-[; ;drv_iic.c: 134: _delay((unsigned long)((1)*(16000000/4000.0)));
-"134
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;drv_iic.c: 135: iic_start();
-"135
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 136: iic_checkSSPIF();
-"136
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 137: SSP1BUF = slaveAddr;
-"137
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 138: iic_checkSSPIF();
-"138
-[e ( _iic_checkSSPIF ..  ]
-"139
-}
-[e :U 1053 ]
-"129
-[e $ != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1054  ]
-[e :U 1055 ]
-[; ;drv_iic.c: 139: }
-[; ;drv_iic.c: 140: SSP1BUF = regAddr;
-"140
-[e = _SSP1BUF _regAddr ]
-[; ;drv_iic.c: 141: iic_checkSSPIF();
-"141
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 142: if(SSP1CON2bits.ACKSTAT) {
-"142
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1057  ]
-{
-[; ;drv_iic.c: 143: return 0;
-"143
-[e ) -> -> 0 `i `uc ]
-[e $UE 1052  ]
-"144
-}
-[e :U 1057 ]
-[; ;drv_iic.c: 144: }
-[; ;drv_iic.c: 146: iic_reStart();
-"146
-[e ( _iic_reStart ..  ]
-[; ;drv_iic.c: 147: iic_checkSSPIF();
-"147
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 149: SSP1BUF = slaveAddr + 1;
-"149
-[e = _SSP1BUF -> + -> _slaveAddr `i -> 1 `i `uc ]
-[; ;drv_iic.c: 150: iic_checkSSPIF();
-"150
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 151: if(SSP1CON2bits.ACKSTAT) {
-"151
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1058  ]
-{
-[; ;drv_iic.c: 152: return 0;
-"152
-[e ) -> -> 0 `i `uc ]
-[e $UE 1052  ]
-"153
-}
-[e :U 1058 ]
-[; ;drv_iic.c: 153: }
-[; ;drv_iic.c: 155: iic_receive_enable();
-"155
-[e ( _iic_receive_enable ..  ]
-[; ;drv_iic.c: 156: iic_checkSSPIF();
-"156
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 157: byte = SSP1BUF;
-"157
-[e = _byte _SSP1BUF ]
-[; ;drv_iic.c: 158: SSP1CON2bits.ACKDT = 1;
-"158
-[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 159: SSP1CON2bits.ACKEN = 1;
-"159
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 160: iic_checkSSPIF();
-"160
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 163: iic_stop();
-"163
-[e ( _iic_stop ..  ]
-[; ;drv_iic.c: 164: iic_checkSSPIF();
-"164
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 166: return byte;
-"166
-[e ) _byte ]
-[e $UE 1052  ]
-[; ;drv_iic.c: 167: }
-"167
-[e :UE 1052 ]
-}
-"169
-[v _iic_readBuffer `(v ~T0 @X0 1 ef4`uc`uc`*uc`uc ]
-{
-[; ;drv_iic.c: 169: void iic_readBuffer(uint8_t slaveAddr,uint8_t regAddr,uint8_t *buf,uint8_t len) {
-[e :U _iic_readBuffer ]
-[v _slaveAddr `uc ~T0 @X0 1 r1 ]
-[v _regAddr `uc ~T0 @X0 1 r2 ]
-[v _buf `*uc ~T0 @X0 1 r3 ]
-[v _len `uc ~T0 @X0 1 r4 ]
-[f ]
-"170
-[v _cnt `uc ~T0 @X0 1 a ]
-[; ;drv_iic.c: 170: uint8_t cnt = 0;
-[e = _cnt -> -> 0 `i `uc ]
-[; ;drv_iic.c: 172: iic_start();
-"172
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 173: iic_checkSSPIF();
-"173
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 176: SSP1BUF = slaveAddr;
-"176
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 177: iic_checkSSPIF();
-"177
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 178: while(SSP1CON2bits.ACKSTAT) {
-"178
-[e $U 1060  ]
-[e :U 1061 ]
-{
-[; ;drv_iic.c: 179: cnt++;
-"179
-[e ++ _cnt -> -> 1 `i `uc ]
-[; ;drv_iic.c: 180: if(cnt > 5) {
-"180
-[e $ ! > -> _cnt `i -> 5 `i 1063  ]
-{
-[; ;drv_iic.c: 181: return ;
-"181
-[e $UE 1059  ]
-"182
-}
-[e :U 1063 ]
-[; ;drv_iic.c: 182: }
-[; ;drv_iic.c: 183: _delay((unsigned long)((1)*(16000000/4000.0)));
-"183
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;drv_iic.c: 184: iic_start();
-"184
-[e ( _iic_start ..  ]
-[; ;drv_iic.c: 185: iic_checkSSPIF();
-"185
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 186: SSP1BUF = slaveAddr;
-"186
-[e = _SSP1BUF _slaveAddr ]
-[; ;drv_iic.c: 187: iic_checkSSPIF();
-"187
-[e ( _iic_checkSSPIF ..  ]
-"188
-}
-[e :U 1060 ]
-"178
-[e $ != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1061  ]
-[e :U 1062 ]
-[; ;drv_iic.c: 188: }
-[; ;drv_iic.c: 189: SSP1BUF = regAddr;
-"189
-[e = _SSP1BUF _regAddr ]
-[; ;drv_iic.c: 190: iic_checkSSPIF();
-"190
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 191: if(SSP1CON2bits.ACKSTAT) {
-"191
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1064  ]
-{
-[; ;drv_iic.c: 192: return ;
-"192
-[e $UE 1059  ]
-"193
-}
-[e :U 1064 ]
-[; ;drv_iic.c: 193: }
-[; ;drv_iic.c: 195: iic_reStart();
-"195
-[e ( _iic_reStart ..  ]
-[; ;drv_iic.c: 196: iic_checkSSPIF();
-"196
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 198: SSP1BUF = slaveAddr + 1;
-"198
-[e = _SSP1BUF -> + -> _slaveAddr `i -> 1 `i `uc ]
-[; ;drv_iic.c: 199: iic_checkSSPIF();
-"199
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 200: if(SSP1CON2bits.ACKSTAT) {
-"200
-[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 1065  ]
-{
-[; ;drv_iic.c: 201: return ;
-"201
-[e $UE 1059  ]
-"202
-}
-[e :U 1065 ]
-[; ;drv_iic.c: 202: }
-[; ;drv_iic.c: 203: for(uint8_t i = 0; i < len - 1; i++) {
-"203
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $U 1069  ]
-[e :U 1066 ]
-{
-[; ;drv_iic.c: 204: iic_receive_enable();
-"204
-[e ( _iic_receive_enable ..  ]
-[; ;drv_iic.c: 205: iic_checkSSPIF();
-"205
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 206: *(buf + i) = SSP1BUF;
-"206
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _SSP1BUF ]
-[; ;drv_iic.c: 207: SSP1CON2bits.ACKDT = 0;
-"207
-[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
-[; ;drv_iic.c: 208: SSP1CON2bits.ACKEN = 1;
-"208
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 209: iic_checkSSPIF();
-"209
-[e ( _iic_checkSSPIF ..  ]
-"210
-}
-"203
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1069 ]
-[e $ < -> _i `i - -> _len `i -> 1 `i 1066  ]
-[e :U 1067 ]
-"210
-}
-[; ;drv_iic.c: 210: }
-[; ;drv_iic.c: 211: iic_receive_enable();
-"211
-[e ( _iic_receive_enable ..  ]
-[; ;drv_iic.c: 212: iic_checkSSPIF();
-"212
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 213: *(buf + len - 1) = SSP1BUF;
-"213
-[e = *U - + _buf * -> _len `ux -> -> # *U _buf `ui `ux * -> -> 1 `i `x -> -> # *U + _buf * -> _len `ux -> -> # *U _buf `ui `ux `i `x _SSP1BUF ]
-[; ;drv_iic.c: 214: SSP1CON2bits.ACKDT = 1;
-"214
-[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 215: SSP1CON2bits.ACKEN = 1;
-"215
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[; ;drv_iic.c: 216: iic_checkSSPIF();
-"216
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 219: iic_stop();
-"219
-[e ( _iic_stop ..  ]
-[; ;drv_iic.c: 220: iic_checkSSPIF();
-"220
-[e ( _iic_checkSSPIF ..  ]
-[; ;drv_iic.c: 221: }
-"221
-[e :UE 1059 ]
+[e :UE 1036 ]
 }

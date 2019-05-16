@@ -4,7 +4,7 @@
 void osc_init() {
     //配置新振荡器
     OSCCON1bits.NOSC = 0x06;        //内部高速时钟
-    OSCCON1bits.NDIV = 0x02;        //4分频
+    OSCCON1bits.NDIV = 0x00;        //1分频
     //OSCCON3
     OSCCON3bits.CSWHOLD = 0;        //禁止时钟暂停
     OSCCON3bits.SOSCPWR = 0;        //低功耗模式

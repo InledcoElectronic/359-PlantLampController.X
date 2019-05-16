@@ -11765,7 +11765,7 @@ extern void osc_init();
 void osc_init() {
 
 OSCCON1bits.NOSC = 0x06;
-OSCCON1bits.NDIV = 0x02;
+OSCCON1bits.NDIV = 0x00;
 
 OSCCON3bits.CSWHOLD = 0;
 OSCCON3bits.SOSCPWR = 0;
