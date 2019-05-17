@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC PRO Macro Assembler V1.45 build -152302408 
-                                                                                               Fri May 17 06:55:03 2019
+                                                                                               Fri May 17 08:45:24 2019
 
 Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 201711160504
      1                           	processor	16F15375
@@ -5017,7 +5017,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   4991  0106                     __ptext45:	
   4992 ;; *************** function _flash_readBuffer *****************
   4993 ;; Defined at:
-  4994 ;;		line 42 in file "src/drv_flash.c"
+  4994 ;;		line 40 in file "src/drv_flash.c"
   4995 ;; Parameters:    Size  Location     Type
   4996 ;;  flashAddr       2    0[BANK1 ] unsigned int 
   4997 ;;  pbuf            2    2[BANK1 ] PTR unsigned char 
@@ -5057,7 +5057,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   5026                           ;psect for function _flash_readBuffer
   5027  0106                     _flash_readBuffer:	
   5028                           
-  5029                           ;drv_flash.c: 43: for (uint8_t i = 0; i < len; i++) {
+  5029                           ;drv_flash.c: 41: for (uint8_t i = 0; i < len; i++) {
   5030                           
   5031                           ;incstack = 0
   5032                           ; Regs used in _flash_readBuffer: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
@@ -5068,7 +5068,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   5037  0109  1803               	btfsc	3,0
   5038  010A  0008               	return
   5039                           
-  5040                           ;drv_flash.c: 44: *(pbuf + i) = flash_readByte(flashAddr++);
+  5040                           ;drv_flash.c: 42: *(pbuf + i) = flash_readByte(flashAddr++);
   5041  010B  0851               	movf	(flash_readBuffer@flashAddr+1)^(0+128),w
   5042  010C  0140               	movlb	0	; select bank0
   5043  010D  00BB               	movwf	flash_readByte@flashAddr+1
@@ -5102,7 +5102,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   5071  0129                     __ptext46:	
   5072 ;; *************** function _flash_readByte *****************
   5073 ;; Defined at:
-  5074 ;;		line 31 in file "src/drv_flash.c"
+  5074 ;;		line 29 in file "src/drv_flash.c"
   5075 ;; Parameters:    Size  Location     Type
   5076 ;;  flashAddr       2   26[BANK0 ] unsigned int 
   5077 ;; Auto vars:     Size  Location     Type
@@ -5139,7 +5139,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   5103                           ;psect for function _flash_readByte
   5104  0129                     _flash_readByte:	
   5105                           
-  5106                           ;drv_flash.c: 33: NVMADR = flashAddr;
+  5106                           ;drv_flash.c: 31: NVMADR = flashAddr;
   5107                           
   5108                           ;incstack = 0
   5109                           ; Regs used in _flash_readByte: [wreg]
@@ -5151,13 +5151,13 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   5115  012E  0150               	movlb	16	; select bank16
   5116  012F  009A               	movwf	26	;volatile
   5117                           
-  5118                           ;drv_flash.c: 35: NVMCON1bits.NVMREGS = 0;
+  5118                           ;drv_flash.c: 33: NVMCON1bits.NVMREGS = 0;
   5119  0130  131E               	bcf	30,6	;volsfr
   5120                           
-  5121                           ;drv_flash.c: 37: NVMCON1bits.RD = 1;
+  5121                           ;drv_flash.c: 35: NVMCON1bits.RD = 1;
   5122  0131  141E               	bsf	30,0	;volsfr
   5123                           
-  5124                           ;drv_flash.c: 39: return NVMDATL;
+  5124                           ;drv_flash.c: 37: return NVMDATL;
   5125  0132  081C               	movf	28,w	;volatile
   5126  0133  0008               	return
   5127  0134                     __end_of_flash_readByte:	
@@ -7378,7 +7378,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7220  0402                     __ptext41:	
   7221 ;; *************** function _flash_writeBlock *****************
   7222 ;; Defined at:
-  7223 ;;		line 48 in file "src/drv_flash.c"
+  7223 ;;		line 46 in file "src/drv_flash.c"
   7224 ;; Parameters:    Size  Location     Type
   7225 ;;  flashAddr       2    1[BANK1 ] unsigned int 
   7226 ;;  pbuf            2    3[BANK1 ] PTR unsigned char 
@@ -7423,7 +7423,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7260                           ; Regs used in _flash_writeBlock: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
   7261                           
   7262                           
-  7263                           ;drv_flash.c: 49: uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)))
+  7263                           ;drv_flash.c: 47: uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)))
       +                          ;
   7264  0402  30FF               	movlw	255
   7265  0403  00D8               	movwf	flash_writeBlock@blockStartAddr^(0+128)
@@ -7435,13 +7435,13 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7271  0409  0852               	movf	(flash_writeBlock@flashAddr+1)^(0+128),w
   7272  040A  05D9               	andwf	(flash_writeBlock@blockStartAddr+1)^(0+128),f
   7273                           
-  7274                           ;drv_flash.c: 50: uint8_t state = INTCONbits.GIE;
+  7274                           ;drv_flash.c: 48: uint8_t state = INTCONbits.GIE;
   7275  040B  3000               	movlw	0
   7276  040C  1B8B               	btfsc	11,7	;volatile
   7277  040D  3001               	movlw	1
   7278  040E  00D7               	movwf	flash_writeBlock@state^(0+128)
   7279                           
-  7280                           ;drv_flash.c: 51: if (flashAddr != blockStartAddr) {
+  7280                           ;drv_flash.c: 49: if (flashAddr != blockStartAddr) {
   7281  040F  0859               	movf	(flash_writeBlock@blockStartAddr+1)^(0+128),w
   7282  0410  0652               	xorwf	(flash_writeBlock@flashAddr+1)^(0+128),w
   7283  0411  1D03               	skipz
@@ -7452,8 +7452,8 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7288  0415  1D03               	btfss	3,2
   7289  0416  0008               	return
   7290                           
-  7291                           ;drv_flash.c: 53: }
-  7292                           ;drv_flash.c: 55: flash_erase_block(flashAddr);
+  7291                           ;drv_flash.c: 51: }
+  7292                           ;drv_flash.c: 53: flash_erase_block(flashAddr);
   7293  0417  0852               	movf	(flash_writeBlock@flashAddr+1)^(0+128),w
   7294  0418  0140               	movlb	0	; select bank0
   7295  0419  00BB               	movwf	flash_erase_block@flashAddr+1
@@ -7463,25 +7463,25 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7299  041D  00BA               	movwf	flash_erase_block@flashAddr
   7300  041E  245B  3180         	fcall	_flash_erase_block
   7301                           
-  7302                           ;drv_flash.c: 57: NVMCON1bits.NVMREGS = 0;
+  7302                           ;drv_flash.c: 55: NVMCON1bits.NVMREGS = 0;
   7303  0420  0150               	movlb	16	; select bank16
   7304  0421  131E               	bcf	30,6	;volsfr
   7305                           
-  7306                           ;drv_flash.c: 58: NVMCON1bits.FREE = 0;
+  7306                           ;drv_flash.c: 56: NVMCON1bits.FREE = 0;
   7307  0422  121E               	bcf	30,4	;volsfr
   7308                           
-  7309                           ;drv_flash.c: 60: NVMCON1bits.LWLO = 1;
+  7309                           ;drv_flash.c: 58: NVMCON1bits.LWLO = 1;
   7310  0423  169E               	bsf	30,5	;volsfr
   7311                           
-  7312                           ;drv_flash.c: 61: NVMCON1bits.WREN = 1;
+  7312                           ;drv_flash.c: 59: NVMCON1bits.WREN = 1;
   7313  0424  151E               	bsf	30,2	;volsfr
   7314                           
-  7315                           ;drv_flash.c: 63: for (uint8_t i = 0; i < 32; i++) {
+  7315                           ;drv_flash.c: 61: for (uint8_t i = 0; i < 32; i++) {
   7316  0425  0141               	movlb	1	; select bank1
   7317  0426  01DA               	clrf	flash_writeBlock@i^(0+128)
   7318  0427                     l3455:	
   7319                           
-  7320                           ;drv_flash.c: 64: NVMADR = flashAddr;
+  7320                           ;drv_flash.c: 62: NVMADR = flashAddr;
   7321  0427  0852               	movf	(flash_writeBlock@flashAddr+1)^(0+128),w
   7322  0428  0150               	movlb	16	; select bank16
   7323  0429  009B               	movwf	27	;volatile
@@ -7490,7 +7490,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7326  042C  0150               	movlb	16	; select bank16
   7327  042D  009A               	movwf	26	;volatile
   7328                           
-  7329                           ;drv_flash.c: 65: NVMDATL = *(pbuf + i);
+  7329                           ;drv_flash.c: 63: NVMDATL = *(pbuf + i);
   7330  042E  0141               	movlb	1	; select bank1
   7331  042F  085A               	movf	flash_writeBlock@i^(0+128),w
   7332  0430  00D5               	movwf	??_flash_writeBlock^(0+128)
@@ -7504,41 +7504,41 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7340  0438  0150               	movlb	16	; select bank16
   7341  0439  009C               	movwf	28	;volatile
   7342                           
-  7343                           ;drv_flash.c: 66: if (i == (32 - 1)) {
+  7343                           ;drv_flash.c: 64: if (i == (32 - 1)) {
   7344  043A  301F               	movlw	31
   7345  043B  0141               	movlb	1	; select bank1
   7346  043C  065A               	xorwf	flash_writeBlock@i^(0+128),w
   7347  043D  1D03               	btfss	3,2
   7348  043E  2C41               	goto	l681
   7349                           
-  7350                           ;drv_flash.c: 68: NVMCON1bits.LWLO = 0;
+  7350                           ;drv_flash.c: 66: NVMCON1bits.LWLO = 0;
   7351  043F  0150               	movlb	16	; select bank16
   7352  0440  129E               	bcf	30,5	;volsfr
   7353  0441                     l681:	
   7354                           
-  7355                           ;drv_flash.c: 69: }
-  7356                           ;drv_flash.c: 71: INTCONbits.GIE = 0;
+  7355                           ;drv_flash.c: 67: }
+  7356                           ;drv_flash.c: 69: INTCONbits.GIE = 0;
   7357  0441  138B               	bcf	11,7	;volatile
   7358                           
-  7359                           ;drv_flash.c: 73: NVMCON2 = 0x55;
+  7359                           ;drv_flash.c: 71: NVMCON2 = 0x55;
   7360  0442  3055               	movlw	85
   7361  0443  0150               	movlb	16	; select bank16
   7362  0444  009F               	movwf	31	;volsfr
   7363                           
-  7364                           ;drv_flash.c: 74: NVMCON2 = 0xAA;
+  7364                           ;drv_flash.c: 72: NVMCON2 = 0xAA;
   7365  0445  30AA               	movlw	170
   7366  0446  009F               	movwf	31	;volsfr
   7367                           
-  7368                           ;drv_flash.c: 75: NVMCON1bits.WR = 1;
+  7368                           ;drv_flash.c: 73: NVMCON1bits.WR = 1;
   7369  0447  149E               	bsf	30,1	;volsfr
   7370                           
-  7371                           ;drv_flash.c: 76: __nop();
+  7371                           ;drv_flash.c: 74: __nop();
   7372  0448  0000               	nop
   7373                           
-  7374                           ;drv_flash.c: 77: __nop();
+  7374                           ;drv_flash.c: 75: __nop();
   7375  0449  0000               	nop
   7376                           
-  7377                           ;drv_flash.c: 78: INTCONbits.GIE = state;
+  7377                           ;drv_flash.c: 76: INTCONbits.GIE = state;
   7378  044A  0141               	movlb	1	; select bank1
   7379  044B  0C57               	rrf	flash_writeBlock@state^(0+128),w
   7380  044C  1C03               	skipc
@@ -7546,7 +7546,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7382  044E  1803               	skipnc
   7383  044F  178B               	bsf	11,7	;volatile
   7384                           
-  7385                           ;drv_flash.c: 79: flashAddr++;
+  7385                           ;drv_flash.c: 77: flashAddr++;
   7386  0450  0AD1               	incf	flash_writeBlock@flashAddr^(0+128),f
   7387  0451  1903               	skipnz
   7388  0452  0AD2               	incf	(flash_writeBlock@flashAddr+1)^(0+128),f
@@ -7556,19 +7556,19 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7392  0456  1C03               	skipc
   7393  0457  2C27               	goto	l3455
   7394                           
-  7395                           ;drv_flash.c: 80: }
-  7396                           ;drv_flash.c: 81: NVMCON1bits.WREN = 0;
+  7395                           ;drv_flash.c: 78: }
+  7396                           ;drv_flash.c: 79: NVMCON1bits.WREN = 0;
   7397  0458  0150               	movlb	16	; select bank16
   7398  0459  111E               	bcf	30,2	;volsfr
   7399                           
-  7400                           ;drv_flash.c: 83: return 0;
+  7400                           ;drv_flash.c: 81: return 0;
   7401                           ;	Return value of _flash_writeBlock is never used
   7402  045A  0008               	return
   7403  045B                     __end_of_flash_writeBlock:	
   7404  045B                     __ptext42:	
   7405 ;; *************** function _flash_erase_block *****************
   7406 ;; Defined at:
-  7407 ;;		line 6 in file "src/drv_flash.c"
+  7407 ;;		line 4 in file "src/drv_flash.c"
   7408 ;; Parameters:    Size  Location     Type
   7409 ;;  flashAddr       2   26[BANK0 ] unsigned int 
   7410 ;; Auto vars:     Size  Location     Type
@@ -7605,7 +7605,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7436                           ;psect for function _flash_erase_block
   7437  045B                     _flash_erase_block:	
   7438                           
-  7439                           ;drv_flash.c: 7: bool state = INTCONbits.GIE;
+  7439                           ;drv_flash.c: 5: bool state = INTCONbits.GIE;
   7440                           
   7441                           ;incstack = 0
   7442                           ; Regs used in _flash_erase_block: [wreg+status,2+status,0]
@@ -7615,7 +7615,7 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7446  045E  0141               	movlb	1	; select bank1
   7447  045F  00D0               	movwf	flash_erase_block@state^(0+128)
   7448                           
-  7449                           ;drv_flash.c: 9: NVMADR = flashAddr;
+  7449                           ;drv_flash.c: 7: NVMADR = flashAddr;
   7450  0460  0140               	movlb	0	; select bank0
   7451  0461  083B               	movf	flash_erase_block@flashAddr+1,w
   7452  0462  0150               	movlb	16	; select bank16
@@ -7625,40 +7625,40 @@ Microchip Technology Omniscient Code Generator v1.45 (PRO mode) build 2017111605
   7456  0466  0150               	movlb	16	; select bank16
   7457  0467  009A               	movwf	26	;volatile
   7458                           
-  7459                           ;drv_flash.c: 11: NVMCON1bits.NVMREGS = 0;
+  7459                           ;drv_flash.c: 9: NVMCON1bits.NVMREGS = 0;
   7460  0468  131E               	bcf	30,6	;volsfr
   7461                           
-  7462                           ;drv_flash.c: 13: NVMCON1bits.FREE = 1;
+  7462                           ;drv_flash.c: 11: NVMCON1bits.FREE = 1;
   7463  0469  161E               	bsf	30,4	;volsfr
   7464                           
-  7465                           ;drv_flash.c: 15: NVMCON1bits.WREN = 1;
+  7465                           ;drv_flash.c: 13: NVMCON1bits.WREN = 1;
   7466  046A  151E               	bsf	30,2	;volsfr
   7467                           
-  7468                           ;drv_flash.c: 17: INTCONbits.GIE = 0;
+  7468                           ;drv_flash.c: 15: INTCONbits.GIE = 0;
   7469  046B  138B               	bcf	11,7	;volatile
   7470                           
-  7471                           ;drv_flash.c: 19: NVMCON2 = 0x55;
+  7471                           ;drv_flash.c: 17: NVMCON2 = 0x55;
   7472  046C  3055               	movlw	85
   7473  046D  009F               	movwf	31	;volsfr
   7474                           
-  7475                           ;drv_flash.c: 20: NVMCON2 = 0xAA;
+  7475                           ;drv_flash.c: 18: NVMCON2 = 0xAA;
   7476  046E  30AA               	movlw	170
   7477  046F  009F               	movwf	31	;volsfr
   7478                           
-  7479                           ;drv_flash.c: 21: NVMCON1bits.WR = 1;
+  7479                           ;drv_flash.c: 19: NVMCON1bits.WR = 1;
   7480  0470  149E               	bsf	30,1	;volsfr
   7481                           
-  7482                           ;drv_flash.c: 22: __nop();
+  7482                           ;drv_flash.c: 20: __nop();
   7483  0471  0000               	nop
   7484                           
-  7485                           ;drv_flash.c: 23: __nop();
+  7485                           ;drv_flash.c: 21: __nop();
   7486  0472  0000               	nop
   7487                           
-  7488                           ;drv_flash.c: 25: NVMCON1bits.WREN = 0;
+  7488                           ;drv_flash.c: 23: NVMCON1bits.WREN = 0;
   7489  0473  0150               	movlb	16	; select bank16
   7490  0474  111E               	bcf	30,2	;volsfr
   7491                           
-  7492                           ;drv_flash.c: 27: INTCONbits.GIE = state;
+  7492                           ;drv_flash.c: 25: INTCONbits.GIE = state;
   7493  0475  0141               	movlb	1	; select bank1
   7494  0476  0C50               	rrf	flash_erase_block@state^(0+128),w
   7495  0477  2EFB               	ljmp	PL36	;call to abstracted procedure
@@ -13452,7 +13452,7 @@ SFR63                0      0       0      64        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Fri May 17 06:55:03 2019
+Symbol Table                                                                                   Fri May 17 08:45:24 2019
 
                      ?_rs485_write_start 0070                   ??i1_app_control_update 0070  
                       _app_protocol_init 0274                       _app_protocol_clear 0134  

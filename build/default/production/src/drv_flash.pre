@@ -11795,7 +11795,7 @@ extern void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len);
 extern uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf);
 extern void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte);
 
-# 6 "src/drv_flash.c"
+# 4 "src/drv_flash.c"
 void flash_erase_block(uint16_t flashAddr) {
 bool state = INTCONbits.GIE;
 

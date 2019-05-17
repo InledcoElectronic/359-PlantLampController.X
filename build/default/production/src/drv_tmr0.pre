@@ -11789,7 +11789,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 17 "src/../inc/drv_tmr0.h"
+# 23 "src/../inc/drv_tmr0.h"
 typedef void (*tmr0_interrupt_callback_t)();
 
 extern void tmr0_init();
@@ -11826,3 +11826,4 @@ tmr0_callback();
 void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback) {
 tmr0_callback = callback;
 }
+

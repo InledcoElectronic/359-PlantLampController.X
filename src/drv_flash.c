@@ -1,8 +1,6 @@
 #include "../inc/drv_common.h"
 #include "../inc/drv_flash.h"
 
-//擦除操作
-
 void flash_erase_block(uint16_t flashAddr) {
 	bool state = INTCONbits.GIE;
 	//选择地址

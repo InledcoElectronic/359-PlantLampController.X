@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   drv_flash.h
  * Author: niumiaomiao
  *
@@ -15,9 +15,9 @@ extern "C" {
 #define END_FLASH                       0x1FFF
 #define ERASE_FLASH_BLOCKSIZE           32
 #define WRITE_FLASH_BLOCKSIZE           32
-    
+
 #define HEF_START                       0x1F80
-    
+
     extern uint8_t flash_readByte(uint16_t flashAddr);
     extern void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len);
     extern uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf);

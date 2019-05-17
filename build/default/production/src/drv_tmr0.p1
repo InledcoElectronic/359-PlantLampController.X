@@ -8795,11 +8795,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;drv_tmr0.h: 17: typedef void (*tmr0_interrupt_callback_t)();
-[; ;drv_tmr0.h: 19: extern void tmr0_init();
-[; ;drv_tmr0.h: 20: extern void tmr0_start();
-[; ;drv_tmr0.h: 21: extern void tmr0_isr();
-[; ;drv_tmr0.h: 22: extern void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback);
+[; ;drv_tmr0.h: 23: typedef void (*tmr0_interrupt_callback_t)();
+[; ;drv_tmr0.h: 25: extern void tmr0_init();
+[; ;drv_tmr0.h: 26: extern void tmr0_start();
+[; ;drv_tmr0.h: 27: extern void tmr0_isr();
+[; ;drv_tmr0.h: 28: extern void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback);
 "3 src/drv_tmr0.c
 [v _tmr0_callback `*F9552 ~T0 @X0 1 e ]
 [; ;drv_tmr0.c: 3: tmr0_interrupt_callback_t tmr0_callback;

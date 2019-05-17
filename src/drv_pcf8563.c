@@ -3,11 +3,11 @@
 #include "../inc/drv_iic.h"
 
 static uint8_t hexToBcd(uint8_t hex) {
-    return ((hex/10)<<4) + hex%10; 
+    return ((hex/10)<<4) + hex%10;
 }
 
 static uint8_t bcdToHex(uint8_t bcd) {
-    return (bcd>>4)*10 + (bcd&0x0F); 
+    return (bcd>>4)*10 + (bcd&0x0F);
 }
 
 void pcf8563_init() {

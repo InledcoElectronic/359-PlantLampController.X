@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   drv_pcf8563.h
  * Author: niumiaomiao
  *
@@ -11,7 +11,7 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+
 #define RTC_ADDR                        0xA2
 //#define RTC_WRITE_ADDR                  0xA2                //写
 //#define RTC_READ_ADDR                   0xA3                //读
@@ -33,7 +33,7 @@ extern "C" {
 #define RTC_CLKOUT_ADDR                 0x0D
 #define RTC_TIMERC_ADDR                 0x0E
 #define RTC_TIMER_ADDR                  0x0F
-    
+
 /* 有效数据位 */
 #define MASK_SEC               0x7F
 #define MASK_MIN               0x7F
@@ -44,7 +44,7 @@ extern "C" {
 /*时钟完整性*/
 #define SEC_INTEGRITY_YES               0x00            //保证时钟完整性
 #define SEC_INTEGRITY_NO                0x80            //不保证时钟完整性
-    
+
     extern void pcf8563_init();
     extern void pcf8563_get_time(uint8_t *ptime);
     extern void pcf8563_set_time(uint8_t *ptime);

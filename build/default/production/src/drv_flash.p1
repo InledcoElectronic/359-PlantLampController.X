@@ -8790,160 +8790,160 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_flash.h: 22: extern void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len);
 [; ;drv_flash.h: 23: extern uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf);
 [; ;drv_flash.h: 24: extern void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte);
-"6 src/drv_flash.c
+"4 src/drv_flash.c
 [v _flash_erase_block `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;drv_flash.c: 6: void flash_erase_block(uint16_t flashAddr) {
+[; ;drv_flash.c: 4: void flash_erase_block(uint16_t flashAddr) {
 [e :U _flash_erase_block ]
 [v _flashAddr `ui ~T0 @X0 1 r1 ]
 [f ]
-"7
+"5
 [v _state `uc ~T0 @X0 1 a ]
-[; ;drv_flash.c: 7: bool state = INTCONbits.GIE;
+[; ;drv_flash.c: 5: bool state = INTCONbits.GIE;
 [e = _state . . _INTCONbits 0 3 ]
-[; ;drv_flash.c: 9: NVMADR = flashAddr;
-"9
+[; ;drv_flash.c: 7: NVMADR = flashAddr;
+"7
 [e = _NVMADR -> _flashAddr `us ]
-[; ;drv_flash.c: 11: NVMCON1bits.NVMREGS = 0;
-"11
+[; ;drv_flash.c: 9: NVMCON1bits.NVMREGS = 0;
+"9
 [e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 13: NVMCON1bits.FREE = 1;
-"13
+[; ;drv_flash.c: 11: NVMCON1bits.FREE = 1;
+"11
 [e = . . _NVMCON1bits 0 4 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 15: NVMCON1bits.WREN = 1;
-"15
+[; ;drv_flash.c: 13: NVMCON1bits.WREN = 1;
+"13
 [e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 17: INTCONbits.GIE = 0;
-"17
+[; ;drv_flash.c: 15: INTCONbits.GIE = 0;
+"15
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 19: NVMCON2 = 0x55;
-"19
+[; ;drv_flash.c: 17: NVMCON2 = 0x55;
+"17
 [e = _NVMCON2 -> -> 85 `i `uc ]
-[; ;drv_flash.c: 20: NVMCON2 = 0xAA;
-"20
+[; ;drv_flash.c: 18: NVMCON2 = 0xAA;
+"18
 [e = _NVMCON2 -> -> 170 `i `uc ]
-[; ;drv_flash.c: 21: NVMCON1bits.WR = 1;
-"21
+[; ;drv_flash.c: 19: NVMCON1bits.WR = 1;
+"19
 [e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 22: __nop();
-"22
+[; ;drv_flash.c: 20: __nop();
+"20
 [e ( ___nop ..  ]
-[; ;drv_flash.c: 23: __nop();
+[; ;drv_flash.c: 21: __nop();
+"21
+[e ( ___nop ..  ]
+[; ;drv_flash.c: 23: NVMCON1bits.WREN = 0;
 "23
-[e ( ___nop ..  ]
-[; ;drv_flash.c: 25: NVMCON1bits.WREN = 0;
-"25
 [e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 27: INTCONbits.GIE = state;
-"27
+[; ;drv_flash.c: 25: INTCONbits.GIE = state;
+"25
 [e = . . _INTCONbits 0 3 _state ]
-[; ;drv_flash.c: 28: }
-"28
+[; ;drv_flash.c: 26: }
+"26
 [e :UE 1026 ]
 }
-"31
+"29
 [v _flash_readByte `(uc ~T0 @X0 1 ef1`ui ]
 {
-[; ;drv_flash.c: 31: uint8_t flash_readByte(uint16_t flashAddr) {
+[; ;drv_flash.c: 29: uint8_t flash_readByte(uint16_t flashAddr) {
 [e :U _flash_readByte ]
 [v _flashAddr `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;drv_flash.c: 33: NVMADR = flashAddr;
-"33
+[; ;drv_flash.c: 31: NVMADR = flashAddr;
+"31
 [e = _NVMADR -> _flashAddr `us ]
-[; ;drv_flash.c: 35: NVMCON1bits.NVMREGS = 0;
-"35
+[; ;drv_flash.c: 33: NVMCON1bits.NVMREGS = 0;
+"33
 [e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 37: NVMCON1bits.RD = 1;
-"37
+[; ;drv_flash.c: 35: NVMCON1bits.RD = 1;
+"35
 [e = . . _NVMCON1bits 0 0 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 39: return NVMDATL;
-"39
+[; ;drv_flash.c: 37: return NVMDATL;
+"37
 [e ) _NVMDATL ]
 [e $UE 1027  ]
-[; ;drv_flash.c: 40: }
-"40
+[; ;drv_flash.c: 38: }
+"38
 [e :UE 1027 ]
 }
-"42
+"40
 [v _flash_readBuffer `(v ~T0 @X0 1 ef3`ui`*uc`uc ]
 {
-[; ;drv_flash.c: 42: void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len) {
+[; ;drv_flash.c: 40: void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len) {
 [e :U _flash_readBuffer ]
 [v _flashAddr `ui ~T0 @X0 1 r1 ]
 [v _pbuf `*uc ~T0 @X0 1 r2 ]
 [v _len `uc ~T0 @X0 1 r3 ]
 [f ]
-[; ;drv_flash.c: 43: for (uint8_t i = 0; i < len; i++) {
-"43
+[; ;drv_flash.c: 41: for (uint8_t i = 0; i < len; i++) {
+"41
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $U 1032  ]
 [e :U 1029 ]
 {
-[; ;drv_flash.c: 44: *(pbuf + i) = flash_readByte(flashAddr++);
-"44
+[; ;drv_flash.c: 42: *(pbuf + i) = flash_readByte(flashAddr++);
+"42
 [e = *U + _pbuf * -> _i `ux -> -> # *U _pbuf `ui `ux ( _flash_readByte (1 ++ _flashAddr -> -> 1 `i `ui ]
-"45
-}
 "43
+}
+"41
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 1032 ]
 [e $ < -> _i `i -> _len `i 1029  ]
 [e :U 1030 ]
-"45
+"43
 }
-[; ;drv_flash.c: 45: }
-[; ;drv_flash.c: 46: }
-"46
+[; ;drv_flash.c: 43: }
+[; ;drv_flash.c: 44: }
+"44
 [e :UE 1028 ]
 }
-"48
+"46
 [v _flash_writeBlock `(uc ~T0 @X0 1 ef2`ui`*uc ]
 {
-[; ;drv_flash.c: 48: uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf) {
+[; ;drv_flash.c: 46: uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf) {
 [e :U _flash_writeBlock ]
 [v _flashAddr `ui ~T0 @X0 1 r1 ]
 [v _pbuf `*uc ~T0 @X0 1 r2 ]
 [f ]
-"49
+"47
 [v _blockStartAddr `ui ~T0 @X0 1 a ]
-[; ;drv_flash.c: 49: uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)));
+[; ;drv_flash.c: 47: uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)));
 [e = _blockStartAddr & _flashAddr -> ^ -> 8191 `i - -> 32 `i -> 1 `i `ui ]
-"50
+"48
 [v _state `uc ~T0 @X0 1 a ]
-[; ;drv_flash.c: 50: uint8_t state = INTCONbits.GIE;
+[; ;drv_flash.c: 48: uint8_t state = INTCONbits.GIE;
 [e = _state . . _INTCONbits 0 3 ]
-[; ;drv_flash.c: 51: if (flashAddr != blockStartAddr) {
-"51
+[; ;drv_flash.c: 49: if (flashAddr != blockStartAddr) {
+"49
 [e $ ! != _flashAddr _blockStartAddr 1034  ]
 {
-[; ;drv_flash.c: 52: return -1;
-"52
+[; ;drv_flash.c: 50: return -1;
+"50
 [e ) -> -U -> 1 `i `uc ]
 [e $UE 1033  ]
-"53
+"51
 }
 [e :U 1034 ]
-[; ;drv_flash.c: 53: }
-[; ;drv_flash.c: 55: flash_erase_block(flashAddr);
-"55
+[; ;drv_flash.c: 51: }
+[; ;drv_flash.c: 53: flash_erase_block(flashAddr);
+"53
 [e ( _flash_erase_block (1 _flashAddr ]
-[; ;drv_flash.c: 57: NVMCON1bits.NVMREGS = 0;
-"57
+[; ;drv_flash.c: 55: NVMCON1bits.NVMREGS = 0;
+"55
 [e = . . _NVMCON1bits 0 6 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 58: NVMCON1bits.FREE = 0;
-"58
+[; ;drv_flash.c: 56: NVMCON1bits.FREE = 0;
+"56
 [e = . . _NVMCON1bits 0 4 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 60: NVMCON1bits.LWLO = 1;
-"60
+[; ;drv_flash.c: 58: NVMCON1bits.LWLO = 1;
+"58
 [e = . . _NVMCON1bits 0 5 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 61: NVMCON1bits.WREN = 1;
-"61
+[; ;drv_flash.c: 59: NVMCON1bits.WREN = 1;
+"59
 [e = . . _NVMCON1bits 0 2 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 63: for (uint8_t i = 0; i < 32; i++) {
-"63
+[; ;drv_flash.c: 61: for (uint8_t i = 0; i < 32; i++) {
+"61
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -8951,86 +8951,86 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1036  ]
 [e :U 1035 ]
 {
-[; ;drv_flash.c: 64: NVMADR = flashAddr;
-"64
+[; ;drv_flash.c: 62: NVMADR = flashAddr;
+"62
 [e = _NVMADR -> _flashAddr `us ]
-[; ;drv_flash.c: 65: NVMDATL = *(pbuf + i);
-"65
+[; ;drv_flash.c: 63: NVMDATL = *(pbuf + i);
+"63
 [e = _NVMDATL *U + _pbuf * -> _i `ux -> -> # *U _pbuf `ui `ux ]
-[; ;drv_flash.c: 66: if (i == (32 - 1)) {
-"66
+[; ;drv_flash.c: 64: if (i == (32 - 1)) {
+"64
 [e $ ! == -> _i `i - -> 32 `i -> 1 `i 1038  ]
 {
-[; ;drv_flash.c: 68: NVMCON1bits.LWLO = 0;
-"68
+[; ;drv_flash.c: 66: NVMCON1bits.LWLO = 0;
+"66
 [e = . . _NVMCON1bits 0 5 -> -> 0 `i `uc ]
-"69
+"67
 }
 [e :U 1038 ]
-[; ;drv_flash.c: 69: }
-[; ;drv_flash.c: 71: INTCONbits.GIE = 0;
-"71
+[; ;drv_flash.c: 67: }
+[; ;drv_flash.c: 69: INTCONbits.GIE = 0;
+"69
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 73: NVMCON2 = 0x55;
-"73
+[; ;drv_flash.c: 71: NVMCON2 = 0x55;
+"71
 [e = _NVMCON2 -> -> 85 `i `uc ]
-[; ;drv_flash.c: 74: NVMCON2 = 0xAA;
-"74
+[; ;drv_flash.c: 72: NVMCON2 = 0xAA;
+"72
 [e = _NVMCON2 -> -> 170 `i `uc ]
-[; ;drv_flash.c: 75: NVMCON1bits.WR = 1;
-"75
+[; ;drv_flash.c: 73: NVMCON1bits.WR = 1;
+"73
 [e = . . _NVMCON1bits 0 1 -> -> 1 `i `uc ]
-[; ;drv_flash.c: 76: __nop();
+[; ;drv_flash.c: 74: __nop();
+"74
+[e ( ___nop ..  ]
+[; ;drv_flash.c: 75: __nop();
+"75
+[e ( ___nop ..  ]
+[; ;drv_flash.c: 76: INTCONbits.GIE = state;
 "76
-[e ( ___nop ..  ]
-[; ;drv_flash.c: 77: __nop();
-"77
-[e ( ___nop ..  ]
-[; ;drv_flash.c: 78: INTCONbits.GIE = state;
-"78
 [e = . . _INTCONbits 0 3 _state ]
-[; ;drv_flash.c: 79: flashAddr++;
-"79
+[; ;drv_flash.c: 77: flashAddr++;
+"77
 [e ++ _flashAddr -> -> 1 `i `ui ]
-"80
+"78
 }
-"63
+"61
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 32 `i 1035  ]
 [e :U 1036 ]
-"80
+"78
 }
-[; ;drv_flash.c: 80: }
-[; ;drv_flash.c: 81: NVMCON1bits.WREN = 0;
-"81
+[; ;drv_flash.c: 78: }
+[; ;drv_flash.c: 79: NVMCON1bits.WREN = 0;
+"79
 [e = . . _NVMCON1bits 0 2 -> -> 0 `i `uc ]
-[; ;drv_flash.c: 83: return 0;
-"83
+[; ;drv_flash.c: 81: return 0;
+"81
 [e ) -> -> 0 `i `uc ]
 [e $UE 1033  ]
-[; ;drv_flash.c: 84: }
-"84
+[; ;drv_flash.c: 82: }
+"82
 [e :UE 1033 ]
 }
-"86
+"84
 [v _flash_write_byte `(v ~T0 @X0 1 ef3`ui`*uc`uc ]
 {
-[; ;drv_flash.c: 86: void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte) {
+[; ;drv_flash.c: 84: void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte) {
 [e :U _flash_write_byte ]
 [v _flashAddr `ui ~T0 @X0 1 r1 ]
 [v _rambuf `*uc ~T0 @X0 1 r2 ]
 [v _byte `uc ~T0 @X0 1 r3 ]
 [f ]
-"87
+"85
 [v _blockStartAddr `ui ~T0 @X0 1 a ]
-[; ;drv_flash.c: 87: uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)));
+[; ;drv_flash.c: 85: uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)));
 [e = _blockStartAddr & _flashAddr -> ^ -> 8191 `i - -> 32 `i -> 1 `i `ui ]
-"88
+"86
 [v _offset `uc ~T0 @X0 1 a ]
-[; ;drv_flash.c: 88: uint8_t offset = (uint16_t) (flashAddr & (32 - 1));
+[; ;drv_flash.c: 86: uint8_t offset = (uint16_t) (flashAddr & (32 - 1));
 [e = _offset -> & _flashAddr -> - -> 32 `i -> 1 `i `ui `uc ]
-[; ;drv_flash.c: 90: for (uint8_t i = 0; i < 32; i++) {
-"90
+[; ;drv_flash.c: 88: for (uint8_t i = 0; i < 32; i++) {
+"88
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -9038,25 +9038,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1041  ]
 [e :U 1040 ]
 {
-[; ;drv_flash.c: 91: rambuf[i] = flash_readByte(blockStartAddr++);
-"91
+[; ;drv_flash.c: 89: rambuf[i] = flash_readByte(blockStartAddr++);
+"89
 [e = *U + _rambuf * -> _i `ux -> -> # *U _rambuf `ui `ux ( _flash_readByte (1 ++ _blockStartAddr -> -> 1 `i `ui ]
-"92
-}
 "90
+}
+"88
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 32 `i 1040  ]
 [e :U 1041 ]
-"92
+"90
 }
-[; ;drv_flash.c: 92: }
-[; ;drv_flash.c: 93: rambuf[offset] = byte;
-"93
+[; ;drv_flash.c: 90: }
+[; ;drv_flash.c: 91: rambuf[offset] = byte;
+"91
 [e = *U + _rambuf * -> _offset `ux -> -> # *U _rambuf `ui `ux _byte ]
-[; ;drv_flash.c: 94: flash_writeBlock(blockStartAddr, rambuf);
-"94
+[; ;drv_flash.c: 92: flash_writeBlock(blockStartAddr, rambuf);
+"92
 [e ( _flash_writeBlock (2 , _blockStartAddr _rambuf ]
-[; ;drv_flash.c: 95: }
-"95
+[; ;drv_flash.c: 93: }
+"93
 [e :UE 1039 ]
 }

@@ -5,7 +5,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _app_control_ramp `(v ~T0 @X0 0 ef ]
 "36 src/../inc/app_protocol.h
 [v _app_protocol_receive `(v ~T0 @X0 0 ef1`uc ]
-"20 src/../inc/drv_tmr0.h
+"26 src/../inc/drv_tmr0.h
 [v _tmr0_start `(v ~T0 @X0 0 ef ]
 "512 /opt/microchip/xc8/v1.45/include/pic16f15375.h
 [s S30 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -51,7 +51,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _tmr2_init `(v ~T0 @X0 0 ef5`E9572`E9589`E9599`E9617`E9640 ]
 "106
 [v _tmr2_start `(v ~T0 @X0 0 ef ]
-"19 src/../inc/drv_tmr0.h
+"25 src/../inc/drv_tmr0.h
 [v _tmr0_init `(v ~T0 @X0 0 ef ]
 "16 src/../inc/drv_eusart.h
 [v _eusart_init `(v ~T0 @X0 0 ef ]
@@ -81,7 +81,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "110 src/../inc/drv_tmr2.h
 [v _tmr2_setInterruptHandler `(v ~T0 @X0 0 ef1`*F9657 ]
 [v F9566 `(v ~T0 @X0 0 tf ]
-"22 src/../inc/drv_tmr0.h
+"28 src/../inc/drv_tmr0.h
 [v _tmr0_set_interrupt_callback `(v ~T0 @X0 0 ef1`*F9566 ]
 [v F9717 `(v ~T0 @X0 0 tf3`uc`uc`*uc ]
 "39 src/../inc/app_protocol.h
@@ -134,7 +134,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S427 . . ]
 "9307
 [v _PIR0bits `VS427 ~T0 @X0 0 e@1804 ]
-"21 src/../inc/drv_tmr0.h
+"27 src/../inc/drv_tmr0.h
 [v _tmr0_isr `(v ~T0 @X0 0 ef ]
 "9773 /opt/microchip/xc8/v1.45/include/pic16f15375.h
 [s S453 :1 `uc 1 :1 `uc 1 ]
@@ -8928,11 +8928,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_pwm.h: 20: extern void pwm3_load_duty(uint16_t duty);
 [; ;drv_pwm.h: 21: extern void pwm4_init();
 [; ;drv_pwm.h: 22: extern void pwm4_load_duty(uint16_t duty);
-[; ;drv_tmr0.h: 17: typedef void (*tmr0_interrupt_callback_t)();
-[; ;drv_tmr0.h: 19: extern void tmr0_init();
-[; ;drv_tmr0.h: 20: extern void tmr0_start();
-[; ;drv_tmr0.h: 21: extern void tmr0_isr();
-[; ;drv_tmr0.h: 22: extern void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback);
+[; ;drv_tmr0.h: 23: typedef void (*tmr0_interrupt_callback_t)();
+[; ;drv_tmr0.h: 25: extern void tmr0_init();
+[; ;drv_tmr0.h: 26: extern void tmr0_start();
+[; ;drv_tmr0.h: 27: extern void tmr0_isr();
+[; ;drv_tmr0.h: 28: extern void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback);
 [; ;drv_tmr2.h: 15: typedef enum tmr2_clk_cs {
 [; ;drv_tmr2.h: 16: TMR2_CLK_T2CKIPPS = 0,
 [; ;drv_tmr2.h: 17: TMR2_CLK_FOSC_4,

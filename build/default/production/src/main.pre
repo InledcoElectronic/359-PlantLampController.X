@@ -11805,7 +11805,7 @@ extern void pwm3_load_duty(uint16_t duty);
 extern void pwm4_init();
 extern void pwm4_load_duty(uint16_t duty);
 
-# 17 "src/../inc/drv_tmr0.h"
+# 23 "src/../inc/drv_tmr0.h"
 typedef void (*tmr0_interrupt_callback_t)();
 
 extern void tmr0_init();

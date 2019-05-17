@@ -234,13 +234,13 @@ TMR2_RSEL_LC4_OUT 13
 [v _eusart_setReceiveHandler eusart_setReceiveHandler `(v  1 e 1 0 ]
 "82
 [v _eusart_receive_isr eusart_receive_isr `(v  1 e 1 0 ]
-"6 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c
+"4 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c
 [v _flash_erase_block flash_erase_block `(v  1 e 1 0 ]
-"31
+"29
 [v _flash_readByte flash_readByte `(uc  1 e 1 0 ]
-"42
+"40
 [v _flash_readBuffer flash_readBuffer `(v  1 e 1 0 ]
-"48
+"46
 [v _flash_writeBlock flash_writeBlock `(uc  1 e 1 0 ]
 "4 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_gpio.c
 [v _gpio_init gpio_init `(v  1 e 1 0 ]
@@ -1340,28 +1340,28 @@ TMR2_RSEL_LC4_OUT 13
 [v app_control_save@pdata pdata `*.39uc  1 a 2 11 ]
 "49
 } 0
-"48 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c
+"46 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c
 [v _flash_writeBlock flash_writeBlock `(uc  1 e 1 0 ]
 {
-"63
+"61
 [v flash_writeBlock@i i `uc  1 a 1 10 ]
-"49
+"47
 [v flash_writeBlock@blockStartAddr blockStartAddr `ui  1 a 2 8 ]
-"50
-[v flash_writeBlock@state state `uc  1 a 1 7 ]
 "48
+[v flash_writeBlock@state state `uc  1 a 1 7 ]
+"46
 [v flash_writeBlock@flashAddr flashAddr `ui  1 p 2 1 ]
 [v flash_writeBlock@pbuf pbuf `*.39uc  1 p 2 3 ]
-"84
+"82
 } 0
-"6
+"4
 [v _flash_erase_block flash_erase_block `(v  1 e 1 0 ]
 {
-"7
+"5
 [v flash_erase_block@state state `uc  1 a 1 0 ]
-"6
+"4
 [v flash_erase_block@flashAddr flashAddr `ui  1 p 2 26 ]
-"28
+"26
 } 0
 "182 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/app_protocol.c
 [v _app_protocol_clear app_protocol_clear `(v  1 e 1 0 ]
@@ -1378,22 +1378,22 @@ TMR2_RSEL_LC4_OUT 13
 [v app_control_init@j j `uc  1 a 1 23 ]
 "41
 } 0
-"42 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c
+"40 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c
 [v _flash_readBuffer flash_readBuffer `(v  1 e 1 0 ]
 {
-"43
+"41
 [v flash_readBuffer@i i `uc  1 a 1 10 ]
-"42
+"40
 [v flash_readBuffer@flashAddr flashAddr `ui  1 p 2 0 ]
 [v flash_readBuffer@pbuf pbuf `*.39uc  1 p 2 2 ]
 [v flash_readBuffer@len len `uc  1 p 1 4 ]
-"46
+"44
 } 0
-"31
+"29
 [v _flash_readByte flash_readByte `(uc  1 e 1 0 ]
 {
 [v flash_readByte@flashAddr flashAddr `ui  1 p 2 26 ]
-"40
+"38
 } 0
 "51 /home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/app_control.c
 [v _app_control_update app_control_update `(v  1 s 1 app_control_update ]

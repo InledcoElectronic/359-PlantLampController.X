@@ -124,7 +124,7 @@ void main(void) {
     //初始化定时器
     tmr2_init(TMR2_CLK_FOSC_4,TMR2_CKPS_16,TMR2_OUTPS_1,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
     tmr2_start();
-	
+
 	tmr0_init();
     //串口初始化
     eusart_init();
@@ -132,21 +132,21 @@ void main(void) {
     iic_init();
     //初始化pcf8563
     pcf8563_init();
-	
+
 	app_protocol_init(getGroup(), getAddress(), &mRegister, sizeof(mRegister));
 	app_control_init();
-	
+
 	eusart_setReceiveHandler(eusart_handler);
 	tmr2_setInterruptHandler(tmr2_handler);
 	tmr0_set_interrupt_callback(tmr0_handler);
 	app_protocol_set_write_data_cb(app_control_param_changed_cb);
-    
+
     GlobalInterruptEnable();
     PeripheralInterruptEnable();
- 
+
     while(1) {
-        CLRWDT();     
-                                  
+        CLRWDT();
+
         if (frameReceived) {
 			frameReceived = false;
 			app_protocol_decode();
