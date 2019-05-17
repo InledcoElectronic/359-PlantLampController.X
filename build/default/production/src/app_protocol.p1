@@ -1,82 +1,39 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"730 /opt/microchip/xc8/v1.45/include/pic16f15375.h
-[v _TRISA `Vuc ~T0 @X0 0 e@18 ]
-"20256
-[v _ANSELA `Vuc ~T0 @X0 0 e@7992 ]
-"20318
-[v _WPUA `Vuc ~T0 @X0 0 e@7993 ]
-"20380
-[v _ODCONA `Vuc ~T0 @X0 0 e@7994 ]
-"20442
-[v _SLRCONA `Vuc ~T0 @X0 0 e@7995 ]
-"20504
-[v _INLVLA `Vuc ~T0 @X0 0 e@7996 ]
-"1078
-[v _LATB `Vuc ~T0 @X0 0 e@25 ]
-"792
-[v _TRISB `Vuc ~T0 @X0 0 e@19 ]
-"20752
-[v _ANSELB `Vuc ~T0 @X0 0 e@8003 ]
-"20814
-[v _WPUB `Vuc ~T0 @X0 0 e@8004 ]
-"20876
-[v _ODCONB `Vuc ~T0 @X0 0 e@8005 ]
-"20938
-[v _SLRCONB `Vuc ~T0 @X0 0 e@8006 ]
-"21000
-[v _INLVLB `Vuc ~T0 @X0 0 e@8007 ]
-"21248
-[v _ANSELC `Vuc ~T0 @X0 0 e@8014 ]
-"1140
-[v _LATC `Vuc ~T0 @X0 0 e@26 ]
-"854
-[v _TRISC `Vuc ~T0 @X0 0 e@20 ]
-"21310
-[v _WPUC `Vuc ~T0 @X0 0 e@8015 ]
-"21372
-[v _ODCONC `Vuc ~T0 @X0 0 e@8016 ]
-"21434
-[v _SLRCONC `Vuc ~T0 @X0 0 e@8017 ]
-"21496
-[v _INLVLC `Vuc ~T0 @X0 0 e@8018 ]
-"417
-[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . INTEDG . PEIE GIE ]
-"416
-[u S25 `S26 1 ]
-[n S25 . . ]
-"424
-[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"17362
-[v _PPSLOCK `Vuc ~T0 @X0 0 e@7823 ]
-"17368
-[s S783 :1 `uc 1 ]
-[n S783 . PPSLOCKED ]
-"17367
-[u S782 `S783 1 ]
-[n S782 . . ]
-"17372
-[v _PPSLOCKbits `VS782 ~T0 @X0 0 e@7823 ]
-"19068
-[v _RB0PPS `Vuc ~T0 @X0 0 e@7960 ]
-"19112
-[v _RB1PPS `Vuc ~T0 @X0 0 e@7961 ]
-"19156
-[v _RB2PPS `Vuc ~T0 @X0 0 e@7962 ]
-"19200
-[v _RB3PPS `Vuc ~T0 @X0 0 e@7963 ]
-"19684
-[v _RC6PPS `Vuc ~T0 @X0 0 e@7974 ]
-"18484
-[v _RX1DTPPS `Vuc ~T0 @X0 0 e@7883 ]
-"18136
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
-"19464
-[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
-"19508
-[v _RC2PPS `Vuc ~T0 @X0 0 e@7970 ]
-"18194
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
+"4 src/app_protocol.c
+[s S1029 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1029 . poly init xorout refin refout ]
+[v F9566 `(v ~T0 @X0 0 tf3`uc`uc`*uc ]
+"20 src/../inc/app_protocol.h
+[s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc -> 112 `i ]
+[n S1028 . group address command regAddress regCount data ]
+"19
+[u S1027 `S1028 1 `uc -> 120 `i ]
+[n S1027 . . array ]
+"17
+[s S1026 `uc 1 `S1027 1 ]
+[n S1026 . index . ]
+"1146 /opt/microchip/xc8/v1.45/include/pic16f15375.h
+[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S52 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"1145
+[u S51 `S52 1 ]
+[n S51 . . ]
+"1157
+[v _LATCbits `VS51 ~T0 @X0 0 e@26 ]
+[v F9334 `(v ~T0 @X0 1 tf1`ul ]
+"153 /opt/microchip/xc8/v1.45/include/pic.h
+[v __delay `JF9334 ~T0 @X0 0 e ]
+[p i __delay ]
+"2127 /opt/microchip/xc8/v1.45/include/pic16f15375.h
+[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S107 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"2126
+[u S106 `S107 1 ]
+[n S106 . . ]
+"2138
+[v _TXSTA1bits `VS106 ~T0 @X0 0 e@286 ]
+"18 src/../inc/drv_eusart.h
+[v _eusart_write_buffer `(v ~T0 @X0 0 ef2`*uc`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -8839,132 +8796,722 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;drv_gpio.h: 15: extern void gpio_init();
-"4 src/drv_gpio.c
-[v _gpio_init `(v ~T0 @X0 1 ef ]
-{
-[; ;drv_gpio.c: 4: void gpio_init() {
-[e :U _gpio_init ]
-[f ]
-[; ;drv_gpio.c: 6: TRISA = 0x3F;
-"6
-[e = _TRISA -> -> 63 `i `uc ]
-[; ;drv_gpio.c: 7: ANSELA = 0x00;
-"7
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 8: WPUA = 0x00;
-"8
-[e = _WPUA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 9: ODCONA = 0x00;
-"9
-[e = _ODCONA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 10: SLRCONA = 0xFF;
-"10
-[e = _SLRCONA -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 11: INLVLA = 0x00;
-"11
-[e = _INLVLA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 13: LATB = 0x0F;
-"13
-[e = _LATB -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 14: TRISB = 0x30;
-"14
-[e = _TRISB -> -> 48 `i `uc ]
-[; ;drv_gpio.c: 15: ANSELB = 0x00;
-"15
-[e = _ANSELB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 16: WPUB = 0x00;
-"16
-[e = _WPUB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 17: ODCONB = 0x00;
-"17
-[e = _ODCONB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 18: SLRCONB = 0xFF;
-"18
-[e = _SLRCONB -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 19: INLVLB = 0x00;
+[; ;app_protocol.h: 17: typedef struct {
+[; ;app_protocol.h: 18: uint8_t index;
+[; ;app_protocol.h: 19: union {
+[; ;app_protocol.h: 20: struct {
+[; ;app_protocol.h: 21: uint8_t group;
+[; ;app_protocol.h: 22: uint8_t address;
+[; ;app_protocol.h: 23: uint8_t command;
+[; ;app_protocol.h: 24: uint8_t regAddress;
+[; ;app_protocol.h: 25: uint8_t regCount;
+[; ;app_protocol.h: 26: uint8_t data[112];
+[; ;app_protocol.h: 27: };
+[; ;app_protocol.h: 28: uint8_t array[120];
+[; ;app_protocol.h: 29: };
+[; ;app_protocol.h: 30: } frame_t;
+[; ;app_protocol.h: 33: typedef void (*app_protocol_write_data_cb_t)(uint8_t start, uint8_t cnt, uint8_t *pdata);
+[; ;app_protocol.h: 35: extern void app_protocol_init(uint8_t group, uint8_t address, uint8_t *reg, uint8_t regCount);
+[; ;app_protocol.h: 36: extern void app_protocol_receive(uint8_t rcv);
+[; ;app_protocol.h: 37: extern void app_protocol_decode();
+[; ;app_protocol.h: 38: extern void app_protocol_clear();
+[; ;app_protocol.h: 39: extern void app_protocol_set_write_data_cb(app_protocol_write_data_cb_t callback);
+[; ;drv_eusart.h: 15: typedef void (*eusart_rcv_handler_t)(uint8_t rcv);
+[; ;drv_eusart.h: 16: extern void eusart_init();
+[; ;drv_eusart.h: 17: extern uint8_t eusart_write(uint8_t byte);
+[; ;drv_eusart.h: 18: extern void eusart_write_buffer(uint8_t *pdata, uint8_t len);
+[; ;drv_eusart.h: 19: extern void eusart_transmit_isr();
+[; ;drv_eusart.h: 20: extern void eusart_setReceiveHandler(eusart_rcv_handler_t handler);
+[; ;drv_eusart.h: 21: extern void eusart_receive_isr();
+[; ;app_protocol.c: 4: typedef struct {
+[; ;app_protocol.c: 5: uint8_t poly;
+[; ;app_protocol.c: 6: uint8_t init;
+[; ;app_protocol.c: 7: uint8_t xorout;
+[; ;app_protocol.c: 8: bool refin;
+[; ;app_protocol.c: 9: bool refout;
+[; ;app_protocol.c: 10: } crc8_type_t;
+"18 src/app_protocol.c
+[v _crc8_maxim `CS1029 ~T0 @X0 1 e ]
+[i _crc8_maxim
+:U ..
+:U ..
 "19
-[e = _INLVLB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 21: ANSELC = 0x00;
+-> -> 49 `i `uc
+"20
+-> -> 0 `i `uc
 "21
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 22: LATC = 0x40;
+-> -> 0 `i `uc
 "22
-[e = _LATC -> -> 64 `i `uc ]
-[; ;drv_gpio.c: 23: TRISC = 0x86;
-"23
-[e = _TRISC -> -> 134 `i `uc ]
-[; ;drv_gpio.c: 24: WPUC = 0x00;
+-> -> 1 `i `uc
 "24
-[e = _WPUC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 25: ODCONC = 0x00;
-"25
-[e = _ODCONC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 26: SLRCONC = 0xFF;
+-> -> 1 `i `uc
+..
+..
+]
+[; ;app_protocol.c: 18: const crc8_type_t crc8_maxim = {
+[; ;app_protocol.c: 19: 0x31,
+[; ;app_protocol.c: 20: 0x00,
+[; ;app_protocol.c: 21: 0x00,
+[; ;app_protocol.c: 22: 1,
+[; ;app_protocol.c: 23: 1
+[; ;app_protocol.c: 24: };
 "26
-[e = _SLRCONC -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 27: INLVLC = 0x00;
+[v _mGroup `uc ~T0 @X0 1 s ]
+[; ;app_protocol.c: 26: static uint8_t mGroup;
 "27
-[e = _INLVLC -> -> 0 `i `uc ]
+[v _mAddress `uc ~T0 @X0 1 s ]
+[; ;app_protocol.c: 27: static uint8_t mAddress;
+"28
+[v _pRegister `*uc ~T0 @X0 1 s ]
+[; ;app_protocol.c: 28: static uint8_t *pRegister;
+"29
+[v _mRegCount `uc ~T0 @X0 1 s ]
+[; ;app_protocol.c: 29: static uint8_t mRegCount;
 "30
-[v _state `uc ~T0 @X0 1 a ]
-[; ;drv_gpio.c: 30: bool state = INTCONbits.GIE;
-[e = _state . . _INTCONbits 0 3 ]
-[; ;drv_gpio.c: 32: (INTCONbits.GIE = 0);
+[v _write_data_cb `*F9566 ~T0 @X0 1 s ]
+[; ;app_protocol.c: 30: static app_protocol_write_data_cb_t write_data_cb;
 "32
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 34: PPSLOCK = 0x55;
+[v _mFrame `S1026 ~T0 @X0 1 e ]
+[; ;app_protocol.c: 32: frame_t mFrame;
 "34
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 35: PPSLOCK = 0xAA;
+[v _app_protocol_init `(v ~T0 @X0 1 ef4`uc`uc`*uc`uc ]
+{
+[; ;app_protocol.c: 34: void app_protocol_init(uint8_t group, uint8_t address, uint8_t *reg, uint8_t regCount) {
+[e :U _app_protocol_init ]
+[v _group `uc ~T0 @X0 1 r1 ]
+[v _address `uc ~T0 @X0 1 r2 ]
+[v _reg `*uc ~T0 @X0 1 r3 ]
+[v _regCount `uc ~T0 @X0 1 r4 ]
+[f ]
+[; ;app_protocol.c: 35: if (group != 0 && address != 0 && reg != (0) && regCount <= 112) {
 "35
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 36: PPSLOCKbits.PPSLOCKED = 0;
+[e $ ! && && && != -> _group `i -> 0 `i != -> _address `i -> 0 `i != _reg -> -> 0 `i `*uc <= -> _regCount `i -> 112 `i 1031  ]
+{
+[; ;app_protocol.c: 36: mGroup = group;
 "36
-[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 37: RB0PPS = 0x09;
+[e = _mGroup _group ]
+[; ;app_protocol.c: 37: mAddress = address;
 "37
-[e = _RB0PPS -> -> 9 `i `uc ]
-[; ;drv_gpio.c: 38: RB1PPS = 0x0A;
+[e = _mAddress _address ]
+[; ;app_protocol.c: 38: pRegister = reg;
 "38
-[e = _RB1PPS -> -> 10 `i `uc ]
-[; ;drv_gpio.c: 39: RB2PPS = 0x0B;
+[e = _pRegister _reg ]
+[; ;app_protocol.c: 39: mRegCount = regCount;
 "39
-[e = _RB2PPS -> -> 11 `i `uc ]
-[; ;drv_gpio.c: 40: RB3PPS = 0x0C;
+[e = _mRegCount _regCount ]
 "40
-[e = _RB3PPS -> -> 12 `i `uc ]
-[; ;drv_gpio.c: 41: RC6PPS = 0x0F;
+}
+[e :U 1031 ]
+[; ;app_protocol.c: 40: }
+[; ;app_protocol.c: 41: }
 "41
-[e = _RC6PPS -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 42: RX1DTPPS = 0x17;
-"42
-[e = _RX1DTPPS -> -> 23 `i `uc ]
-[; ;drv_gpio.c: 43: SSP1CLKPPS = 0x12;
+[e :UE 1030 ]
+}
 "43
-[e = _SSP1CLKPPS -> -> 18 `i `uc ]
-[; ;drv_gpio.c: 44: RC1PPS = 0x16;
+[v _rs485_write_start `(v ~T0 @X0 1 sf ]
+{
+[; ;app_protocol.c: 43: static void rs485_write_start() {
+[e :U _rs485_write_start ]
+[f ]
+[; ;app_protocol.c: 44: LATCbits.LATC5 = 1;
 "44
-[e = _RC1PPS -> -> 22 `i `uc ]
-[; ;drv_gpio.c: 45: RC2PPS = 0x15;
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;app_protocol.c: 45: _delay((unsigned long)((100)*(16000000/4000000.0)));
 "45
-[e = _RC2PPS -> -> 21 `i `uc ]
-[; ;drv_gpio.c: 46: SSP1DATPPS = 0x11;
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;app_protocol.c: 46: }
 "46
-[e = _SSP1DATPPS -> -> 17 `i `uc ]
-[; ;drv_gpio.c: 48: PPSLOCK = 0x55;
+[e :UE 1032 ]
+}
 "48
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 49: PPSLOCK = 0xAA;
+[v _rs485_write_stop `(v ~T0 @X0 1 sf ]
+{
+[; ;app_protocol.c: 48: static void rs485_write_stop() {
+[e :U _rs485_write_stop ]
+[f ]
+[; ;app_protocol.c: 49: while (!TXSTA1bits.TRMT);
 "49
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 50: PPSLOCKbits.PPSLOCKED = 1;
+[e $U 1034  ]
+[e :U 1035 ]
+[e :U 1034 ]
+[e $ ! != -> . . _TXSTA1bits 0 1 `i -> -> -> 0 `i `Vuc `i 1035  ]
+[e :U 1036 ]
+[; ;app_protocol.c: 50: _delay((unsigned long)((100)*(16000000/4000000.0)));
 "50
-[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
-[; ;drv_gpio.c: 51: INTCONbits.GIE = state;
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;app_protocol.c: 51: LATCbits.LATC5 = 0;
 "51
-[e = . . _INTCONbits 0 3 _state ]
-[; ;drv_gpio.c: 52: }
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;app_protocol.c: 52: }
 "52
-[e :UE 1026 ]
+[e :UE 1033 ]
+}
+"54
+[v _reflect `(uc ~T0 @X0 1 sf1`uc ]
+{
+[; ;app_protocol.c: 54: static uint8_t reflect(uint8_t data) {
+[e :U _reflect ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"55
+[v _result `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 55: uint8_t result = 0;
+[e = _result -> -> 0 `i `uc ]
+[; ;app_protocol.c: 56: for (uint8_t i = 0; i < 8; i++) {
+"56
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1038  ]
+[e $U 1039  ]
+[e :U 1038 ]
+{
+[; ;app_protocol.c: 57: result <<= 1;
+"57
+[e =<< _result -> 1 `i ]
+[; ;app_protocol.c: 58: if (data & (1 << i)) {
+"58
+[e $ ! != & -> _data `i << -> 1 `i _i -> 0 `i 1041  ]
+{
+[; ;app_protocol.c: 59: result |= 0x01;
+"59
+[e =| _result -> -> 1 `i `uc ]
+"60
+}
+[e :U 1041 ]
+"61
+}
+"56
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1038  ]
+[e :U 1039 ]
+"61
+}
+[; ;app_protocol.c: 60: }
+[; ;app_protocol.c: 61: }
+[; ;app_protocol.c: 62: return result;
+"62
+[e ) _result ]
+[e $UE 1037  ]
+[; ;app_protocol.c: 63: }
+"63
+[e :UE 1037 ]
+}
+"65
+[v _getChecksum `(uc ~T0 @X0 1 sf3`*S1029`*uc`uc ]
+{
+[; ;app_protocol.c: 65: static uint8_t getChecksum(crc8_type_t *type, uint8_t *pdata, uint8_t len) {
+[e :U _getChecksum ]
+[v _type `*S1029 ~T0 @X0 1 r1 ]
+[v _pdata `*uc ~T0 @X0 1 r2 ]
+[v _len `uc ~T0 @X0 1 r3 ]
+[f ]
+"66
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+"67
+[v _crc `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 66: uint8_t i, j;
+[; ;app_protocol.c: 67: uint8_t crc = type->init;
+[e = _crc . *U _type 1 ]
+"68
+[v _poly `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 68: uint8_t poly = 0;
+[e = _poly -> -> 0 `i `uc ]
+[; ;app_protocol.c: 69: if (type->refin) {
+"69
+[e $ ! != -> . *U _type 3 `i -> -> -> 0 `i `uc `i 1043  ]
+{
+[; ;app_protocol.c: 70: poly = reflect(type->poly);
+"70
+[e = _poly ( _reflect (1 . *U _type 0 ]
+[; ;app_protocol.c: 71: for (i = 0; i < len; i++) {
+"71
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 1047  ]
+[e :U 1044 ]
+{
+[; ;app_protocol.c: 72: crc ^= pdata[i];
+"72
+[e =^ _crc *U + _pdata * -> _i `ux -> -> # *U _pdata `ui `ux ]
+[; ;app_protocol.c: 73: for (j = 0; j < 8; j++) {
+"73
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 8 `i 1048  ]
+[e $U 1049  ]
+[e :U 1048 ]
+{
+[; ;app_protocol.c: 74: if (crc & 0x01) {
+"74
+[e $ ! != & -> _crc `i -> 1 `i -> 0 `i 1051  ]
+{
+[; ;app_protocol.c: 75: crc = (crc >> 1) ^ poly;
+"75
+[e = _crc -> ^ >> -> _crc `i -> 1 `i -> _poly `i `uc ]
+"76
+}
+[; ;app_protocol.c: 76: } else {
+[e $U 1052  ]
+[e :U 1051 ]
+{
+[; ;app_protocol.c: 77: crc >>= 1;
+"77
+[e =>> _crc -> 1 `i ]
+"78
+}
+[e :U 1052 ]
+"79
+}
+"73
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 8 `i 1048  ]
+[e :U 1049 ]
+"79
+}
+"80
+}
+"71
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1047 ]
+[e $ < -> _i `i -> _len `i 1044  ]
+[e :U 1045 ]
+"80
+}
+"81
+}
+[; ;app_protocol.c: 78: }
+[; ;app_protocol.c: 79: }
+[; ;app_protocol.c: 80: }
+[; ;app_protocol.c: 81: } else {
+[e $U 1053  ]
+[e :U 1043 ]
+{
+[; ;app_protocol.c: 82: poly = type->poly;
+"82
+[e = _poly . *U _type 0 ]
+[; ;app_protocol.c: 83: for (i = 0; i < len; i++) {
+"83
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 1057  ]
+[e :U 1054 ]
+{
+[; ;app_protocol.c: 84: crc ^= pdata[i];
+"84
+[e =^ _crc *U + _pdata * -> _i `ux -> -> # *U _pdata `ui `ux ]
+[; ;app_protocol.c: 85: for (j = 0; j < 8; j++) {
+"85
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 8 `i 1058  ]
+[e $U 1059  ]
+[e :U 1058 ]
+{
+[; ;app_protocol.c: 86: if (crc & 0x80) {
+"86
+[e $ ! != & -> _crc `i -> 128 `i -> 0 `i 1061  ]
+{
+[; ;app_protocol.c: 87: crc = (crc << 1) ^ poly;
+"87
+[e = _crc -> ^ << -> _crc `i -> 1 `i -> _poly `i `uc ]
+"88
+}
+[; ;app_protocol.c: 88: } else {
+[e $U 1062  ]
+[e :U 1061 ]
+{
+[; ;app_protocol.c: 89: crc <<= 1;
+"89
+[e =<< _crc -> 1 `i ]
+"90
+}
+[e :U 1062 ]
+"91
+}
+"85
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 8 `i 1058  ]
+[e :U 1059 ]
+"91
+}
+"92
+}
+"83
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1057 ]
+[e $ < -> _i `i -> _len `i 1054  ]
+[e :U 1055 ]
+"92
+}
+"93
+}
+[e :U 1053 ]
+[; ;app_protocol.c: 90: }
+[; ;app_protocol.c: 91: }
+[; ;app_protocol.c: 92: }
+[; ;app_protocol.c: 93: }
+[; ;app_protocol.c: 94: if (type->refin ^ type->refout) {
+"94
+[e $ ! != ^ -> . *U _type 3 `i -> . *U _type 4 `i -> 0 `i 1063  ]
+{
+[; ;app_protocol.c: 95: crc = reflect(crc);
+"95
+[e = _crc ( _reflect (1 _crc ]
+"96
+}
+[; ;app_protocol.c: 96: } else {
+[e $U 1064  ]
+[e :U 1063 ]
+{
+[; ;app_protocol.c: 97: crc ^= type->xorout;
+"97
+[e =^ _crc . *U _type 2 ]
+"98
+}
+[e :U 1064 ]
+[; ;app_protocol.c: 98: }
+[; ;app_protocol.c: 99: return crc;
+"99
+[e ) _crc ]
+[e $UE 1042  ]
+[; ;app_protocol.c: 100: }
+"100
+[e :UE 1042 ]
+}
+"102
+[v _app_protocol_read_ack `(v ~T0 @X0 1 sf2`uc`uc ]
+{
+[; ;app_protocol.c: 102: static void app_protocol_read_ack(uint8_t start, uint8_t cnt) {
+[e :U _app_protocol_read_ack ]
+[v _start `uc ~T0 @X0 1 r1 ]
+[v _cnt `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;app_protocol.c: 103: if (pRegister == (0) || start >= mRegCount || start+cnt > mRegCount) {
+"103
+[e $ ! || || == _pRegister -> -> 0 `i `*uc >= -> _start `i -> _mRegCount `i > + -> _start `i -> _cnt `i -> _mRegCount `i 1066  ]
+{
+[; ;app_protocol.c: 104: return;
+"104
+[e $UE 1065  ]
+"105
+}
+[e :U 1066 ]
+[; ;app_protocol.c: 105: }
+[; ;app_protocol.c: 106: rs485_write_start();
+"106
+[e ( _rs485_write_start ..  ]
+[; ;app_protocol.c: 107: for (uint8_t i = 0; i < cnt; i++) {
+"107
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1070  ]
+[e :U 1067 ]
+{
+[; ;app_protocol.c: 108: mFrame.data[i] = *(pRegister+start+i);
+"108
+[e = *U + &U . . . _mFrame 1 0 5 * -> _i `ux -> -> # *U &U . . . _mFrame 1 0 5 `ui `ux *U + + _pRegister * -> _start `ux -> -> # *U _pRegister `ui `ux * -> _i `ux -> -> # *U + _pRegister * -> _start `ux -> -> # *U _pRegister `ui `ux `ui `ux ]
+"109
+}
+"107
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1070 ]
+[e $ < -> _i `i -> _cnt `i 1067  ]
+[e :U 1068 ]
+"109
+}
+[; ;app_protocol.c: 109: }
+[; ;app_protocol.c: 110: mFrame.array[cnt+5] = getChecksum(&crc8_maxim, mFrame.array, cnt+5);
+"110
+[e = *U + &U . . _mFrame 1 1 * -> -> + -> _cnt `i -> 5 `i `ui `ux -> -> # *U &U . . _mFrame 1 1 `ui `ux ( _getChecksum (3 , , -> &U _crc8_maxim `*S1029 &U . . _mFrame 1 1 -> + -> _cnt `i -> 5 `i `uc ]
+[; ;app_protocol.c: 111: eusart_write_buffer(mFrame.array, cnt+6);
+"111
+[e ( _eusart_write_buffer (2 , &U . . _mFrame 1 1 -> + -> _cnt `i -> 6 `i `uc ]
+[; ;app_protocol.c: 112: rs485_write_stop();
+"112
+[e ( _rs485_write_stop ..  ]
+[; ;app_protocol.c: 113: }
+"113
+[e :UE 1065 ]
+}
+"115
+[v _app_protocol_write_ack `(v ~T0 @X0 1 sf ]
+{
+[; ;app_protocol.c: 115: static void app_protocol_write_ack() {
+[e :U _app_protocol_write_ack ]
+[f ]
+[; ;app_protocol.c: 116: rs485_write_start();
+"116
+[e ( _rs485_write_start ..  ]
+[; ;app_protocol.c: 117: mFrame.array[5] = getChecksum(&crc8_maxim, mFrame.array, 5);
+"117
+[e = *U + &U . . _mFrame 1 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . . _mFrame 1 1 `ui `ux ( _getChecksum (3 , , -> &U _crc8_maxim `*S1029 &U . . _mFrame 1 1 -> -> 5 `i `uc ]
+[; ;app_protocol.c: 118: eusart_write_buffer(mFrame.array, 6);
+"118
+[e ( _eusart_write_buffer (2 , &U . . _mFrame 1 1 -> -> 6 `i `uc ]
+[; ;app_protocol.c: 119: rs485_write_stop();
+"119
+[e ( _rs485_write_stop ..  ]
+[; ;app_protocol.c: 120: }
+"120
+[e :UE 1071 ]
+}
+"122
+[v _app_protocol_receive `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;app_protocol.c: 122: void app_protocol_receive(uint8_t rcv) {
+[e :U _app_protocol_receive ]
+[v _rcv `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;app_protocol.c: 123: if (mFrame.index >= sizeof(mFrame.array)) {
+"123
+[e $ ! >= -> . _mFrame 0 `ui * -> # *U &U . . _mFrame 1 1 `ui -> -> 120 `i `ui 1073  ]
+{
+[; ;app_protocol.c: 124: mFrame.index = 0;
+"124
+[e = . _mFrame 0 -> -> 0 `i `uc ]
+"125
+}
+[e :U 1073 ]
+[; ;app_protocol.c: 125: }
+[; ;app_protocol.c: 126: mFrame.array[mFrame.index++] = rcv;
+"126
+[e = *U + &U . . _mFrame 1 1 * -> ++ . _mFrame 0 -> -> 1 `i `uc `ux -> -> # *U &U . . _mFrame 1 1 `ui `ux _rcv ]
+[; ;app_protocol.c: 127: }
+"127
+[e :UE 1072 ]
+}
+"129
+[v _app_protocol_decode `(v ~T0 @X0 1 ef ]
+{
+[; ;app_protocol.c: 129: void app_protocol_decode() {
+[e :U _app_protocol_decode ]
+[f ]
+[; ;app_protocol.c: 130: if (mGroup == 0 || mAddress == 0 || pRegister == (0)) {
+"130
+[e $ ! || || == -> _mGroup `i -> 0 `i == -> _mAddress `i -> 0 `i == _pRegister -> -> 0 `i `*uc 1075  ]
+{
+[; ;app_protocol.c: 131: return;
+"131
+[e $UE 1074  ]
+"132
+}
+[e :U 1075 ]
+[; ;app_protocol.c: 132: }
+[; ;app_protocol.c: 133: if (mFrame.index < 6) {
+"133
+[e $ ! < -> . _mFrame 0 `i -> 6 `i 1076  ]
+{
+[; ;app_protocol.c: 134: return;
+"134
+[e $UE 1074  ]
+"135
+}
+[e :U 1076 ]
+"136
+[v _match `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 135: }
+[; ;app_protocol.c: 136: bool match = 0;
+[e = _match -> -> 0 `i `uc ]
+"137
+[v _ack `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 137: bool ack = 0;
+[e = _ack -> -> 0 `i `uc ]
+"138
+[v _group `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 138: uint8_t group = mFrame.group;
+[e = _group . . . _mFrame 1 0 0 ]
+"139
+[v _address `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 139: uint8_t address = mFrame.address;
+[e = _address . . . _mFrame 1 0 1 ]
+"140
+[v _start `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 140: uint8_t start = mFrame.regAddress;
+[e = _start . . . _mFrame 1 0 3 ]
+"141
+[v _cnt `uc ~T0 @X0 1 a ]
+[; ;app_protocol.c: 141: uint8_t cnt = mFrame.regCount;
+[e = _cnt . . . _mFrame 1 0 4 ]
+[; ;app_protocol.c: 142: if (group == 0 && address == 0) {
+"142
+[e $ ! && == -> _group `i -> 0 `i == -> _address `i -> 0 `i 1077  ]
+{
+[; ;app_protocol.c: 143: match = 1;
+"143
+[e = _match -> -> 1 `i `uc ]
+"144
+}
+[; ;app_protocol.c: 144: } else if (group == mGroup && address == 0) {
+[e $U 1078  ]
+[e :U 1077 ]
+[e $ ! && == -> _group `i -> _mGroup `i == -> _address `i -> 0 `i 1079  ]
+{
+[; ;app_protocol.c: 145: match = 1;
+"145
+[e = _match -> -> 1 `i `uc ]
+"146
+}
+[; ;app_protocol.c: 146: } else if (group == mGroup && address == mAddress) {
+[e $U 1080  ]
+[e :U 1079 ]
+[e $ ! && == -> _group `i -> _mGroup `i == -> _address `i -> _mAddress `i 1081  ]
+{
+[; ;app_protocol.c: 147: match = 1;
+"147
+[e = _match -> -> 1 `i `uc ]
+[; ;app_protocol.c: 148: ack = 1;
+"148
+[e = _ack -> -> 1 `i `uc ]
+"149
+}
+[e :U 1081 ]
+"150
+[e :U 1080 ]
+[e :U 1078 ]
+[; ;app_protocol.c: 149: }
+[; ;app_protocol.c: 150: if (match == 0) {
+[e $ ! == -> _match `i -> 0 `i 1082  ]
+{
+[; ;app_protocol.c: 151: return;
+"151
+[e $UE 1074  ]
+"152
+}
+[e :U 1082 ]
+[; ;app_protocol.c: 152: }
+[; ;app_protocol.c: 153: if (getChecksum(&crc8_maxim, mFrame.array, mFrame.index) != 0) {
+"153
+[e $ ! != -> ( _getChecksum (3 , , -> &U _crc8_maxim `*S1029 &U . . _mFrame 1 1 . _mFrame 0 `i -> 0 `i 1083  ]
+{
+[; ;app_protocol.c: 154: return;
+"154
+[e $UE 1074  ]
+"155
+}
+[e :U 1083 ]
+[; ;app_protocol.c: 155: }
+[; ;app_protocol.c: 156: if (address >= mRegCount || address+cnt > mRegCount) {
+"156
+[e $ ! || >= -> _address `i -> _mRegCount `i > + -> _address `i -> _cnt `i -> _mRegCount `i 1084  ]
+{
+[; ;app_protocol.c: 157: return;
+"157
+[e $UE 1074  ]
+"158
+}
+[e :U 1084 ]
+[; ;app_protocol.c: 158: }
+[; ;app_protocol.c: 159: switch (mFrame.command) {
+"159
+[e $U 1086  ]
+{
+[; ;app_protocol.c: 160: case 0x03:
+"160
+[e :U 1087 ]
+[; ;app_protocol.c: 161: if (ack) {
+"161
+[e $ ! != -> _ack `i -> -> -> 0 `i `uc `i 1088  ]
+{
+[; ;app_protocol.c: 162: app_protocol_read_ack(start, cnt);
+"162
+[e ( _app_protocol_read_ack (2 , _start _cnt ]
+"163
+}
+[e :U 1088 ]
+[; ;app_protocol.c: 163: }
+[; ;app_protocol.c: 164: break;
+"164
+[e $U 1085  ]
+[; ;app_protocol.c: 165: case 0x10:
+"165
+[e :U 1089 ]
+[; ;app_protocol.c: 166: if (cnt+6 != mFrame.index) {
+"166
+[e $ ! != + -> _cnt `i -> 6 `i -> . _mFrame 0 `i 1090  ]
+{
+[; ;app_protocol.c: 167: return;
+"167
+[e $UE 1074  ]
+"168
+}
+[e :U 1090 ]
+[; ;app_protocol.c: 168: }
+[; ;app_protocol.c: 169: if (write_data_cb == (0)) {
+"169
+[e $ ! == _write_data_cb -> -> 0 `i `*F9566 1091  ]
+{
+[; ;app_protocol.c: 170: return;
+"170
+[e $UE 1074  ]
+"171
+}
+[e :U 1091 ]
+[; ;app_protocol.c: 171: }
+[; ;app_protocol.c: 172: write_data_cb(start, cnt, mFrame.data);
+"172
+[e ( *U _write_data_cb (3 , , _start _cnt &U . . . _mFrame 1 0 5 ]
+[; ;app_protocol.c: 173: if (ack) {
+"173
+[e $ ! != -> _ack `i -> -> -> 0 `i `uc `i 1092  ]
+{
+[; ;app_protocol.c: 174: app_protocol_write_ack();
+"174
+[e ( _app_protocol_write_ack ..  ]
+"175
+}
+[e :U 1092 ]
+[; ;app_protocol.c: 175: }
+[; ;app_protocol.c: 176: break;
+"176
+[e $U 1085  ]
+[; ;app_protocol.c: 177: default:
+"177
+[e :U 1093 ]
+[; ;app_protocol.c: 178: break;
+"178
+[e $U 1085  ]
+"179
+}
+[; ;app_protocol.c: 179: }
+[e $U 1085  ]
+"159
+[e :U 1086 ]
+[e [\ . . . _mFrame 1 0 2 , $ -> -> 3 `i `uc 1087
+ , $ -> -> 16 `i `uc 1089
+ 1093 ]
+"179
+[e :U 1085 ]
+[; ;app_protocol.c: 180: }
+"180
+[e :UE 1074 ]
+}
+"182
+[v _app_protocol_clear `(v ~T0 @X0 1 ef ]
+{
+[; ;app_protocol.c: 182: void app_protocol_clear() {
+[e :U _app_protocol_clear ]
+[f ]
+[; ;app_protocol.c: 183: mFrame.index = 0;
+"183
+[e = . _mFrame 0 -> -> 0 `i `uc ]
+[; ;app_protocol.c: 184: }
+"184
+[e :UE 1094 ]
+}
+"186
+[v _app_protocol_set_write_data_cb `(v ~T0 @X0 1 ef1`*F9566 ]
+{
+[; ;app_protocol.c: 186: void app_protocol_set_write_data_cb(app_protocol_write_data_cb_t callback) {
+[e :U _app_protocol_set_write_data_cb ]
+[v _callback `*F9566 ~T0 @X0 1 r1 ]
+[f ]
+[; ;app_protocol.c: 187: write_data_cb = callback;
+"187
+[e = _write_data_cb _callback ]
+[; ;app_protocol.c: 188: }
+"188
+[e :UE 1095 ]
 }

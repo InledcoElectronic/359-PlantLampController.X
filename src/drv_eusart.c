@@ -32,6 +32,7 @@ void eusart_init() {
     BAUD1CONbits.BRG16 = 1;         //使能16位波特发生器
     SP1BRG = EUSART_BRG_VALUE;
     
+	PIE3bits.RC1IE = 1;
     tx_head = 0;
     tx_tail = 0;
     tx_remain = sizeof(tx_buffer);

@@ -1,82 +1,31 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"730 /opt/microchip/xc8/v1.45/include/pic16f15375.h
-[v _TRISA `Vuc ~T0 @X0 0 e@18 ]
-"20256
-[v _ANSELA `Vuc ~T0 @X0 0 e@7992 ]
-"20318
-[v _WPUA `Vuc ~T0 @X0 0 e@7993 ]
-"20380
-[v _ODCONA `Vuc ~T0 @X0 0 e@7994 ]
-"20442
-[v _SLRCONA `Vuc ~T0 @X0 0 e@7995 ]
-"20504
-[v _INLVLA `Vuc ~T0 @X0 0 e@7996 ]
-"1078
-[v _LATB `Vuc ~T0 @X0 0 e@25 ]
-"792
-[v _TRISB `Vuc ~T0 @X0 0 e@19 ]
-"20752
-[v _ANSELB `Vuc ~T0 @X0 0 e@8003 ]
-"20814
-[v _WPUB `Vuc ~T0 @X0 0 e@8004 ]
-"20876
-[v _ODCONB `Vuc ~T0 @X0 0 e@8005 ]
-"20938
-[v _SLRCONB `Vuc ~T0 @X0 0 e@8006 ]
-"21000
-[v _INLVLB `Vuc ~T0 @X0 0 e@8007 ]
-"21248
-[v _ANSELC `Vuc ~T0 @X0 0 e@8014 ]
-"1140
-[v _LATC `Vuc ~T0 @X0 0 e@26 ]
-"854
-[v _TRISC `Vuc ~T0 @X0 0 e@20 ]
-"21310
-[v _WPUC `Vuc ~T0 @X0 0 e@8015 ]
-"21372
-[v _ODCONC `Vuc ~T0 @X0 0 e@8016 ]
-"21434
-[v _SLRCONC `Vuc ~T0 @X0 0 e@8017 ]
-"21496
-[v _INLVLC `Vuc ~T0 @X0 0 e@8018 ]
-"417
-[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . INTEDG . PEIE GIE ]
-"416
-[u S25 `S26 1 ]
-[n S25 . . ]
-"424
-[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"17362
-[v _PPSLOCK `Vuc ~T0 @X0 0 e@7823 ]
-"17368
-[s S783 :1 `uc 1 ]
-[n S783 . PPSLOCKED ]
-"17367
-[u S782 `S783 1 ]
-[n S782 . . ]
-"17372
-[v _PPSLOCKbits `VS782 ~T0 @X0 0 e@7823 ]
-"19068
-[v _RB0PPS `Vuc ~T0 @X0 0 e@7960 ]
-"19112
-[v _RB1PPS `Vuc ~T0 @X0 0 e@7961 ]
-"19156
-[v _RB2PPS `Vuc ~T0 @X0 0 e@7962 ]
-"19200
-[v _RB3PPS `Vuc ~T0 @X0 0 e@7963 ]
-"19684
-[v _RC6PPS `Vuc ~T0 @X0 0 e@7974 ]
-"18484
-[v _RX1DTPPS `Vuc ~T0 @X0 0 e@7883 ]
-"18136
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
-"19464
-[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
-"19508
-[v _RC2PPS `Vuc ~T0 @X0 0 e@7970 ]
-"18194
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
+"19 src/../inc/app_control.h
+[s S1026 `ui 1 `uc -> 6 `i ]
+[n S1026 . turnonTime brights ]
+"25
+[s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc -> 8 `i `uc 1 `ui -> 6 `i `uc -> 3 `i `ui -> 8 `i `S1026 -> 8 `i ]
+[n S1028 . rsv0 year month day week hour minute second rsv1 power brights rsv2 turnoffTime timepoints ]
+"24
+[u S1027 `S1028 1 `uc -> 112 `i ]
+[n S1027 . . array ]
+"22 src/../inc/drv_flash.h
+[v _flash_readBuffer `(v ~T0 @X0 0 ef3`ui`*uc`uc ]
+"23 src/app_control.c
+[v _app_control_update `(v ~T0 @X0 0 sf ]
+"23 src/../inc/drv_flash.h
+[v _flash_writeBlock `(uc ~T0 @X0 0 ef2`ui`*uc ]
+"16 src/../inc/drv_pwm.h
+[v _pwm1_load_duty `(v ~T0 @X0 0 ef1`ui ]
+"18
+[v _pwm2_load_duty `(v ~T0 @X0 0 ef1`ui ]
+"20
+[v _pwm3_load_duty `(v ~T0 @X0 0 ef1`ui ]
+"22
+[v _pwm4_load_duty `(v ~T0 @X0 0 ef1`ui ]
+"49 src/../inc/drv_pcf8563.h
+[v _pcf8563_get_time `(v ~T0 @X0 0 ef1`*uc ]
+"50
+[v _pcf8563_set_time `(v ~T0 @X0 0 ef1`*uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -8839,132 +8788,521 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;drv_gpio.h: 15: extern void gpio_init();
-"4 src/drv_gpio.c
-[v _gpio_init `(v ~T0 @X0 1 ef ]
-{
-[; ;drv_gpio.c: 4: void gpio_init() {
-[e :U _gpio_init ]
-[f ]
-[; ;drv_gpio.c: 6: TRISA = 0x3F;
-"6
-[e = _TRISA -> -> 63 `i `uc ]
-[; ;drv_gpio.c: 7: ANSELA = 0x00;
-"7
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 8: WPUA = 0x00;
-"8
-[e = _WPUA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 9: ODCONA = 0x00;
-"9
-[e = _ODCONA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 10: SLRCONA = 0xFF;
-"10
-[e = _SLRCONA -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 11: INLVLA = 0x00;
-"11
-[e = _INLVLA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 13: LATB = 0x0F;
-"13
-[e = _LATB -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 14: TRISB = 0x30;
-"14
-[e = _TRISB -> -> 48 `i `uc ]
-[; ;drv_gpio.c: 15: ANSELB = 0x00;
-"15
-[e = _ANSELB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 16: WPUB = 0x00;
-"16
-[e = _WPUB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 17: ODCONB = 0x00;
-"17
-[e = _ODCONB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 18: SLRCONB = 0xFF;
-"18
-[e = _SLRCONB -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 19: INLVLB = 0x00;
-"19
-[e = _INLVLB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 21: ANSELC = 0x00;
+[; ;app_control.h: 19: typedef struct {
+[; ;app_control.h: 20: uint16_t turnonTime;
+[; ;app_control.h: 21: uint8_t brights[6];
+[; ;app_control.h: 22: } timepoint_t;
+[; ;app_control.h: 24: typedef union {
+[; ;app_control.h: 25: struct {
+[; ;app_control.h: 27: uint8_t rsv0;
+[; ;app_control.h: 28: uint8_t year;
+[; ;app_control.h: 29: uint8_t month;
+[; ;app_control.h: 30: uint8_t day;
+[; ;app_control.h: 31: uint8_t week;
+[; ;app_control.h: 32: uint8_t hour;
+[; ;app_control.h: 33: uint8_t minute;
+[; ;app_control.h: 34: uint8_t second;
+[; ;app_control.h: 35: uint8_t rsv1[8];
+[; ;app_control.h: 37: bool power;
+[; ;app_control.h: 38: uint16_t brights[6];
+[; ;app_control.h: 39: uint8_t rsv2[3];
+[; ;app_control.h: 41: uint16_t turnoffTime[8];
+[; ;app_control.h: 43: timepoint_t timepoints[8];
+[; ;app_control.h: 44: };
+[; ;app_control.h: 45: uint8_t array[112];
+[; ;app_control.h: 46: } register_t;
+[; ;app_control.h: 48: extern register_t mRegister;
+[; ;app_control.h: 50: extern void app_control_init();
+[; ;app_control.h: 51: extern void app_control_ramp();
+[; ;app_control.h: 52: extern void app_control_process();
+[; ;app_control.h: 53: extern void app_control_param_changed_cb(uint8_t start, uint8_t cnt, uint8_t *pdata);
+[; ;drv_pwm.h: 15: extern void pwm1_init();
+[; ;drv_pwm.h: 16: extern void pwm1_load_duty(uint16_t duty);
+[; ;drv_pwm.h: 17: extern void pwm2_init();
+[; ;drv_pwm.h: 18: extern void pwm2_load_duty(uint16_t duty);
+[; ;drv_pwm.h: 19: extern void pwm3_init();
+[; ;drv_pwm.h: 20: extern void pwm3_load_duty(uint16_t duty);
+[; ;drv_pwm.h: 21: extern void pwm4_init();
+[; ;drv_pwm.h: 22: extern void pwm4_load_duty(uint16_t duty);
+[; ;drv_pcf8563.h: 48: extern void pcf8563_init();
+[; ;drv_pcf8563.h: 49: extern void pcf8563_get_time(uint8_t *ptime);
+[; ;drv_pcf8563.h: 50: extern void pcf8563_set_time(uint8_t *ptime);
+[; ;drv_flash.h: 21: extern uint8_t flash_readByte(uint16_t flashAddr);
+[; ;drv_flash.h: 22: extern void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len);
+[; ;drv_flash.h: 23: extern uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf);
+[; ;drv_flash.h: 24: extern void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte);
+"18 src/app_control.c
+[v _mRegister `S1027 ~T0 @X0 1 e ]
+[; ;app_control.c: 18: register_t mRegister;
+"20
+[v _mTargetBrights `ui ~T0 @X0 -> 6 `i s ]
+[; ;app_control.c: 20: static uint16_t mTargetBrights[6];
 "21
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 22: LATC = 0x40;
-"22
-[e = _LATC -> -> 64 `i `uc ]
-[; ;drv_gpio.c: 23: TRISC = 0x86;
-"23
-[e = _TRISC -> -> 134 `i `uc ]
-[; ;drv_gpio.c: 24: WPUC = 0x00;
-"24
-[e = _WPUC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 25: ODCONC = 0x00;
+[v _mCurrentBrights `ui ~T0 @X0 -> 6 `i s ]
+[; ;app_control.c: 21: static uint16_t mCurrentBrights[6];
+[; ;app_control.c: 23: static void app_control_update();
 "25
-[e = _ODCONC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 26: SLRCONC = 0xFF;
+[v _app_control_init `(v ~T0 @X0 1 ef ]
+{
+[; ;app_control.c: 25: void app_control_init() {
+[e :U _app_control_init ]
+[f ]
 "26
-[e = _SLRCONC -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 27: INLVLC = 0x00;
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
 "27
-[e = _INLVLC -> -> 0 `i `uc ]
+[v _pdata `*uc ~T0 @X0 1 a ]
+[; ;app_control.c: 26: uint8_t i, j;
+[; ;app_control.c: 27: uint8_t *pdata = (uint8_t *) &mRegister;
+[e = _pdata -> &U _mRegister `*uc ]
+[; ;app_control.c: 28: pdata += 16;
+"28
+[e =+ _pdata * -> -> 16 `i `x -> -> # *U _pdata `i `x ]
+[; ;app_control.c: 29: flash_readBuffer(0x1F80, pdata, sizeof(mRegister)-16);
+"29
+[e ( _flash_readBuffer (3 , , -> -> 8064 `i `ui _pdata -> - -> # _mRegister `ui -> -> 16 `i `ui `uc ]
+[; ;app_control.c: 30: for (i = 0; i < 6; i++) {
 "30
-[v _state `uc ~T0 @X0 1 a ]
-[; ;drv_gpio.c: 30: bool state = INTCONbits.GIE;
-[e = _state . . _INTCONbits 0 3 ]
-[; ;drv_gpio.c: 32: (INTCONbits.GIE = 0);
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1030  ]
+[e $U 1031  ]
+[e :U 1030 ]
+{
+[; ;app_control.c: 31: if (mRegister.brights[i] > 1000) {
+"31
+[e $ ! > *U + &U . . _mRegister 0 10 * -> _i `ux -> -> # *U &U . . _mRegister 0 10 `ui `ux -> -> 1000 `i `ui 1033  ]
+{
+[; ;app_control.c: 32: mRegister.brights[i] = 1000;
 "32
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 34: PPSLOCK = 0x55;
+[e = *U + &U . . _mRegister 0 10 * -> _i `ux -> -> # *U &U . . _mRegister 0 10 `ui `ux -> -> 1000 `i `ui ]
+"33
+}
+[e :U 1033 ]
+[; ;app_control.c: 33: }
+[; ;app_control.c: 34: for (j = 0; j < 8; j++) {
 "34
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 35: PPSLOCK = 0xAA;
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 8 `i 1034  ]
+[e $U 1035  ]
+[e :U 1034 ]
+{
+[; ;app_control.c: 35: if (mRegister.timepoints[j].brights[i] > 100) {
 "35
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 36: PPSLOCKbits.PPSLOCKED = 0;
+[e $ ! > -> *U + &U . *U + &U . . _mRegister 0 13 * -> _j `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 1 * -> _i `ux -> -> # *U &U . *U + &U . . _mRegister 0 13 * -> _j `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 1 `ui `ux `i -> 100 `i 1037  ]
+{
+[; ;app_control.c: 36: mRegister.timepoints[j].brights[i] = 100;
 "36
-[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 37: RB0PPS = 0x09;
+[e = *U + &U . *U + &U . . _mRegister 0 13 * -> _j `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 1 * -> _i `ux -> -> # *U &U . *U + &U . . _mRegister 0 13 * -> _j `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 1 `ui `ux -> -> 100 `i `uc ]
 "37
-[e = _RB0PPS -> -> 9 `i `uc ]
-[; ;drv_gpio.c: 38: RB1PPS = 0x0A;
+}
+[e :U 1037 ]
 "38
-[e = _RB1PPS -> -> 10 `i `uc ]
-[; ;drv_gpio.c: 39: RB2PPS = 0x0B;
+}
+"34
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 8 `i 1034  ]
+[e :U 1035 ]
+"38
+}
 "39
-[e = _RB2PPS -> -> 11 `i `uc ]
-[; ;drv_gpio.c: 40: RB3PPS = 0x0C;
+}
+"30
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1030  ]
+[e :U 1031 ]
+"39
+}
+[; ;app_control.c: 37: }
+[; ;app_control.c: 38: }
+[; ;app_control.c: 39: }
+[; ;app_control.c: 40: app_control_update();
 "40
-[e = _RB3PPS -> -> 12 `i `uc ]
-[; ;drv_gpio.c: 41: RC6PPS = 0x0F;
+[e ( _app_control_update ..  ]
+[; ;app_control.c: 41: }
 "41
-[e = _RC6PPS -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 42: RX1DTPPS = 0x17;
-"42
-[e = _RX1DTPPS -> -> 23 `i `uc ]
-[; ;drv_gpio.c: 43: SSP1CLKPPS = 0x12;
+[e :UE 1029 ]
+}
 "43
-[e = _SSP1CLKPPS -> -> 18 `i `uc ]
-[; ;drv_gpio.c: 44: RC1PPS = 0x16;
+[v _app_control_save `(v ~T0 @X0 1 ef ]
+{
+[; ;app_control.c: 43: void app_control_save() {
+[e :U _app_control_save ]
+[f ]
 "44
-[e = _RC1PPS -> -> 22 `i `uc ]
-[; ;drv_gpio.c: 45: RC2PPS = 0x15;
+[v _pdata `*uc ~T0 @X0 1 a ]
+[; ;app_control.c: 44: uint8_t *pdata = (uint8_t *) &mRegister;
+[e = _pdata -> &U _mRegister `*uc ]
+[; ;app_control.c: 45: pdata += 16;
 "45
-[e = _RC2PPS -> -> 21 `i `uc ]
-[; ;drv_gpio.c: 46: SSP1DATPPS = 0x11;
+[e =+ _pdata * -> -> 16 `i `x -> -> # *U _pdata `i `x ]
+[; ;app_control.c: 46: flash_writeBlock(0x1F80, pdata);
 "46
-[e = _SSP1DATPPS -> -> 17 `i `uc ]
-[; ;drv_gpio.c: 48: PPSLOCK = 0x55;
+[e ( _flash_writeBlock (2 , -> -> 8064 `i `ui _pdata ]
+[; ;app_control.c: 47: flash_writeBlock(0x1F80+32, pdata+32);
+"47
+[e ( _flash_writeBlock (2 , -> + -> 8064 `i -> 32 `i `ui + _pdata * -> -> 32 `i `x -> -> # *U _pdata `i `x ]
+[; ;app_control.c: 48: flash_writeBlock(0x1F80+32*2, pdata+32*2);
 "48
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 49: PPSLOCK = 0xAA;
+[e ( _flash_writeBlock (2 , -> + -> 8064 `i * -> 32 `i -> 2 `i `ui + _pdata * -> * -> 32 `i -> 2 `i `x -> -> # *U _pdata `i `x ]
+[; ;app_control.c: 49: }
 "49
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 50: PPSLOCKbits.PPSLOCKED = 1;
-"50
-[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
-[; ;drv_gpio.c: 51: INTCONbits.GIE = state;
+[e :UE 1038 ]
+}
 "51
-[e = . . _INTCONbits 0 3 _state ]
-[; ;drv_gpio.c: 52: }
+[v _app_control_update `(v ~T0 @X0 1 sf ]
+{
+[; ;app_control.c: 51: static void app_control_update() {
+[e :U _app_control_update ]
+[f ]
 "52
-[e :UE 1026 ]
+[v _i `uc ~T0 @X0 1 a ]
+[; ;app_control.c: 52: uint8_t i;
+[; ;app_control.c: 53: if (mRegister.power) {
+"53
+[e $ ! != -> . . _mRegister 0 9 `i -> -> -> 0 `i `uc `i 1040  ]
+{
+[; ;app_control.c: 54: for (i = 0; i < 6; i++) {
+"54
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1041  ]
+[e $U 1042  ]
+[e :U 1041 ]
+{
+[; ;app_control.c: 55: mTargetBrights[i] = mRegister.brights[i];
+"55
+[e = *U + &U _mTargetBrights * -> _i `ux -> -> # *U &U _mTargetBrights `ui `ux *U + &U . . _mRegister 0 10 * -> _i `ux -> -> # *U &U . . _mRegister 0 10 `ui `ux ]
+"56
+}
+"54
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1041  ]
+[e :U 1042 ]
+"56
+}
+"57
+}
+[; ;app_control.c: 56: }
+[; ;app_control.c: 57: } else {
+[e $U 1044  ]
+[e :U 1040 ]
+{
+[; ;app_control.c: 58: for (i = 0; i < 6; i++) {
+"58
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1045  ]
+[e $U 1046  ]
+[e :U 1045 ]
+{
+[; ;app_control.c: 59: mTargetBrights[i] = 0;
+"59
+[e = *U + &U _mTargetBrights * -> _i `ux -> -> # *U &U _mTargetBrights `ui `ux -> -> 0 `i `ui ]
+"60
+}
+"58
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1045  ]
+[e :U 1046 ]
+"60
+}
+"61
+}
+[e :U 1044 ]
+[; ;app_control.c: 60: }
+[; ;app_control.c: 61: }
+[; ;app_control.c: 62: }
+"62
+[e :UE 1039 ]
+}
+"64
+[v _app_control_ramp `(v ~T0 @X0 1 ef ]
+{
+[; ;app_control.c: 64: void app_control_ramp() {
+[e :U _app_control_ramp ]
+[f ]
+[; ;app_control.c: 65: for (uint8_t i = 0; i < 6; i++) {
+"65
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1049  ]
+[e $U 1050  ]
+[e :U 1049 ]
+{
+[; ;app_control.c: 66: if (mCurrentBrights[i] + 1 < mTargetBrights[i]) {
+"66
+[e $ ! < + *U + &U _mCurrentBrights * -> _i `ux -> -> # *U &U _mCurrentBrights `ui `ux -> -> 1 `i `ui *U + &U _mTargetBrights * -> _i `ux -> -> # *U &U _mTargetBrights `ui `ux 1052  ]
+{
+[; ;app_control.c: 67: mCurrentBrights[i] += 1;
+"67
+[e =+ *U + &U _mCurrentBrights * -> _i `ux -> -> # *U &U _mCurrentBrights `ui `ux -> -> 1 `i `ui ]
+"68
+}
+[; ;app_control.c: 68: } else if (mCurrentBrights[i] > mTargetBrights[i] + 1) {
+[e $U 1053  ]
+[e :U 1052 ]
+[e $ ! > *U + &U _mCurrentBrights * -> _i `ux -> -> # *U &U _mCurrentBrights `ui `ux + *U + &U _mTargetBrights * -> _i `ux -> -> # *U &U _mTargetBrights `ui `ux -> -> 1 `i `ui 1054  ]
+{
+[; ;app_control.c: 69: mCurrentBrights[i] -= 1;
+"69
+[e =- *U + &U _mCurrentBrights * -> _i `ux -> -> # *U &U _mCurrentBrights `ui `ux -> -> 1 `i `ui ]
+"70
+}
+[e :U 1054 ]
+"71
+[e :U 1053 ]
+}
+"65
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 1049  ]
+[e :U 1050 ]
+"71
+}
+[; ;app_control.c: 70: }
+[; ;app_control.c: 71: }
+[; ;app_control.c: 72: pwm1_load_duty(mCurrentBrights[0]);
+"72
+[e ( _pwm1_load_duty (1 *U + &U _mCurrentBrights * -> -> -> 0 `i `ui `ux -> -> # *U &U _mCurrentBrights `ui `ux ]
+[; ;app_control.c: 73: pwm2_load_duty(mCurrentBrights[1]);
+"73
+[e ( _pwm2_load_duty (1 *U + &U _mCurrentBrights * -> -> -> 1 `i `ui `ux -> -> # *U &U _mCurrentBrights `ui `ux ]
+[; ;app_control.c: 74: pwm3_load_duty(mCurrentBrights[2]);
+"74
+[e ( _pwm3_load_duty (1 *U + &U _mCurrentBrights * -> -> -> 2 `i `ui `ux -> -> # *U &U _mCurrentBrights `ui `ux ]
+[; ;app_control.c: 75: pwm4_load_duty(mCurrentBrights[3]);
+"75
+[e ( _pwm4_load_duty (1 *U + &U _mCurrentBrights * -> -> -> 3 `i `ui `ux -> -> # *U &U _mCurrentBrights `ui `ux ]
+[; ;app_control.c: 76: }
+"76
+[e :UE 1048 ]
+}
+"78
+[v _app_control_process `(v ~T0 @X0 1 ef ]
+{
+[; ;app_control.c: 78: void app_control_process() {
+[e :U _app_control_process ]
+[f ]
+"79
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+[; ;app_control.c: 79: uint8_t i, j;
+[; ;app_control.c: 80: pcf8563_get_time(&mRegister.year);
+"80
+[e ( _pcf8563_get_time (1 &U . . _mRegister 0 1 ]
+"81
+[v _hour `uc ~T0 @X0 1 a ]
+[; ;app_control.c: 81: uint8_t hour = mRegister.hour;
+[e = _hour . . _mRegister 0 5 ]
+"82
+[v _minute `uc ~T0 @X0 1 a ]
+[; ;app_control.c: 82: uint8_t minute = mRegister.minute;
+[e = _minute . . _mRegister 0 6 ]
+"83
+[v _sec `uc ~T0 @X0 1 a ]
+[; ;app_control.c: 83: uint8_t sec = mRegister.second;
+[e = _sec . . _mRegister 0 7 ]
+[; ;app_control.c: 84: if (hour > 23 || minute > 59) {
+"84
+[e $ ! || > -> _hour `i -> 23 `i > -> _minute `i -> 59 `i 1056  ]
+{
+[; ;app_control.c: 85: return;
+"85
+[e $UE 1055  ]
+"86
+}
+[e :U 1056 ]
+"87
+[v _tm `ui ~T0 @X0 1 a ]
+[; ;app_control.c: 86: }
+[; ;app_control.c: 87: uint16_t tm = hour*60u+minute;
+[e = _tm + * -> _hour `ui -> 60 `ui -> _minute `ui ]
+[; ;app_control.c: 88: if (sec == 0) {
+"88
+[e $ ! == -> _sec `i -> 0 `i 1057  ]
+{
+[; ;app_control.c: 89: for (i = 0; i < 8; i++) {
+"89
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1058  ]
+[e $U 1059  ]
+[e :U 1058 ]
+{
+[; ;app_control.c: 90: if (mRegister.turnoffTime[i] > 1439) {
+"90
+[e $ ! > *U + &U . . _mRegister 0 12 * -> _i `ux -> -> # *U &U . . _mRegister 0 12 `ui `ux -> -> 1439 `i `ui 1061  ]
+{
+[; ;app_control.c: 91: break;
+"91
+[e $U 1059  ]
+"92
+}
+[e :U 1061 ]
+[; ;app_control.c: 92: }
+[; ;app_control.c: 93: if (tm == mRegister.turnoffTime[i]) {
+"93
+[e $ ! == _tm *U + &U . . _mRegister 0 12 * -> _i `ux -> -> # *U &U . . _mRegister 0 12 `ui `ux 1062  ]
+{
+[; ;app_control.c: 94: mRegister.power = 0;
+"94
+[e = . . _mRegister 0 9 -> -> 0 `i `uc ]
+[; ;app_control.c: 95: app_control_update();
+"95
+[e ( _app_control_update ..  ]
+[; ;app_control.c: 96: break;
+"96
+[e $U 1059  ]
+"97
+}
+[e :U 1062 ]
+"98
+}
+"89
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1058  ]
+[e :U 1059 ]
+"98
+}
+[; ;app_control.c: 97: }
+[; ;app_control.c: 98: }
+[; ;app_control.c: 99: for (i = 0; i < 8; i++) {
+"99
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1063  ]
+[e $U 1064  ]
+[e :U 1063 ]
+{
+[; ;app_control.c: 100: if (mRegister.timepoints[i].turnonTime > 1439) {
+"100
+[e $ ! > . *U + &U . . _mRegister 0 13 * -> _i `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 0 -> -> 1439 `i `ui 1066  ]
+{
+[; ;app_control.c: 101: break;
+"101
+[e $U 1064  ]
+"102
+}
+[e :U 1066 ]
+[; ;app_control.c: 102: }
+[; ;app_control.c: 103: if (tm == mRegister.timepoints[i].turnonTime) {
+"103
+[e $ ! == _tm . *U + &U . . _mRegister 0 13 * -> _i `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 0 1067  ]
+{
+[; ;app_control.c: 104: mRegister.power = 1;
+"104
+[e = . . _mRegister 0 9 -> -> 1 `i `uc ]
+[; ;app_control.c: 105: for (j = 0; j < 6; j++) {
+"105
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 6 `i 1068  ]
+[e $U 1069  ]
+[e :U 1068 ]
+{
+[; ;app_control.c: 106: mRegister.brights[j] = mRegister.timepoints[i].brights[j]*10;
+"106
+[e = *U + &U . . _mRegister 0 10 * -> _j `ux -> -> # *U &U . . _mRegister 0 10 `ui `ux -> * -> *U + &U . *U + &U . . _mRegister 0 13 * -> _i `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 1 * -> _j `ux -> -> # *U &U . *U + &U . . _mRegister 0 13 * -> _i `ux -> -> # *U &U . . _mRegister 0 13 `ui `ux 1 `ui `ux `i -> 10 `i `ui ]
+"107
+}
+"105
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 6 `i 1068  ]
+[e :U 1069 ]
+"107
+}
+[; ;app_control.c: 107: }
+[; ;app_control.c: 108: app_control_update();
+"108
+[e ( _app_control_update ..  ]
+[; ;app_control.c: 109: break;
+"109
+[e $U 1064  ]
+"110
+}
+[e :U 1067 ]
+"111
+}
+"99
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 1063  ]
+[e :U 1064 ]
+"111
+}
+"112
+}
+[e :U 1057 ]
+[; ;app_control.c: 110: }
+[; ;app_control.c: 111: }
+[; ;app_control.c: 112: }
+[; ;app_control.c: 113: }
+"113
+[e :UE 1055 ]
+}
+"115
+[v _app_control_param_changed_cb `(v ~T0 @X0 1 ef3`uc`uc`*uc ]
+{
+[; ;app_control.c: 115: void app_control_param_changed_cb(uint8_t start, uint8_t cnt, uint8_t *pdata) {
+[e :U _app_control_param_changed_cb ]
+[v _start `uc ~T0 @X0 1 r1 ]
+[v _cnt `uc ~T0 @X0 1 r2 ]
+[v _pdata `*uc ~T0 @X0 1 r3 ]
+[f ]
+[; ;app_control.c: 116: if (start >= sizeof(register_t) || start+cnt > sizeof(register_t)) {
+"116
+[e $ ! || >= -> _start `ui -> # `S1027 `ui > -> + -> _start `i -> _cnt `i `ui -> # `S1027 `ui 1072  ]
+{
+[; ;app_control.c: 117: return;
+"117
+[e $UE 1071  ]
+"118
+}
+[e :U 1072 ]
+[; ;app_control.c: 118: }
+[; ;app_control.c: 119: if (start == 1 && cnt == 7) {
+"119
+[e $ ! && == -> _start `i -> 1 `i == -> _cnt `i -> 7 `i 1073  ]
+{
+[; ;app_control.c: 120: pcf8563_set_time(pdata);
+"120
+[e ( _pcf8563_set_time (1 _pdata ]
+[; ;app_control.c: 121: return;
+"121
+[e $UE 1071  ]
+"122
+}
+[e :U 1073 ]
+[; ;app_control.c: 122: }
+[; ;app_control.c: 123: for (uint8_t i = 0; i < cnt; i++) {
+"123
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1077  ]
+[e :U 1074 ]
+{
+[; ;app_control.c: 124: mRegister.array[start+i] = *(pdata+i);
+"124
+[e = *U + &U . _mRegister 1 * -> -> + -> _start `i -> _i `i `ui `ux -> -> # *U &U . _mRegister 1 `ui `ux *U + _pdata * -> _i `ux -> -> # *U _pdata `ui `ux ]
+"125
+}
+"123
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1077 ]
+[e $ < -> _i `i -> _cnt `i 1074  ]
+[e :U 1075 ]
+"125
+}
+[; ;app_control.c: 125: }
+[; ;app_control.c: 126: app_control_update();
+"126
+[e ( _app_control_update ..  ]
+[; ;app_control.c: 127: app_control_save();
+"127
+[e ( _app_control_save ..  ]
+[; ;app_control.c: 128: }
+"128
+[e :UE 1071 ]
 }

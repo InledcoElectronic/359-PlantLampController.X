@@ -14,7 +14,7 @@ extern "C" {
     
     typedef enum tmr2_clk_cs {
         TMR2_CLK_T2CKIPPS = 0,
-        TMR2_CLK__FOSC_4,
+        TMR2_CLK_FOSC_4,
         TMR2_CLK__FOSC,
         TMR2_CLK__HFINTOSC,                     //32MHz
         TMR2_CLK__LFINTOSC,

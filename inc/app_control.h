@@ -45,7 +45,13 @@ extern "C" {
         uint8_t array[112];
     } register_t;
     
-
+    extern register_t mRegister;
+    
+    extern void app_control_init();
+    extern void app_control_ramp();
+    extern void app_control_process();
+    extern void app_control_param_changed_cb(uint8_t start, uint8_t cnt, uint8_t *pdata);
+    
 #ifdef	__cplusplus
 }
 #endif

@@ -35,33 +35,19 @@ extern "C" {
 #define RTC_TIMER_ADDR                  0x0F
     
 /* 有效数据位 */
-#define RTC_EFFECTIVE_SEC               0x7F
-#define RTC_EFFECTIVE_MIN               0x7F
-#define RTC_EFFECTIVE_HOUR              0x3F
-#define RTC_EFFECTIVE_DAY               0x3F
-#define RTC_EFFECTIVE_WEEKDAY           0x07
-#define RTC_EFFECTIVE_MONTH             0x1F
+#define MASK_SEC               0x7F
+#define MASK_MIN               0x7F
+#define MASK_HOUR              0x3F
+#define MASK_DAY               0x3F
+#define MASK_WEEKDAY           0x07
+#define MASK_MONTH             0x1F
 /*时钟完整性*/
 #define SEC_INTEGRITY_YES               0x00            //保证时钟完整性
 #define SEC_INTEGRITY_NO                0x80            //不保证时钟完整性
     
-    typedef union {
-        struct {
-            uint8_t year;
-            uint8_t month;
-            uint8_t day;
-            uint8_t weekday;
-            uint8_t hour;
-            uint8_t minute;
-            uint8_t second;
-        };
-        uint8_t array[7];
-    }data_time_t;
-    
-    extern data_time_t data_time;
     extern void pcf8563_init();
-    extern void rtc_readOrWrite_time(uint8_t mode);
-    extern void rtc_init();
+    extern void pcf8563_get_time(uint8_t *ptime);
+    extern void pcf8563_set_time(uint8_t *ptime);
 
 #ifdef	__cplusplus
 }

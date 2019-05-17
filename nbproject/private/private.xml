@@ -9,7 +9,9 @@
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_pwm.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_tmr0.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_eusart.h</file>
+            <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_flash.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/app_control.h</file>
+            <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_pcf8563.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_tmr2.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/app_protocol.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_eusart.c</file>
@@ -18,7 +20,9 @@
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/main.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/drv_tmr2.h</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/app_control.c</file>
+            <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_pcf8563.c</file>
             <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/inc/app_protocol.h</file>
+            <file>file:/home/liruya/MPLABXProjects/pic16f15375/359-PlantLampController.X/src/drv_flash.c</file>
         </group>
     </open-files>
 </project-private>

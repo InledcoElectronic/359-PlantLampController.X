@@ -1,5 +1,5 @@
 
-# 1 "src/drv_eusart.c"
+# 1 "src/drv_tmr0.c"
 
 # 26 "/opt/microchip/xc8/v1.45/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -11789,88 +11789,40 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 15 "src/../inc/drv_eusart.h"
-typedef void (*eusart_rcv_handler_t)(uint8_t rcv);
-extern void eusart_init();
-extern uint8_t eusart_write(uint8_t byte);
-extern void eusart_write_buffer(uint8_t *pdata, uint8_t len);
-extern void eusart_transmit_isr();
-extern void eusart_setReceiveHandler(eusart_rcv_handler_t handler);
-extern void eusart_receive_isr();
+# 17 "src/../inc/drv_tmr0.h"
+typedef void (*tmr0_interrupt_callback_t)();
 
-# 14 "src/drv_eusart.c"
-eusart_rcv_handler_t eusart_rcv_handler;
-static uint8_t tx_buffer[32];
-static uint8_t tx_head;
-static uint8_t tx_tail;
-static uint8_t tx_remain;
+extern void tmr0_init();
+extern void tmr0_start();
+extern void tmr0_isr();
+extern void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback);
 
-void eusart_init() {
+# 3 "src/drv_tmr0.c"
+tmr0_interrupt_callback_t tmr0_callback;
 
-TX1STAbits.TX9 = 0;
-TX1STAbits.TXEN = 1;
-TX1STAbits.SYNC = 0;
-TX1STAbits.SENDB = 0;
-TX1STAbits.BRGH = 1;
+void tmr0_init() {
+T0CON0 = 0x04;
+T0CON1 = 0x44;
 
-RC1STAbits.SPEN = 1;
-RC1STAbits.RX9 = 0;
-RC1STAbits.CREN = 1;
-
-BAUD1CONbits.BRG16 = 1;
-SP1BRG = 416;
-
-PIE3bits.RC1IE = 1;
-tx_head = 0;
-tx_tail = 0;
-tx_remain = sizeof(tx_buffer);
-}
-void putch(char c) {
-while(tx_remain == 0);
-if(PIE3bits.TX1IE == 0) {
-TX1REG = c;
-} else {
-PIE3bits.TX1IE = 0;
-tx_buffer[tx_head++] = c;
-if(tx_head >= sizeof(tx_buffer)) {
-tx_head = 0;
-}
-tx_remain--;
+PIE0bits.TMR0IE = 1;
 }
 
-PIE3bits.TX1IE = 1;
+void tmr0_start() {
+if (T0CON0bits.T0EN) {
+T0CON0bits.T0EN = 0;
+}
+TMR0 = 0;
+T0CON0bits.T0EN = 1;
 }
 
-uint8_t eusart_write(uint8_t byte) {
-putch(byte);
-return byte;
-}
-void eusart_write_buffer(uint8_t *pdata, uint8_t len) {
-for(uint8_t i = 0; i < len; i++) {
-eusart_write(*(pdata+i));
+void tmr0_isr() {
+PIR0bits.TMR0IF = 0;
+T0CON0bits.T0EN = 0;
+if (tmr0_callback != (0)) {
+tmr0_callback();
 }
 }
 
-void eusart_transmit_isr() {
-if(tx_remain < sizeof(tx_buffer)) {
-TX1REG = tx_buffer[tx_tail++];
-if(tx_tail >= sizeof(tx_buffer)) {
-tx_tail = 0;
+void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback) {
+tmr0_callback = callback;
 }
-tx_remain++;
-} else {
-PIE3bits.TX1IE = 0;
-}
-}
-
-void eusart_setReceiveHandler(eusart_rcv_handler_t handler) {
-eusart_rcv_handler = handler;
-}
-
-void eusart_receive_isr() {
-uint8_t rcv = RC1REG;
-if(eusart_rcv_handler != (0)) {
-eusart_rcv_handler(rcv);
-}
-}
-

@@ -1,82 +1,38 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"730 /opt/microchip/xc8/v1.45/include/pic16f15375.h
-[v _TRISA `Vuc ~T0 @X0 0 e@18 ]
-"20256
-[v _ANSELA `Vuc ~T0 @X0 0 e@7992 ]
-"20318
-[v _WPUA `Vuc ~T0 @X0 0 e@7993 ]
-"20380
-[v _ODCONA `Vuc ~T0 @X0 0 e@7994 ]
-"20442
-[v _SLRCONA `Vuc ~T0 @X0 0 e@7995 ]
-"20504
-[v _INLVLA `Vuc ~T0 @X0 0 e@7996 ]
-"1078
-[v _LATB `Vuc ~T0 @X0 0 e@25 ]
-"792
-[v _TRISB `Vuc ~T0 @X0 0 e@19 ]
-"20752
-[v _ANSELB `Vuc ~T0 @X0 0 e@8003 ]
-"20814
-[v _WPUB `Vuc ~T0 @X0 0 e@8004 ]
-"20876
-[v _ODCONB `Vuc ~T0 @X0 0 e@8005 ]
-"20938
-[v _SLRCONB `Vuc ~T0 @X0 0 e@8006 ]
-"21000
-[v _INLVLB `Vuc ~T0 @X0 0 e@8007 ]
-"21248
-[v _ANSELC `Vuc ~T0 @X0 0 e@8014 ]
-"1140
-[v _LATC `Vuc ~T0 @X0 0 e@26 ]
-"854
-[v _TRISC `Vuc ~T0 @X0 0 e@20 ]
-"21310
-[v _WPUC `Vuc ~T0 @X0 0 e@8015 ]
-"21372
-[v _ODCONC `Vuc ~T0 @X0 0 e@8016 ]
-"21434
-[v _SLRCONC `Vuc ~T0 @X0 0 e@8017 ]
-"21496
-[v _INLVLC `Vuc ~T0 @X0 0 e@8018 ]
-"417
-[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . INTEDG . PEIE GIE ]
-"416
-[u S25 `S26 1 ]
-[n S25 . . ]
-"424
-[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"17362
-[v _PPSLOCK `Vuc ~T0 @X0 0 e@7823 ]
-"17368
-[s S783 :1 `uc 1 ]
-[n S783 . PPSLOCKED ]
-"17367
-[u S782 `S783 1 ]
-[n S782 . . ]
-"17372
-[v _PPSLOCKbits `VS782 ~T0 @X0 0 e@7823 ]
-"19068
-[v _RB0PPS `Vuc ~T0 @X0 0 e@7960 ]
-"19112
-[v _RB1PPS `Vuc ~T0 @X0 0 e@7961 ]
-"19156
-[v _RB2PPS `Vuc ~T0 @X0 0 e@7962 ]
-"19200
-[v _RB3PPS `Vuc ~T0 @X0 0 e@7963 ]
-"19684
-[v _RC6PPS `Vuc ~T0 @X0 0 e@7974 ]
-"18484
-[v _RX1DTPPS `Vuc ~T0 @X0 0 e@7883 ]
-"18136
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
-"19464
-[v _RC1PPS `Vuc ~T0 @X0 0 e@7969 ]
-"19508
-[v _RC2PPS `Vuc ~T0 @X0 0 e@7970 ]
-"18194
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
+[v F9552 `(v ~T0 @X0 0 tf ]
+"8376 /opt/microchip/xc8/v1.45/include/pic16f15375.h
+[v _T0CON0 `Vuc ~T0 @X0 0 e@1438 ]
+"8446
+[v _T0CON1 `Vuc ~T0 @X0 0 e@1439 ]
+"9606
+[s S445 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S445 . INTE . IOCIE TMR0IE ]
+"9605
+[u S444 `S445 1 ]
+[n S444 . . ]
+"9613
+[v _PIE0bits `VS444 ~T0 @X0 0 e@1814 ]
+"8382
+[s S386 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S386 . T0OUTPS T016BIT T0OUT T0OE T0EN ]
+"8389
+[s S387 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S387 . T0OUTPS0 T0OUTPS1 T0OUTPS2 T0OUTPS3 ]
+"8381
+[u S385 `S386 1 `S387 1 ]
+[n S385 . . . ]
+"8396
+[v _T0CON0bits `VS385 ~T0 @X0 0 e@1438 ]
+"7989
+[v _TMR0 `Vuc ~T0 @X0 0 e@1436 ]
+"9300
+[s S428 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S428 . INTF . IOCIF TMR0IF ]
+"9299
+[u S427 `S428 1 ]
+[n S427 . . ]
+"9307
+[v _PIR0bits `VS427 ~T0 @X0 0 e@1804 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -8839,132 +8795,98 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;drv_gpio.h: 15: extern void gpio_init();
-"4 src/drv_gpio.c
-[v _gpio_init `(v ~T0 @X0 1 ef ]
+[; ;drv_tmr0.h: 17: typedef void (*tmr0_interrupt_callback_t)();
+[; ;drv_tmr0.h: 19: extern void tmr0_init();
+[; ;drv_tmr0.h: 20: extern void tmr0_start();
+[; ;drv_tmr0.h: 21: extern void tmr0_isr();
+[; ;drv_tmr0.h: 22: extern void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback);
+"3 src/drv_tmr0.c
+[v _tmr0_callback `*F9552 ~T0 @X0 1 e ]
+[; ;drv_tmr0.c: 3: tmr0_interrupt_callback_t tmr0_callback;
+"5
+[v _tmr0_init `(v ~T0 @X0 1 ef ]
 {
-[; ;drv_gpio.c: 4: void gpio_init() {
-[e :U _gpio_init ]
+[; ;drv_tmr0.c: 5: void tmr0_init() {
+[e :U _tmr0_init ]
 [f ]
-[; ;drv_gpio.c: 6: TRISA = 0x3F;
+[; ;drv_tmr0.c: 6: T0CON0 = 0x04;
 "6
-[e = _TRISA -> -> 63 `i `uc ]
-[; ;drv_gpio.c: 7: ANSELA = 0x00;
+[e = _T0CON0 -> -> 4 `i `uc ]
+[; ;drv_tmr0.c: 7: T0CON1 = 0x44;
 "7
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 8: WPUA = 0x00;
-"8
-[e = _WPUA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 9: ODCONA = 0x00;
+[e = _T0CON1 -> -> 68 `i `uc ]
+[; ;drv_tmr0.c: 9: PIE0bits.TMR0IE = 1;
 "9
-[e = _ODCONA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 10: SLRCONA = 0xFF;
+[e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
+[; ;drv_tmr0.c: 10: }
 "10
-[e = _SLRCONA -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 11: INLVLA = 0x00;
-"11
-[e = _INLVLA -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 13: LATB = 0x0F;
-"13
-[e = _LATB -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 14: TRISB = 0x30;
-"14
-[e = _TRISB -> -> 48 `i `uc ]
-[; ;drv_gpio.c: 15: ANSELB = 0x00;
-"15
-[e = _ANSELB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 16: WPUB = 0x00;
-"16
-[e = _WPUB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 17: ODCONB = 0x00;
-"17
-[e = _ODCONB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 18: SLRCONB = 0xFF;
-"18
-[e = _SLRCONB -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 19: INLVLB = 0x00;
-"19
-[e = _INLVLB -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 21: ANSELC = 0x00;
-"21
-[e = _ANSELC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 22: LATC = 0x40;
-"22
-[e = _LATC -> -> 64 `i `uc ]
-[; ;drv_gpio.c: 23: TRISC = 0x86;
-"23
-[e = _TRISC -> -> 134 `i `uc ]
-[; ;drv_gpio.c: 24: WPUC = 0x00;
-"24
-[e = _WPUC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 25: ODCONC = 0x00;
-"25
-[e = _ODCONC -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 26: SLRCONC = 0xFF;
-"26
-[e = _SLRCONC -> -> 255 `i `uc ]
-[; ;drv_gpio.c: 27: INLVLC = 0x00;
-"27
-[e = _INLVLC -> -> 0 `i `uc ]
-"30
-[v _state `uc ~T0 @X0 1 a ]
-[; ;drv_gpio.c: 30: bool state = INTCONbits.GIE;
-[e = _state . . _INTCONbits 0 3 ]
-[; ;drv_gpio.c: 32: (INTCONbits.GIE = 0);
-"32
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 34: PPSLOCK = 0x55;
-"34
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 35: PPSLOCK = 0xAA;
-"35
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 36: PPSLOCKbits.PPSLOCKED = 0;
-"36
-[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
-[; ;drv_gpio.c: 37: RB0PPS = 0x09;
-"37
-[e = _RB0PPS -> -> 9 `i `uc ]
-[; ;drv_gpio.c: 38: RB1PPS = 0x0A;
-"38
-[e = _RB1PPS -> -> 10 `i `uc ]
-[; ;drv_gpio.c: 39: RB2PPS = 0x0B;
-"39
-[e = _RB2PPS -> -> 11 `i `uc ]
-[; ;drv_gpio.c: 40: RB3PPS = 0x0C;
-"40
-[e = _RB3PPS -> -> 12 `i `uc ]
-[; ;drv_gpio.c: 41: RC6PPS = 0x0F;
-"41
-[e = _RC6PPS -> -> 15 `i `uc ]
-[; ;drv_gpio.c: 42: RX1DTPPS = 0x17;
-"42
-[e = _RX1DTPPS -> -> 23 `i `uc ]
-[; ;drv_gpio.c: 43: SSP1CLKPPS = 0x12;
-"43
-[e = _SSP1CLKPPS -> -> 18 `i `uc ]
-[; ;drv_gpio.c: 44: RC1PPS = 0x16;
-"44
-[e = _RC1PPS -> -> 22 `i `uc ]
-[; ;drv_gpio.c: 45: RC2PPS = 0x15;
-"45
-[e = _RC2PPS -> -> 21 `i `uc ]
-[; ;drv_gpio.c: 46: SSP1DATPPS = 0x11;
-"46
-[e = _SSP1DATPPS -> -> 17 `i `uc ]
-[; ;drv_gpio.c: 48: PPSLOCK = 0x55;
-"48
-[e = _PPSLOCK -> -> 85 `i `uc ]
-[; ;drv_gpio.c: 49: PPSLOCK = 0xAA;
-"49
-[e = _PPSLOCK -> -> 170 `i `uc ]
-[; ;drv_gpio.c: 50: PPSLOCKbits.PPSLOCKED = 1;
-"50
-[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
-[; ;drv_gpio.c: 51: INTCONbits.GIE = state;
-"51
-[e = . . _INTCONbits 0 3 _state ]
-[; ;drv_gpio.c: 52: }
-"52
 [e :UE 1026 ]
+}
+"12
+[v _tmr0_start `(v ~T0 @X0 1 ef ]
+{
+[; ;drv_tmr0.c: 12: void tmr0_start() {
+[e :U _tmr0_start ]
+[f ]
+[; ;drv_tmr0.c: 13: if (T0CON0bits.T0EN) {
+"13
+[e $ ! != -> . . _T0CON0bits 0 4 `i -> -> -> 0 `i `Vuc `i 1028  ]
+{
+[; ;drv_tmr0.c: 14: T0CON0bits.T0EN = 0;
+"14
+[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
+"15
+}
+[e :U 1028 ]
+[; ;drv_tmr0.c: 15: }
+[; ;drv_tmr0.c: 16: TMR0 = 0;
+"16
+[e = _TMR0 -> -> 0 `i `uc ]
+[; ;drv_tmr0.c: 17: T0CON0bits.T0EN = 1;
+"17
+[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
+[; ;drv_tmr0.c: 18: }
+"18
+[e :UE 1027 ]
+}
+"20
+[v _tmr0_isr `(v ~T0 @X0 1 ef ]
+{
+[; ;drv_tmr0.c: 20: void tmr0_isr() {
+[e :U _tmr0_isr ]
+[f ]
+[; ;drv_tmr0.c: 21: PIR0bits.TMR0IF = 0;
+"21
+[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
+[; ;drv_tmr0.c: 22: T0CON0bits.T0EN = 0;
+"22
+[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
+[; ;drv_tmr0.c: 23: if (tmr0_callback != (0)) {
+"23
+[e $ ! != _tmr0_callback -> -> 0 `i `*F9552 1030  ]
+{
+[; ;drv_tmr0.c: 24: tmr0_callback();
+"24
+[e ( *U _tmr0_callback ..  ]
+"25
+}
+[e :U 1030 ]
+[; ;drv_tmr0.c: 25: }
+[; ;drv_tmr0.c: 26: }
+"26
+[e :UE 1029 ]
+}
+"28
+[v _tmr0_set_interrupt_callback `(v ~T0 @X0 1 ef1`*F9552 ]
+{
+[; ;drv_tmr0.c: 28: void tmr0_set_interrupt_callback(tmr0_interrupt_callback_t callback) {
+[e :U _tmr0_set_interrupt_callback ]
+[v _callback `*F9552 ~T0 @X0 1 r1 ]
+[f ]
+[; ;drv_tmr0.c: 29: tmr0_callback = callback;
+"29
+[e = _tmr0_callback _callback ]
+[; ;drv_tmr0.c: 30: }
+"30
+[e :UE 1031 ]
 }

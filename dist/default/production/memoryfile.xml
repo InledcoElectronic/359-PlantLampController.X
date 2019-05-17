@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\359-PlantLampController.X.production.hex">
+  <executable name="dist/default/production/359-PlantLampController.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>831</used>
-      <free>7361</free>
+      <used>2652</used>
+      <free>5540</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>1024</length>
-      <used>70</used>
-      <free>954</free>
+      <used>392</used>
+      <free>632</free>
     </memory>
   </executable>
 </project>

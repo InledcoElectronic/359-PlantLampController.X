@@ -18,6 +18,7 @@ void tmr2_init(tmr2_clk_cs_t cs,tmr2_ckps_t ckps,tmr2_outps_t outps,tmr2_mode_t 
     T2RSTbits.RSEL = rsel;
     
     PR2 = 249;
+	PIE4bits.TMR2IE = 1;
 }
 //定时器使能
 void tmr2_start() {

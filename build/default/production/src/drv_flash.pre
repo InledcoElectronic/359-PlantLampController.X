@@ -1,5 +1,5 @@
 
-# 1 "src/drv_eusart.c"
+# 1 "src/drv_flash.c"
 
 # 26 "/opt/microchip/xc8/v1.45/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -11789,88 +11789,100 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 15 "src/../inc/drv_eusart.h"
-typedef void (*eusart_rcv_handler_t)(uint8_t rcv);
-extern void eusart_init();
-extern uint8_t eusart_write(uint8_t byte);
-extern void eusart_write_buffer(uint8_t *pdata, uint8_t len);
-extern void eusart_transmit_isr();
-extern void eusart_setReceiveHandler(eusart_rcv_handler_t handler);
-extern void eusart_receive_isr();
+# 21 "src/../inc/drv_flash.h"
+extern uint8_t flash_readByte(uint16_t flashAddr);
+extern void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len);
+extern uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf);
+extern void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte);
 
-# 14 "src/drv_eusart.c"
-eusart_rcv_handler_t eusart_rcv_handler;
-static uint8_t tx_buffer[32];
-static uint8_t tx_head;
-static uint8_t tx_tail;
-static uint8_t tx_remain;
+# 6 "src/drv_flash.c"
+void flash_erase_block(uint16_t flashAddr) {
+bool state = INTCONbits.GIE;
 
-void eusart_init() {
+NVMADR = flashAddr;
 
-TX1STAbits.TX9 = 0;
-TX1STAbits.TXEN = 1;
-TX1STAbits.SYNC = 0;
-TX1STAbits.SENDB = 0;
-TX1STAbits.BRGH = 1;
+NVMCON1bits.NVMREGS = 0;
 
-RC1STAbits.SPEN = 1;
-RC1STAbits.RX9 = 0;
-RC1STAbits.CREN = 1;
+NVMCON1bits.FREE = 1;
 
-BAUD1CONbits.BRG16 = 1;
-SP1BRG = 416;
+NVMCON1bits.WREN = 1;
 
-PIE3bits.RC1IE = 1;
-tx_head = 0;
-tx_tail = 0;
-tx_remain = sizeof(tx_buffer);
-}
-void putch(char c) {
-while(tx_remain == 0);
-if(PIE3bits.TX1IE == 0) {
-TX1REG = c;
-} else {
-PIE3bits.TX1IE = 0;
-tx_buffer[tx_head++] = c;
-if(tx_head >= sizeof(tx_buffer)) {
-tx_head = 0;
-}
-tx_remain--;
+INTCONbits.GIE = 0;
+
+NVMCON2 = 0x55;
+NVMCON2 = 0xAA;
+NVMCON1bits.WR = 1;
+__nop();
+__nop();
+
+NVMCON1bits.WREN = 0;
+
+INTCONbits.GIE = state;
 }
 
-PIE3bits.TX1IE = 1;
+
+uint8_t flash_readByte(uint16_t flashAddr) {
+
+NVMADR = flashAddr;
+
+NVMCON1bits.NVMREGS = 0;
+
+NVMCON1bits.RD = 1;
+
+return NVMDATL;
 }
 
-uint8_t eusart_write(uint8_t byte) {
-putch(byte);
-return byte;
-}
-void eusart_write_buffer(uint8_t *pdata, uint8_t len) {
-for(uint8_t i = 0; i < len; i++) {
-eusart_write(*(pdata+i));
+void flash_readBuffer(uint16_t flashAddr, uint8_t *pbuf, uint8_t len) {
+for (uint8_t i = 0; i < len; i++) {
+*(pbuf + i) = flash_readByte(flashAddr++);
 }
 }
 
-void eusart_transmit_isr() {
-if(tx_remain < sizeof(tx_buffer)) {
-TX1REG = tx_buffer[tx_tail++];
-if(tx_tail >= sizeof(tx_buffer)) {
-tx_tail = 0;
-}
-tx_remain++;
-} else {
-PIE3bits.TX1IE = 0;
-}
+uint8_t flash_writeBlock(uint16_t flashAddr, uint8_t *pbuf) {
+uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)));
+uint8_t state = INTCONbits.GIE;
+if (flashAddr != blockStartAddr) {
+return -1;
 }
 
-void eusart_setReceiveHandler(eusart_rcv_handler_t handler) {
-eusart_rcv_handler = handler;
+flash_erase_block(flashAddr);
+
+NVMCON1bits.NVMREGS = 0;
+NVMCON1bits.FREE = 0;
+
+NVMCON1bits.LWLO = 1;
+NVMCON1bits.WREN = 1;
+
+for (uint8_t i = 0; i < 32; i++) {
+NVMADR = flashAddr;
+NVMDATL = *(pbuf + i);
+if (i == (32 - 1)) {
+
+NVMCON1bits.LWLO = 0;
 }
 
-void eusart_receive_isr() {
-uint8_t rcv = RC1REG;
-if(eusart_rcv_handler != (0)) {
-eusart_rcv_handler(rcv);
+INTCONbits.GIE = 0;
+
+NVMCON2 = 0x55;
+NVMCON2 = 0xAA;
+NVMCON1bits.WR = 1;
+__nop();
+__nop();
+INTCONbits.GIE = state;
+flashAddr++;
 }
+NVMCON1bits.WREN = 0;
+
+return 0;
 }
 
+void flash_write_byte(uint16_t flashAddr, uint8_t *rambuf, uint8_t byte) {
+uint16_t blockStartAddr = (uint16_t) (flashAddr & (0x1FFF ^ (32 - 1)));
+uint8_t offset = (uint16_t) (flashAddr & (32 - 1));
+
+for (uint8_t i = 0; i < 32; i++) {
+rambuf[i] = flash_readByte(blockStartAddr++);
+}
+rambuf[offset] = byte;
+flash_writeBlock(blockStartAddr, rambuf);
+}

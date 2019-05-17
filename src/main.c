@@ -13,12 +13,9 @@
 #include "../inc/drv_tmr2.h"
 #include "../inc/drv_eusart.h"
 #include "../inc/drv_iic.h"
-<<<<<<< HEAD
 #include "../inc/app_protocol.h"
 #include "../inc/app_control.h"
-=======
 #include "../inc/drv_pcf8563.h"
->>>>>>> 61c9d203afad3756857c34e816409de748396cf4
 
 // CONFIG1
 #pragma config FEXTOSC = OFF    // External Oscillator mode selection bits->Oscillator not enabled
@@ -59,6 +56,61 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+bool frameReceived;
+
+void tmr2_handler() {
+	static uint16_t count = 0;
+	count++;
+	if (count >= 1000) {
+		count = 0;
+		app_control_process();
+	}
+	app_control_ramp();
+}
+
+void tmr0_handler() {
+	frameReceived = true;
+}
+
+void eusart_handler(uint8_t rcv) {
+	app_protocol_receive(rcv);
+	tmr0_start();
+}
+
+uint8_t getGroup() {
+	uint8_t group = 0;
+	if (!PORTBbits.RB4) {
+		group |= 0x08;
+	}
+	if (!PORTBbits.RB5) {
+		group |= 0x04;
+	}
+	if (!PORTAbits.RA0) {
+		group |= 0x02;
+	}
+	if (!PORTAbits.RA1) {
+		group |= 0x01;
+	}
+	return group;
+}
+
+uint8_t getAddress() {
+	uint8_t address = 0;
+	if (!PORTAbits.RA2) {
+		address |= 0x08;
+	}
+	if (!PORTAbits.RA3) {
+		address |= 0x04;
+	}
+	if (!PORTAbits.RA4) {
+		address |= 0x02;
+	}
+	if (!PORTAbits.RA5) {
+		address |= 0x01;
+	}
+	return address;
+}
+
 void main(void) {
     //初始化时钟
     osc_init();
@@ -70,32 +122,36 @@ void main(void) {
     pwm3_init();
     pwm4_init();
     //初始化定时器
-    tmr2_init(TMR2_CLK__FOSC_4,TMR2_CKPS_16,TMR2_OUTPS_8,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
+    tmr2_init(TMR2_CLK_FOSC_4,TMR2_CKPS_16,TMR2_OUTPS_1,TMR2_MODE_FREE_PERIOD_SW_GATE_CTRL,TMR2_RSEL_T2INPPS);
     tmr2_start();
+	
+	tmr0_init();
     //串口初始化
     eusart_init();
     //IIC初始化
     iic_init();
     //初始化pcf8563
     pcf8563_init();
-    //初始化时钟
-    rtc_init();
+	
+	app_protocol_init(getGroup(), getAddress(), &mRegister, sizeof(mRegister));
+	app_control_init();
+	
+	eusart_setReceiveHandler(eusart_handler);
+	tmr2_setInterruptHandler(tmr2_handler);
+	tmr0_set_interrupt_callback(tmr0_handler);
+	app_protocol_set_write_data_cb(app_control_param_changed_cb);
     
     GlobalInterruptEnable();
     PeripheralInterruptEnable();
  
     while(1) {
-        CLRWDT();
-       
-        rtc_readOrWrite_time(1);
-        eusart_write(data_time.second);
-        eusart_write(data_time.minute);
-        eusart_write(data_time.hour);
-        eusart_write(data_time.day);
-        eusart_write(data_time.weekday);        
-        eusart_write(data_time.month);        
-        eusart_write(data_time.year);                            
-        __delay_ms(100);
+        CLRWDT();     
+                                  
+        if (frameReceived) {
+			frameReceived = false;
+			app_protocol_decode();
+			app_protocol_clear();
+		}
     }
 }
 
